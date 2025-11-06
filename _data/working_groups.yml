@@ -1,0 +1,93 @@
+- number: 1
+  title: "CT for ML"
+  leader: bungert
+  co-leader: guy
+  description: "The advent of the control theoretic perspective on learning with deep residual neural networks has
+recently been shown to be not only a reliable computational tool, but also a fruitful avenue for
+providing original theoretical results to a multitude of problems. These include adversarial
+robustness, generative modelling and generalisation bounds, to name a few. Similarly, dynamic
+Bayesian networks, which are the central paradigm in statistical ML, can be analysed with the help of
+classical CT tools like Kalman filters. The aim is to explore these connections and contribute to the
+mathematics of reliable ML."
+  tasks:
+    - "Obtaining error estimates for ML surrogates"
+    - "Theoretical guarantees for physics-informed neural networks"
+    - "Application of Game Theory to ML"
+    - "Kalman filters in statistical ML"
+    - "Analysis of high-dimensional deep neural networks and transformers using CT tools"
+- number: 2
+  title: "ML for CT"
+  leader: kleikamp
+  co-leader: periago
+  description: "This approach addresses the application of ML tools, such as kernel methods and deep neural networks
+to complex models in control theory. These will be combined with traditional control methods, either on
+the algorithmic level for developing enhanced and provably efficient novel techniques, or for analysis
+purposes, in order to better understand the opportunities and limitations of ML for the control design.
+The focus will be on the development of techniques that can handle high-dimensional problems and
+face the curse of dimensionality."
+  tasks:
+    - "Addressing the curse of dimensionality with ML tools"
+    - "Solving parameterised optimal control problems"
+    - "Construction of control Lyapunov functions using ML methods"
+    - "Developing ML-based approaches for the for the life-cycle-optimisation in materials"
+    - "Exploiting PINNs for solving complex free boundary problems"
+- number: 3
+  title: "Hybrid and Data-driven modelling"
+  leader: flasskamp
+  co-leader: gruene
+  description: "The aim is to address control problems built on observed pairs of input-output data. The Action will
+develop efficient and reliable methods for designing controllers when the underlying model is
+unidentified or when the underlying laws and processes only allow partial knowledge. While these topics
+arise in a wide range of potential applications, the Action will focus on control of power systems (solar,
+wind, smart houses) and construction of digital twins in healthcare and personalised medicine. In
+connection with industry partners, the Action will explore implementation options that can provide
+benefits for clean energy and improve healthcare outcomes of European citizens."
+  tasks:
+    - "Approximating the (control to) state law from data"
+    - "Constructive methods for extremum seeking control"
+    - "Control of energy systems"
+    - "Digital twins for personalised medicine"
+- number: 4
+  title: "Transformational activities"
+  leader: jacimovic
+  co-leader: dede
+  description: "WG4 will be responsible for transforming theoretical results into software solutions and practical
+implementations in industry and society. Its activities are essential for bridging the gap between theory
+and real-world applications, ultimately ensuring the relevance and accessibility of the findings to the
+broader community. Special attention will be given the following activities: <ul><li>creating an open-source
+repository hosting solutions related to the theoretical advances from WG1-WG3;</li><li>development of
+comprehensive documentation and training materials (tutorials, case studies, etc);</li><li>establishing
+partnership with industry to promote the adoption of these solutions and validate their applicability.</li></ul>"
+  tasks:
+    - "Identify possible real-world applications of the results gained in WG1-WG3 in collaboration with
+industrial partners."
+    - "Establish a public repository for data, coding and programs (on GitHub or a similar platform) in
+accordance with the FAIR data principles."
+    - "Develop comprehensive documentation and training materials (tutorials, case studies, etc)."
+    - "Identify and pursue funding opportunities that facilitate collaborations between scientists and
+industry stakeholders."
+    - "Organise on-site events linking companies, software developers and researchers (at least two
+such events per the Action lifetime)."
+- number: 5
+  title: "Sharing & spreading"
+  leader: caldarelli
+  co-leader: molinari
+  description: "The aim of WG5 is to provide communication channels that will allow for efficient and timely transfer of
+knowledge among Action members and towards a wider audience. In particular, to produce a dynamic
+overview of the progress achieved and the current state of the art (the results, developed codes, open
+problems, industrial perspectives) that will be immediately available to the other WGs, and later to all
+the interested researchers. Special attention will be paid to the problems of fragmentation of
+communities interested in CT, ML and their applications. This WG will help to tackle the challenge that
+the same or closely related problems/methods are known by different communities under different
+names, and cross-references are not clearly established."
+  tasks:
+    - "Develop an online platform for sharing the results and ideas of the researchers involved in the
+Action, both within and beyond the Action."
+    - "Provide a forum for discussion and communication to be used by all Action members."
+    - "Launch and run on a regular basis an (online) seminar of the Action."
+    - "Provide a list of open problems that will be offered to Master and Ph.D. students, and to Young
+Researchers and Innovators participating in the network."
+    - "Establish a platform offering industry related internships to Master and Ph.D. students."
+    - "Disseminate results via social media."
+    - "Organise participation in popular science activities at local, national and international level
+(public lectures, Open Doors events, European Researchers Night, Science festivals, etc.)."

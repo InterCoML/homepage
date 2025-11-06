@@ -1,0 +1,28 @@
+<div class="sub-container">
+  <div class="cards-container">
+    {% assign news = site.news | sort: 'date' | reverse %}
+    {% for posting in news limit:include.limit %}
+      <div class="card">
+        {% if posting.date %}
+          <h5>{{ posting.date | date: "%-d %B %Y" }}</h5>
+        {% endif %}
+        <h3>{{ posting.title }}</h3>
+        {% if posting.image %}
+          <img src="{{ site.baseUrl }}/images/news/{{ posting.image }}" />
+        {% endif %}
+        {% if posting.short-description %}
+          <p>{{ posting.short-description }}</p>
+        {% endif %}
+        {% assign content = posting.content | strip_newlines %}
+        {% if content != "" %}
+          <a class="button" href="{{ posting.url }}">Find out more</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if include.showMoreNews and site.news.size > include.limit %}
+    <br>
+    <a href="{{ site.baseUrl }}/news" class="link">More News...</a>
+  {% endif %}
+</div>

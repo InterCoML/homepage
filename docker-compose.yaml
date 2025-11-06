@@ -1,0 +1,12 @@
+name: "intercoml-homepage"
+services:
+  intercoml-homepage:
+    build:
+      context: .
+    volumes:
+      - .:/myapp
+    stdin_open: true
+    tty: true
+    image: intercoml-homepage:latest
+    command: bash
+    network_mode: host

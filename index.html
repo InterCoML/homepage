@@ -1,0 +1,20 @@
+---
+layout: default
+title: Index
+---
+
+<div class="sub-container">
+  <h1>{{ site.actionTitle }}</h1>
+
+  {% include welcome.html %}
+  <hr class="hr-index">
+  <h2>News</h2>
+  {% include newsboard.html limit=3 showMoreNews="true" %}
+  <hr class="hr-index">
+  {% comment %}
+  {% include activitiesOverview.html %}
+  <hr class="hr-index">
+  {% endcomment %}
+  <h2>Working Groups</h2>
+  {% include working-groups-overview.html %}
+</div>

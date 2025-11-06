@@ -1,0 +1,25 @@
+// Colors
+$mainBlue: #1a4575;
+$altBlue: #5492D9;
+$mainGreen: #72bb43;
+$mainGray: #b3b4b4;
+
+// Styling
+$toplevel-max-width: 70em;
+$container-max-width: 70em;
+
+$h2-spacing: 1.5rem;
+
+// Fonts
+@font-face {
+  font-family: "Gill Sans";
+  src: url("../webfonts/gill-sans-2/Gill Sans.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gill Sans Light";
+  src: url("../webfonts/gill-sans-2/Gill Sans Light.otf") format("opentype");
+}
+
+$bodyFont: "Gill Sans", sans-serif;
+$headerFont: "Gill Sans", sans-serif;

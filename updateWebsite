@@ -1,0 +1,79 @@
+#!/bin/bash
+trap 'killall' TERM
+
+. ./scripts/util.sh
+
+killall() {
+  info "Shutting down..."
+  trap '' INT TERM
+  kill -TERM 0
+  wait
+}
+
+VALID_CMDS="watch compile compileAndServe"
+
+checkCommand() {
+  echo $VALID_CMDS | grep "\<$COMMAND\>" >> /dev/null
+  echo $?
+}
+
+compile() {
+  ./scripts/compileWebsite.sh $@
+}
+
+serve() {
+  bundle exec jekyll serve --livereload --port ${PORT:-$DEFAULT_JEKYLL_PORT} --livereload_port $LIVERELOAD_PORT --trace -o --destination /tmp/_site_${PORT:-$DEFAULT_JEKYLL_PORT} $@ &
+  SERVER_PID=$!
+  if [ $(ps -A | grep -c "$SERVER_PID") -gt 0 ]; then
+    info "Started webserver. Close with Ctrl-c"
+    info "Opening $address in '$BROWSER'"
+    true
+  else
+    error "Server could not be started. Maybe another instance is already running?"
+    exit
+  fi
+}
+
+COMMAND="$1"
+
+printHelp() {
+  echo -e "Usage: ./updateWebsite <command> {-i <author_id>}"
+  echo -e "Valid commands:"
+  echo -e "\twatch                serve and automatically recompile website after changes"
+  echo -e "\tcompile              compile all websites"
+  echo -e "\tcompileAndServe      compile all websites and serve website"
+  exit
+}
+
+[ $(checkCommand) -eq 0 ] || printHelp
+shift
+
+address="http://127.0.0.1:$DEFAULT_JEKYLL_PORT"
+
+case $COMMAND in
+  watch)
+    info "Starting webserver"
+    conf="_config.yml,$BASEURL_CONFIG"
+    serve --config $conf &
+    cat
+    ;;
+  compile)
+    info "Compiling the complete website"
+    compile -p
+    ;;
+  compileAndServe)
+    info "Compiling the complete website and serving via localhost"
+    compile
+    cd $OUTPUT_DIR_ABS
+    serve &
+    warning "This version is ${red}${smul}not${white}${normal} fit for deployment as it contains links for serving over localhost. Before pushing to the webserver run"
+    indent "\t./updateWebsite compile"
+    indent "to ensure that all hyperrefs are correct."
+    cat
+    ;;
+  ?)
+    printHelp && exit
+    ;;
+esac
+
+kill $SERVER_PID

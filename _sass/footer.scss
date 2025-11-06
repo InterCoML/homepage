@@ -1,0 +1,83 @@
+@use "variables" as *;
+
+.desktop-footer-wrapper {
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  margin-top: auto;
+}
+
+.desktop-footer-wrapper hr {
+  margin: 0;
+}
+
+.desktop-footer-bottom-wrapper {
+  width: 100%;
+  background-color: $mainGreen;
+}
+
+.desktop-footer-column-wrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.desktop-footer-column {
+  flex: 1 1 0px;
+}
+ 
+.desktop-footer-bottom {
+  width: $container-max-width;
+
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  padding: 3px 0 3px 0;
+}
+
+.desktop-footer-bottom a {
+  line-height: 30px;
+  color: white;
+  text-decoration: none;
+
+  transition: color 0.5s;
+}
+
+.desktop-footer-bottom a:hover {
+  color: black!important;
+}
+
+.desktop-footer-column a {
+  text-decoration: none;
+  color: $mainGray;
+
+  transition: color 0.5s;
+}
+
+.desktop-footer-column a:hover {
+  color: black;
+}
+
+.copyright {
+  display: inline;
+  text-align: right;
+  line-height: 30px;
+}
+
+.desktop-footer-content img {
+  max-width: 300px;
+  vertical-align: middle;
+}
+
+.desktop-footer-content .container {
+  padding-bottom: 0;
+}
+
+.desktop-footer-bottom {
+  display: flex;
+  row-gap: 10px;
+}
+
+.desktop-footer-bottom a {
+  flex-grow: 1;
+}
+

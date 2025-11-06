@@ -1,0 +1,39 @@
+---
+title: Working Groups
+permalink: /:basename/
+---
+
+<div class="sub-container">
+  <h1>Working Groups</h1>
+  <p>The COST Action is organized in five working groups described in more detail below:</p>
+  
+  <div class="tabs-container">
+    {% for wg in site.data.working_groups %}
+    <input type="radio" id="tab-{{ wg.number }}" name="working-group-tab"{% if wg.number == 1 %} checked{% endif %}>
+    <label for="tab-{{ wg.number }}" class="tab-label">WG {{ wg.number }}<br><div class="tab-sublabel">{{ wg.title }}</div></label>
+      <div class="tab-content">
+        <h1>WG {{ wg.number }} - {{ wg.title }}</h1>
+        <hr>
+        <h4>Overview</h4>
+        <p>{{ wg.description }}</p>
+        <hr>
+        <h4>Tasks</h4>
+        <p>
+          <ol>
+            {% for task in wg.tasks %}
+              <li>{{ task }}</li>
+            {% endfor %}
+          </ol>
+        </p>
+        <hr>
+        <h3>Working group leaders:</h3>
+        <div class="cards-container">
+          {% assign member = wg.leader %}
+          {% include member-card.html headline="Leader" %}
+          {% assign member = wg.co-leader %}
+          {% include member-card.html headline="Co-Leader" %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

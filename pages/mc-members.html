@@ -1,0 +1,16 @@
+---
+title: MC Members
+permalink: /:basename/
+---
+
+<div class="sub-container">
+  <h1>
+    Current members of the management committee
+  </h1>
+
+  <div class="cards-container">
+    {% for member in site.data.mc_members %}
+      {% include member-card.html %}
+    {% endfor %}
+  </div>
+</div>

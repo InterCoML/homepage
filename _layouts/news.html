@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+{% if page.start-date and page.end-date %}
+  <h3>{{ page.start-date | date: "%-d %B %Y" }} - {{ page.end-date | date: "%-d %B %Y" }}</h3>
+{% elsif page.date %}
+  <h3>Posting date: {{ page.date | date: "%-d %B %Y" }}</h3>
+{% endif %}
+{% if page.image %}
+  <img class="news-img-large" src="{{ site.baseUrl }}/images/news/{{ page.image }}" />
+{% endif %}
+{{ page.content }}
+{% if page.author %}
+  <h3>Author:</h3>
+  {% assign member=page.author %}
+  {% include member-card.html %}
+{% endif %}

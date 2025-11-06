@@ -1,0 +1,19 @@
+{% if member.memberId %}
+  {% assign m = site.data.members[member.memberId] %}
+{% else %}
+  {% assign m = site.data.members[member] %}
+{% endif %}
+
+<div class="card">
+  {% if include.headline %}
+    <h3>{{ include.headline }}</h3>
+  {% elsif m.role %}
+    <h3>{{ m.role }}</h3>
+  {% endif %}
+  {% if m.image %}
+    <img src="{{ site.baseUrl }}/images/members/{{ m.image }}" />
+  {% endif %}
+  <h3>{{ m.name }}{% if m.degrees %}, {{ m.degrees }}{% endif %}</h3>
+  {% if m.mail %}<p><a href="mailto:{{ m.mail }}" class="link">{{ m.mail }}</a></p>{% endif %}
+  {% if m.address %}<p>{{ m.address }}</p>{% endif %}
+</div>

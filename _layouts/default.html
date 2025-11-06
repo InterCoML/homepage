@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-GB" }}">
+  <head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{{ site.baseUrl }}/assets/images/favicon.ico" />
+    <title>{{ site.actionAbbreviation }} - {{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/css/main.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    {% include desktop-menu.html %}
+    <div id="container" class="content container wrapper">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
