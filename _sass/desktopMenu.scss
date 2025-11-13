@@ -1,7 +1,11 @@
 @use "variables" as *;
 
 .desktop-menu-wrapper {
-  background-color: $mainGreen;
+  background-color: $altGray;
+}
+
+.desktop-menu-wrapper hr {
+  margin: 0;
 }
 
 .desktop-menu {
@@ -11,8 +15,36 @@
   margin-right: auto;
 }
 
+.desktop-menu-top-wrapper {
+  width: 100%;
+  background-color: $mainGreen;
+}
+
+.desktop-menu-top {
+  width: $container-max-width;
+
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  padding: 3px 0 3px 0;
+
+  text-align: right;
+}
+
+.desktop-menu-top a {
+  line-height: 30px;
+  color: white;
+  text-decoration: none;
+
+  transition: color 0.5s;
+}
+
+.desktop-menu-top a:hover {
+  color: black!important;
+}
+
 .menu-logo {
-  height: 75px;
+  height: 100px;
   width: auto;
   float: left;
   margin: 5px;
@@ -26,20 +58,20 @@
 .nav-bar {
   list-style: none;
   margin: 0;
-  line-height: 85px;
+  line-height: 110px;
   display: flex;
 }
 
 .nav-item {
   margin: 0 4px;
   padding: 0;
-  line-height: 85px;
+  line-height: 110px;
   flex-grow: 1;
   text-align: center;
 }
 
 .nav-bar li a {
-  color: white;
+  color: $mainBlue;
   font-size: 20px;
   text-decoration: none;
   letter-spacing: .2px;
@@ -54,7 +86,7 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background-color: white;
+    background-color: $mainBlue;
     bottom: 0;
     left: 0;
     transform-origin: right;

@@ -24,7 +24,7 @@ h2, h3 {
 }
 
 h4 {
-  color: $mainBlue;
+  color: $altBlue;
 }
 
 .container {
@@ -88,7 +88,7 @@ hr {
   padding: 16px;
   margin: 5px;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: $altGray;
   color: black;
 }
 
@@ -174,7 +174,7 @@ hr {
 
 
 .accordion {
-  background-color: #f1f1f1;
+  background-color: $altGray;
   color: $mainBlue;
   cursor: pointer;
   padding: 18px;
