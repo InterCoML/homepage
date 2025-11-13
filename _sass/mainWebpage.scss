@@ -11,11 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $bodyFont;
+  font-size: 20px;
 }
 
 h1, h2, h3 {
   font-family: $headerFont;
-  color: var(--header-color);
+  color: $mainBlue;
   margin-bottom: 0;
 }
 
@@ -25,6 +26,38 @@ h2, h3 {
 
 h4 {
   color: $altBlue;
+}
+
+p {
+  line-height: 28px;
+}
+
+.mainGreen {
+  color: $mainGreen;
+}
+
+.mainBlue {
+  color: $mainBlue;
+}
+
+.row {
+  display: table;
+  width: 100%;
+}
+
+.column {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.column ul {
+  text-align: left;
+}
+
+.column ol {
+  text-align: left;
 }
 
 .container {
@@ -78,12 +111,12 @@ hr {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 350px));
+  grid-template-columns: repeat(3, minmax(200px, 450px));
   gap: 20px;
 }
 
 .card {
-  max-width: 350px;
+  max-width: 450px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   margin: 5px;
@@ -182,7 +215,7 @@ hr {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
   transition: 0.5s;
 }
 
@@ -208,4 +241,8 @@ hr {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
+}
+
+.panel .column {
+  padding-bottom: 18px;
 }

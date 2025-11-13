@@ -2,8 +2,15 @@
   {% for wg in site.data.working_groups %}
     <button class="accordion">WG {{ wg.number }} - {{ wg.title }}</button>
     <div class="panel">
-      <p>{{ wg.description }}</p>
-      <a href="{{ site.baseUrl }}/working-groups" class="link">More Information</a>
+      <div class="row">
+        <div class="column">
+          <p>{{ wg.description }}</p>
+          <a href="{{ site.baseUrl }}/working-groups" class="link">More Information</a>
+        </div>
+        <div class="column">
+          <img style="width: 75%;" class="logo" src="{{ site.baseUrl }}/assets/images/logo_intercoml.png" alt="Logo of the {{ site.actionAbbreviation }} COST Action" />
+        </div>
+      </div>
     </div>
   {% endfor %}
 
