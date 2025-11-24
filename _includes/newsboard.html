@@ -15,7 +15,7 @@
         {% endif %}
         {% assign content = posting.content | strip_newlines %}
         {% if content != "" %}
-          <a class="button" href="{{ posting.url }}">Find out more</a>
+          <a class="button" href="{{ posting.url | prepend: site.baseUrl }}">Find out more</a>
         {% endif %}
       </div>
     {% endfor %}
