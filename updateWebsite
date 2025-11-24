@@ -11,6 +11,7 @@ killall() {
 }
 
 VALID_CMDS="watch compile compileAndServe"
+SERVER_PID=0
 
 checkCommand() {
   echo $VALID_CMDS | grep "\<$COMMAND\>" >> /dev/null
