@@ -18,6 +18,11 @@ checkCommand() {
   echo $?
 }
 
+createBaseUrlConfig() {
+  touch $BASEURL_CONFIG
+  echo "groupBaseUrl: \"$address\"" > $BASEURL_CONFIG
+}
+
 compile() {
   ./scripts/compileWebsite.sh $@
 }
@@ -50,6 +55,7 @@ printHelp() {
 shift
 
 address="http://127.0.0.1:$DEFAULT_JEKYLL_PORT"
+createBaseUrlConfig
 
 case $COMMAND in
   watch)

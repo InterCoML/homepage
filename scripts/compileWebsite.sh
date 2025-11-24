@@ -2,6 +2,9 @@
 
 . ./scripts/util.sh
 
+VALID_ARGS="p"
+PRODUCTION=0
+
 jekyllGuideMsg() {
   error "Please refer to 'https://jekyllrb.com/docs/installation/#guides' for an installation guide for your distribution"
 }
@@ -70,10 +73,18 @@ mvSite() {
 
 buildRootWithJekyll() {
   cfg="$MAIN_CONFIG"
+  [ $PRODUCTION -eq 1 ] || cfg="$cfg,$BASEURL_CONFIG"
   info "Processing webpage"
   bundle exec jekyll build --config $cfg | grep "done"
   mvSite ${pwd}/_site $OUTPUT_DIR_ABS 0
 }
+
+while getopts $VALID_ARGS arg
+do case $arg in
+  p)
+    PRODUCTION=1 ;;
+  esac
+done
 
 # check jekyll installation
 installJekyll

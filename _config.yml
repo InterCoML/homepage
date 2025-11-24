@@ -3,7 +3,7 @@ actionNumber: "CA24136"
 actionAbbreviation: "InterCoML"
 actionCOSTWebpage: "https://www.cost.eu/actions/CA24136/"
 
-baseUrl: "http://127.0.0.1:4000"
+baseUrl: "https://intercoml.github.io/homepage"
 
 defaults:
   -
