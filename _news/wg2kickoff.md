@@ -100,8 +100,9 @@ The workshop will take place via <a href="https://www.zoom.com/" target="_blank"
 Everyone interested in the meeting can participate using the following Zoom credentials:
 <br>
 <ul>
-  <li>Meeting-ID: </li>
-  <li>Password: </li>
+  <li><a href="https://uni-graz.zoom.us/j/63020766678?pwd=Dao3r0BEsI2xma4Hm0RORP7a8Mar9h.1" target="_blank" rel="noopener noreferrer" class="link">Zoom-Link</a></li>
+  <li>Meeting-ID: 630 2076 6678</li>
+  <li>Password: 440404</li>
 </ul>
 Please mute yourself by default during the meeting and use the "raise hand" functionality if you would like to join a discussion.
 <br>
