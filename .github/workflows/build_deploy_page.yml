@@ -1,0 +1,47 @@
+name: Build and Deploy InterCoML Homepage
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  build:
+    timeout-minutes: 10
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker compose build intercoml-homepage
+
+      - name: Compile Website
+        run: docker compose run intercoml-homepage ./updateWebsite compile
+
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        with:
+          path: ./html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
