@@ -88,7 +88,22 @@ All times mentioned in the table below are CEST.
       <td>Peter Kogut</td>
     </tr>
     <tr>
-      <td>14:15-14:30</td>
+      <td>14:15-14:25</td>
+      <td>Short coffee break</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14:25-14:55</td>
+      <td>Presentation T2.5 - Exploiting PINNs for solving complex free boundary problems</td>
+      <td>Cristina Trombetti</td>
+    </tr>
+    <tr>
+      <td>14:55-15:10</td>
+      <td>Round table discussion about T2.5</td>
+      <td>Cristina Trombetti</td>
+    </tr>
+    <tr>
+      <td>15:10-15:30</td>
       <td>Closing</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
     </tr>
