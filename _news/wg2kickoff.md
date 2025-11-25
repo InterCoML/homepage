@@ -128,6 +128,7 @@ If you do not want to be visible, please also make sure to turn off your camera.
 <h4>Documents</h4>
 Here you find some files such as the presentation shown during the workshop or the list of open problems:
 <ul>
-  <li><a href="{{ site.baseUrl }}/files/kickoffWG2Presentation.pdf" target="_blank" rel="noopener noreferrer" class="link">Presentation</a></li>
-  <li><a href="{{ site.baseUrl }}/files/kickoffWG2OpenProblems.pdf" target="_blank" rel="noopener noreferrer" class="link">List of open problems</a></li>
+  <li><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2Announcement.pdf" target="_blank" rel="noopener noreferrer" class="link">Announcement slide</a></li>
+  <li><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2Presentation.pdf" target="_blank" rel="noopener noreferrer" class="link">Presentation</a></li>
+  <li><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2OpenProblems.pdf" target="_blank" rel="noopener noreferrer" class="link">List of open problems</a></li>
 </ul>
