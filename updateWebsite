@@ -20,7 +20,7 @@ checkCommand() {
 
 createBaseUrlConfig() {
   touch $BASEURL_CONFIG
-  echo "groupBaseUrl: \"$address\"" > $BASEURL_CONFIG
+  echo "baseUrl: \"$address\"" > $BASEURL_CONFIG
 }
 
 compile() {
