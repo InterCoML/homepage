@@ -3,7 +3,9 @@ layout: news
 title: "Kickoff workshop WG 3 - online"
 date: 2025-12-12
 short-description: "Working group 3 will have its virtual kickoff workshop on 12 December, 2025."
-author: flasskamp
+authors:
+  - flasskamp
+  - gruene
 ---
 
 <p>
