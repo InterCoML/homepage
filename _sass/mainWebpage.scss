@@ -148,15 +148,15 @@ hr {
     }
   }
 
-  >input[type="radio"]:first-child+.tab-label {
+ >input[type="radio"]:first-child+.tab-label {
     // target the first tab label
-    border-radius: 50px 0 0 0;
+    //border-radius: 50px 0 0 0;
     border-left: solid $mainBlue;
   }
 
   >input[type="radio"]:last-of-type+.tab-label {
     // target the last tab label
-    border-radius: 0 50px 0 0;
+    //border-radius: 0 50px 0 0;
     border-right: solid $mainBlue;
   }
 
@@ -194,13 +194,13 @@ hr {
 
   .tab-content {
     order: 99;
-    width: 100%;
+    //width: 100%;
     display: block;
     border-color: $mainBlue;
     border-style: solid;
     border-top: none;
     padding: 15px;
-    border-radius: 0 0 50px 50px;
+    //border-radius: 0 0 50px 50px;
   }
 }
 
@@ -244,4 +244,20 @@ hr {
 
 .panel .column {
   padding-bottom: 18px;
+}
+
+.desktop-footer-column .fa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: $mainBlue;
+  border-radius: 50%;
+  margin: 1px;
+  text-decoration: none;
+}
+
+.desktop-footer-column .fa:hover {
+  background-color: $mainBlue;
+  color: white;
 }
