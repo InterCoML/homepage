@@ -42,8 +42,8 @@ jobs:
           # Sanitize branch name for URLs
           SAFE_BRANCH_NAME=${BRANCH_NAME//\//-}
           mkdir -p ./html/branches/$SAFE_BRANCH_NAME
-          # Move compiled site into branch subfolder
-          cp -R ./html/* ./html/branches/$SAFE_BRANCH_NAME/
+          # Copy everything except existing branches folder
+          rsync -a --exclude 'branches' ./html/ ./html/branches/$SAFE_BRANCH_NAME/
 
       - name: Upload static files as artifact
         id: deployment
