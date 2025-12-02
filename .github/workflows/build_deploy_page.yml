@@ -2,10 +2,14 @@ name: Build and Deploy InterCoML Homepage
 
 on:
   push:
+    # Trigger on all branches
     branches:
-      - 'main'
+      - '**'
     paths-ignore:
       - 'README.md'
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -25,6 +29,17 @@ jobs:
 
       - name: Compile Website
         run: docker compose run intercoml-homepage ./updateWebsite compile
+
+      - name: Move site to branch folder (if not main)
+        if: github.ref != 'refs/heads/main'
+        run: |
+          # Detect branch name
+          BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
+          # Sanitize branch name for URLs
+          SAFE_BRANCH_NAME=${BRANCH_NAME//\//-}
+          mkdir -p ./html/branches/$SAFE_BRANCH_NAME
+          # Move compiled site into branch subfolder
+          cp -R ./html/* ./html/branches/$SAFE_BRANCH_NAME/
 
       - name: Upload static files as artifact
         id: deployment
