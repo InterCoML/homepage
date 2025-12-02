@@ -30,6 +30,10 @@ jobs:
       - name: Compile Website
         run: docker compose run intercoml-homepage ./updateWebsite compile
 
+      - name: Fix permissions on ./html
+        if: github.ref != 'refs/heads/main'
+        run: sudo chown -R $USER:$USER ./html
+
       - name: Move site to branch folder (if not main)
         if: github.ref != 'refs/heads/main'
         run: |
