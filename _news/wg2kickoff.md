@@ -19,7 +19,7 @@ authors:
 </p>
 
 <h4>Program</h4>
-All times mentioned in the table below are CEST.
+All times mentioned in the table below are CET.
 <table>
   <thead>
     <tr>
