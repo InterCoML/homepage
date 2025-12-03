@@ -2,9 +2,8 @@ name: Build and Deploy InterCoML Homepage
 
 on:
   push:
-    # Trigger on all branches
     branches:
-      - '**'
+      - 'main'
     paths-ignore:
       - 'README.md'
   pull_request:
