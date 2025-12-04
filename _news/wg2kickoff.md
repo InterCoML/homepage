@@ -16,6 +16,7 @@ authors:
 </p>
 <p>
   Below you find the program of the workshop, information on how to participate and some files related to the meeting.
+  For the abstracts of the presentations, please klick on the small arrows in the table below.
 </p>
 
 <h4>Program</h4>
@@ -26,6 +27,7 @@ All times mentioned in the table below are CET.
       <th>Time</th>
       <th>Agenda item</th>
       <th>Moderator/Speaker</th>
+      <th>Material</th>
     </tr>
   </thead>
   <tbody>
@@ -33,10 +35,11 @@ All times mentioned in the table below are CET.
       <td>9:00-9:15</td>
       <td>Welcome and presentation of the working group</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
+      <td></td>
     </tr>
     <tr>
       <td>9:15-9:45</td>
-      <td style="width: 75%;">
+      <td style="width: 60%;">
         <details>
           <summary>Presentation T2.1 - Breaking the curse of dimensionality in some control and parametric problems for PDEs</summary>
           <b>Abstract:</b> The talk will address the following five issues:
@@ -47,24 +50,27 @@ All times mentioned in the table below are CET.
             <li>DeepONets: a promising tool to break the curse of dimensionality in control and parametric problems for PDEs, and</li>
             <li>Some challenging open problems in the field.</li>
           </ol>
-          To make the presentation understandable to non-specialists, we will avoid most of the technical details. Interestingly, several open problems will be presented as a starting point to foster collaboration among the members of our COST Action.
+          To make the presentation understandable to non-specialists, we will avoid most of the technical details. Interestingly, several open problems will be presented as a starting point to foster collaboration among the members of our COST Action. 
         </details>
       </td>
       <td>Francisco Periago</td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationPeriago.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>9:45-10:00</td>
       <td>Round table discussion about T2.1</td>
       <td>Francisco Periago</td>
+      <td></td>
     </tr>
     <tr>
       <td>10:00-10:20</td>
       <td>Short coffee break</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>10:20-10:50</td>
-      <td style="width: 75%;">
+      <td style="width: 60%;">
         <details>
           <summary>Presentation T2.2 - Solving parameterised optimal control problems using machine learning</summary>
           <b>Abstract:</b> In many real-world applications, the governing dynamical systems depend on physical parameters that significantly shape their behavior. When tackling parameterised optimal control problems, this dependence introduces substantial computational challenges—particularly in multi-query scenarios, where one must repeatedly solve an optimal control problem for numerous parameter values. Making such tasks tractable requires methods that explicitly exploit the structure of the control problems and their parameter dependence.
@@ -74,40 +80,46 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Hendrik Kleikamp</td>
+      <td></td>
     </tr>
     <tr>
       <td>10:50-11:05</td>
       <td>Round table discussion about T2.2</td>
       <td>Hendrik Kleikamp</td>
+      <td></td>
     </tr>
     <tr>
       <td>11:05-11:15</td>
       <td>Short coffee break</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>11:15-11:45</td>
-      <td style="width: 75%;">
+      <td style="width: 60%;">
         <details>
           <summary>Presentation T2.3 - Computing control Lyapunov functions with neural networks</summary>
           <b>Abstract:</b> This talk will give an overview of methods that propose to use neural networks for computing control Lyapunov functions. After explaining what control Lyapunov functions are and why they are interesting, we briefly review early approaches from the 1990s and then turn to recent developments. These focus on avoiding singularities, providing formal verification, and overcoming the curse of dimensionality. The talk closes with open problems and challenges in the field.
         </details>
       </td>
       <td>Lars Grüne</td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationGruene.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>11:45-12:00</td>
       <td>Round table discussion about T2.3</td>
       <td>Lars Grüne</td>
+      <td></td>
     </tr>
     <tr>
       <td>12:00-13:30</td>
       <td>Lunch break</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>13:30-14:00</td>
-      <td style="width: 75%;">
+      <td style="width: 60%;">
         <details>
           <summary>Presentation T2.4 - On the life-cycle-optimisation problems in materials and the deep neural network approach</summary>
           <b>Abstract:</b>
@@ -142,36 +154,42 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Peter Kogut</td>
+      <td></td>
     </tr>
     <tr>
       <td>14:00-14:15</td>
       <td>Round table discussion about T2.4</td>
       <td>Peter Kogut</td>
+      <td></td>
     </tr>
     <tr>
       <td>14:15-14:25</td>
       <td>Short coffee break</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>14:25-14:55</td>
-      <td style="width: 75%;">
+      <td style="width: 60%;">
         <details>
           <summary>Presentation T2.5 - Exploiting PINNs for solving complex free boundary problems</summary>
           <b>Abstract:</b>
         </details>
       </td>
       <td>Cristina Trombetti</td>
+      <td></td>
     </tr>
     <tr>
       <td>14:55-15:10</td>
       <td>Round table discussion about T2.5</td>
       <td>Cristina Trombetti</td>
+      <td></td>
     </tr>
     <tr>
       <td>15:10-15:30</td>
       <td>Closing</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
