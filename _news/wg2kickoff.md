@@ -35,7 +35,7 @@ All times mentioned in the table below are CET.
       <td>9:00-9:15</td>
       <td>Welcome and presentation of the working group</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
-      <td></td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2Presentation.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>9:15-9:45</td>
@@ -154,7 +154,7 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Peter Kogut</td>
-      <td></td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKogut.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>14:00-14:15</td>
