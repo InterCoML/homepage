@@ -80,7 +80,7 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Hendrik Kleikamp</td>
-      <td></td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKleikamp.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>10:50-11:05</td>
