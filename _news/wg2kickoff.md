@@ -171,13 +171,10 @@ All times mentioned in the table below are CET.
     <tr>
       <td>14:25-14:55</td>
       <td style="width: 60%;">
-        <details>
-          <summary>Presentation T2.5 - Exploiting PINNs for solving complex free boundary problems</summary>
-          <b>Abstract:</b>
-        </details>
+        Presentation T2.5 - Exploiting PINNs for solving complex free boundary problems
       </td>
       <td>Cristina Trombetti</td>
-      <td></td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationTrombetti.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
     </tr>
     <tr>
       <td>14:55-15:10</td>
