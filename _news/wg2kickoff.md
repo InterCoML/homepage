@@ -35,7 +35,7 @@ All times mentioned in the table below are CET.
       <td>9:00-9:15</td>
       <td>Welcome and presentation of the working group</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2Presentation.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2Presentation.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/sMR3ExceXxBEZrH" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>9:15-9:45</td>
@@ -54,13 +54,12 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Francisco Periago</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationPeriago.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td rowspan="2"><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationPeriago.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/owSqYEGMsxy8XM8" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>9:45-10:00</td>
       <td>Round table discussion about T2.1</td>
       <td>Francisco Periago</td>
-      <td></td>
     </tr>
     <tr>
       <td>10:00-10:20</td>
@@ -80,13 +79,12 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Hendrik Kleikamp</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKleikamp.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td rowspan="2"><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKleikamp.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/FqreFMJNYxWx9ia" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>10:50-11:05</td>
       <td>Round table discussion about T2.2</td>
       <td>Hendrik Kleikamp</td>
-      <td></td>
     </tr>
     <tr>
       <td>11:05-11:15</td>
@@ -103,13 +101,12 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Lars Grüne</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationGruene.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td rowspan="2"><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationGruene.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/7mEjaCRJ3NFfkPM" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>11:45-12:00</td>
       <td>Round table discussion about T2.3</td>
       <td>Lars Grüne</td>
-      <td></td>
     </tr>
     <tr>
       <td>12:00-13:30</td>
@@ -154,13 +151,12 @@ All times mentioned in the table below are CET.
         </details>
       </td>
       <td>Peter Kogut</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKogut.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td rowspan="2"><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationKogut.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/DbfREgi2JpGfSBX" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>14:00-14:15</td>
       <td>Round table discussion about T2.4</td>
       <td>Peter Kogut</td>
-      <td></td>
     </tr>
     <tr>
       <td>14:15-14:25</td>
@@ -174,19 +170,18 @@ All times mentioned in the table below are CET.
         Presentation T2.5 - Exploiting PINNs for solving complex free boundary problems
       </td>
       <td>Cristina Trombetti</td>
-      <td><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationTrombetti.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a></td>
+      <td rowspan="2"><a href="{{ site.baseUrl }}/files/wg2/kickoffWG2PresentationTrombetti.pdf" target="_blank" rel="noopener noreferrer" class="link">Slides</a> <a href="https://cloud.uni-graz.at/s/CasZTnQxL8MCiAB" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
     <tr>
       <td>14:55-15:10</td>
       <td>Round table discussion about T2.5</td>
       <td>Cristina Trombetti</td>
-      <td></td>
     </tr>
     <tr>
       <td>15:10-15:30</td>
       <td>Closing</td>
       <td>Hendrik Kleikamp/Francisco Periago</td>
-      <td></td>
+      <td><a href="https://cloud.uni-graz.at/s/QMQgrgi59EqCfNr" target="_blank" rel="noopener noreferrer" class="link">Recording</a></td>
     </tr>
   </tbody>
 </table>
