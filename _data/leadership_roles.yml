@@ -1,0 +1,12 @@
+- role: "Action Chair"
+  memberId: lazar
+- role: "Action Vice-Chair"
+  memberId: lazar
+- role: "Grant Holder Scientific Representative"
+  memberId: lazar
+- role: "Science Communication Coordinator"
+  memberId: molinari
+- role: "Grant Awarding Coordinator"
+  memberId: caldarelli
+- role: "Equal Opportunities Coordinator (EOC)"
+  memberId: caldarelli

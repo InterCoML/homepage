@@ -1,8 +1,9 @@
 @use "variables" as *;
 
 table {
+  margin: 20px;
   border-collapse: collapse;
-  width: 100%;
+  width: calc(100% - 40px);
 }
 
 td, th {
