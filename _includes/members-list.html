@@ -1,0 +1,6 @@
+<ul>
+  {% for member in members_list %}
+    {% assign m = site.data.members[member.memberId] %}
+    <li><a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>{% if member.role %} ({{ member.role }}){% endif %}</li>
+  {% endfor %}
+</ul>

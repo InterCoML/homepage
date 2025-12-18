@@ -19,7 +19,7 @@ mathematics of reliable ML."
   title: "ML for CT"
   leader: kleikamp
   co-leader: periago
-  description: "This approach addresses the application of ML tools, such as kernel methods and deep neural networks
+  description: "This working group addresses the application of ML tools, such as kernel methods and deep neural networks
 to complex models in control theory. These will be combined with traditional control methods, either on
 the algorithmic level for developing enhanced and provably efficient novel techniques, or for analysis
 purposes, in order to better understand the opportunities and limitations of ML for the control design.
