@@ -4,11 +4,17 @@
   memberId: lazar
 - role: "Czechia"
   memberId: guy
+- role: "France"
+  memberId: bresch-pietri
 - role: "Germany"
   memberId: gruene
 - role: "Italy"
   memberId: molinari
 - role: "Montenegro"
   memberId: jacimovic
+- role: "Portugal"
+  memberId: kennedy
+- role: "Serbia"
+  memberId: konjik
 - role: "Spain"
   memberId: periago
