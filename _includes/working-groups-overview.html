@@ -2,20 +2,17 @@
   <button class="accordion">Action Leaders</button>
   <div class="panel">
     {% assign members_list = site.data.leadership_roles %}
-    {% assign role_label = "Role" %}
-    {% include members-table.html %}
+    {% include members-list.html %}
   </div>
   <button class="accordion">Core Group</button>
   <div class="panel">
     {% assign members_list = site.data.cg_members %}
-    {% assign role_label = false %}
-    {% include members-table.html %}
+    {% include members-list.html %}
   </div>
   <button class="accordion">Management Committee</button>
   <div class="panel">
     {% assign members_list = site.data.mc_members %}
-    {% assign role_label = "Country" %}
-    {% include members-table.html %}
+    {% include members-list.html %}
   </div>
   {% for wg in site.data.working_groups %}
     <button class="accordion">WG {{ wg.number }} - {{ wg.title }}</button>
