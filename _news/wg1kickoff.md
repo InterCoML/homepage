@@ -9,7 +9,7 @@ authors:
 ---
 
 <p>
-  Working group 1 will have its virtual kickoff workshop on <b>Friday, 16 January 2025, from 13:30-16:00 CET</b>.
+  Working group 1 will have its virtual kickoff workshop on <b>Friday, 16 January 2026, from 13:30-16:00 CET</b>.
   Everyone interested in actively participating in the working group is very much invited to join.
   The goal of the workshop is to get an overview of current topics and questions related to WG1.
 </p>
