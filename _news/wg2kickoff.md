@@ -2,20 +2,21 @@
 layout: news
 title: "Kickoff workshop WG 2 - online"
 date: 2025-12-05
-short-description: "Working group 2 will have its virtual kickoff workshop on 5 December, 2025."
+short-description: "Working group 2 had its virtual kickoff workshop on 5 December, 2025."
 authors:
   - kleikamp
   - periago
+image: "wg2kickoff.png"
 ---
 
 <p>
-  Working group 2 will have its virtual kickoff workshop on <b>5 December, 2025</b>.
-  Everyone interested in actively participating in the working group is very much invited to join.
-  The goal of the workshop is to get an overview of current topics and questions related to WG2.
-  Moreover, we would like to start establishing smaller subgroups tackling specific tasks.
+  Working group 2 had its virtual kickoff workshop on <b>5 December, 2025</b>.
+  Several people interested in actively participating in the working group were joining the discussions.
+  The goal of the workshop was to get an overview of current topics and questions related to WG2.
+  Moreover, we started establishing smaller subgroups tackling specific tasks.
 </p>
 <p>
-  Below you find the program of the workshop, information on how to participate and some files related to the meeting.
+  Below you find the program of the workshop and some files related to the meeting.
   For the abstracts of the presentations, please klick on the small arrows in the table below.
 </p>
 
@@ -185,21 +186,6 @@ All times mentioned in the table below are CET.
     </tr>
   </tbody>
 </table>
-
-<h4>How to participate</h4>
-The workshop will take place via <a href="https://www.zoom.com/" target="_blank" rel="noopener noreferrer" class="link">Zoom</a>.
-Everyone interested in the meeting can participate using the following Zoom credentials:
-<br>
-<ul>
-  <li><a href="https://uni-graz.zoom.us/j/63020766678?pwd=Dao3r0BEsI2xma4Hm0RORP7a8Mar9h.1" target="_blank" rel="noopener noreferrer" class="link">Zoom-Link</a></li>
-  <li>Meeting-ID: 630 2076 6678</li>
-  <li>Password: 440404</li>
-</ul>
-Please mute yourself by default during the meeting and use the "raise hand" functionality if you would like to join a discussion.
-<br>
-<br>
-<b>Important note: We plan to record the meeting to make it available also for people that cannot participate.
-If you do not want to be visible, please also make sure to turn off your camera.</b>
 
 <h4>Documents</h4>
 Here you find some files such as the presentation shown during the workshop or the list of open problems:
