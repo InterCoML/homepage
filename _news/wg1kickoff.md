@@ -2,19 +2,19 @@
 layout: news
 title: "Kickoff workshop WG 1 - online"
 date: 2026-01-16
-short-description: "Working group 1 will have its virtual kickoff workshop on 16 January, 2026."
+short-description: "Working group 1 had its virtual kickoff workshop on 16 January, 2026."
 authors:
   - bungert
   - guy
 ---
 
 <p>
-  Working group 1 will have its virtual kickoff workshop on <b>Friday, 16 January 2026, from 13:30-16:00 CET</b>.
-  Everyone interested in actively participating in the working group is very much invited to join.
-  The goal of the workshop is to get an overview of current topics and questions related to WG1.
+  Working group 1 had its virtual kickoff workshop on <b>Friday, 16 January 2026, from 13:30-16:00 CET</b>.
+  Around 50 people interested in actively participating in the working group were joining the discussions.
+  The goal of the workshop was to get an overview of current topics and questions related to WG1.
 </p>
 <p>
-  Below you find the program of the workshop, information on how to participate and some files related to the meeting.
+  Below you find the program of the workshop and some files related to the meeting.
 </p>
 
 <h4>Program</h4>
@@ -28,12 +28,6 @@ authors:
   </li>
   <li>Discussion of future working group events, wrap-up, and goodbye</li>
 </ul>
-
-<h4>How to participate</h4>
-The workshop will take place via <a href="https://www.zoom.com/" target="_blank" rel="noopener noreferrer" class="link">Zoom</a>.
-Everyone interested in the meeting can participate using this <a href="https://uni-wuerzburg.zoom-x.de/j/62683207194?pwd=adcxnMCOOmFJZLra1t4DM6EWyA27XX.1" target="_blank" rel="noopener noreferrer" class="link">Zoom-Link</a>.
-<br>
-Please mute yourself during the meeting and use the "raise hand" functionality if you would like to join a discussion.
 
 <h4>Documents</h4>
 Here you find some files such as the presentation shown during the workshop:
