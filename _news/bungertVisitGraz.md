@@ -15,7 +15,7 @@ image: "bungertVisitGraz.jpg"
   <b>"Robustness on the interface of geometry and probability"</b>. Further, Professor Bungert and Hendrik Kleikamp,
   leader of working group 2, used the chance to exchange some of the latest ideas related to their research.
 </p>
-<h4>Abstract of the talk:</h4>
+<h4>Abstract:</h4>
 <p>
   In this talk I will present the latest developments in the analysis of adversarial machine learning.
   For this I will build on the geometric interpretation of adversarial training as regularization problem
@@ -25,3 +25,5 @@ image: "bungertVisitGraz.jpg"
   training is embedded in a larger family of probabilistically robust problems.
   This is joint work with N. García Trillos, R. Murray, K. Stinson, and T. Laux, and others.
 </p>
+<h4>Slides:</h4>
+The slides of the talk are available <a href="{{ site.baseUrl }}/files/news/bungertVisitGraz.pdf" target="_blank" rel="noopener noreferrer" class="link">here</a>.
