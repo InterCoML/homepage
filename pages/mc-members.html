@@ -10,7 +10,8 @@ permalink: /:basename/
 
   <div class="cards-container">
     {% for member in site.data.mc_members %}
-      {% include member-card.html %}
+      {% assign role="MC representative of " | append: member.role %}
+      {% include member-card.html headline=role %}
     {% endfor %}
   </div>
 </div>
