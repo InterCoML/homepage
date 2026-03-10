@@ -2,3 +2,6 @@ name: "Eduard Petlenkov"
 degrees: "Prof."
 address: "Tallinn University of Technology, Ehitajate tee 5, Tallinn, Estonia"
 mail: "eduard.petlenkov@ttu.ee"
+city: "Tallinn"
+lat: 59.437
+lng: 24.7536

@@ -2,3 +2,6 @@ name: "Erlend Grong"
 degrees: "Dr."
 address: "University of Bergen, Realfagbygget, Bergen, Norway"
 mail: "erlend.grong@uib.no"
+city: "Bergen"
+lat: 60.3913
+lng: 5.3221

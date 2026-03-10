@@ -2,3 +2,6 @@ name: "Chris Guiver"
 degrees: "Dr."
 address: "Edinburgh Napier University, 10 Colinton Road, Edinburgh, United Kingdom"
 mail: "c.guiver@napier.ac.uk"
+city: "Edinburgh"
+lat: 55.9533
+lng: -3.1883

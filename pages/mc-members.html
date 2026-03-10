@@ -24,6 +24,13 @@ permalink: /:basename/
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
   crossorigin=""></script>
+<script>
+  var mcMembersData = [
+    {% for member in site.data.mc_members %}{% assign m = site.data.members[member.memberId] %}{% if m.lat %}
+    { name: {{ m.name | jsonify }}, memberId: {{ member.memberId | jsonify }}, country: {{ member.role | jsonify }}, city: {{ m.city | jsonify }}, lat: {{ m.lat }}, lng: {{ m.lng }} }{% unless forloop.last %},{% endunless %}
+    {% endif %}{% endfor %}
+  ];
+</script>
 <script src="{{ site.baseUrl }}/assets/js/members-map.js"></script>
 
 <style>
