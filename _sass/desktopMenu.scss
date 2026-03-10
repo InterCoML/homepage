@@ -2,6 +2,9 @@
 
 .desktop-menu-wrapper {
   background-color: $altGray;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .desktop-menu-wrapper hr {
