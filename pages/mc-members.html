@@ -59,4 +59,24 @@ permalink: /:basename/
     color: #005979;
     font-size: 0.85em;
   }
+
+  .popup-member-link {
+    color: #182f4c;
+    text-decoration: none;
+    border-bottom: 1px dashed #39a17f;
+  }
+
+  .popup-member-link:hover {
+    color: #39a17f;
+  }
+
+  .card[data-member-id] {
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card-highlighted {
+    box-shadow: 0 0 0 3px #39a17f;
+    border-color: #39a17f;
+  }
 </style>

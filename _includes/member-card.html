@@ -4,7 +4,7 @@
   {% assign m = site.data.members[member] %}
 {% endif %}
 
-<div class="card">
+<div class="card" {% if member.memberId %}data-member-id="{{ member.memberId }}"{% endif %}>
   {% if include.headline %}
     <h3>{{ include.headline }}</h3>
   {% elsif m.role %}
