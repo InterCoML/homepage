@@ -1,7 +1,21 @@
 ---
 title: MC Members
 permalink: /:basename/
+leaflet: true
 ---
+
+{% assign member_count = site.data.mc_members | size %}
+{% assign countries = site.data.mc_members | map: "role" | uniq %}
+{% assign country_count = countries | size %}
+{% assign city_list = "" %}
+{% for member in site.data.mc_members %}
+  {% assign m = site.data.members[member.memberId] %}
+  {% if m.city %}
+    {% assign city_list = city_list | append: m.city | append: "," %}
+  {% endif %}
+{% endfor %}
+{% assign city_array = city_list | split: "," | uniq %}
+{% assign city_count = city_array | size | minus: 1 %}
 
 <div class="sub-container">
   <h1>
@@ -9,6 +23,7 @@ permalink: /:basename/
   </h1>
 
   <div id="members-map"></div>
+  <p class="map-summary">{{ member_count }} members across {{ city_count }} cities in {{ country_count }} countries</p>
 
   <div class="cards-container">
     {% for member in site.data.mc_members %}
@@ -18,9 +33,6 @@ permalink: /:basename/
   </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
   crossorigin=""></script>
@@ -85,5 +97,20 @@ permalink: /:basename/
   .card-highlighted {
     box-shadow: 0 0 0 3px #39a17f;
     border-color: #39a17f;
+  }
+
+  .map-summary {
+    text-align: center;
+    color: #005979;
+    font-size: 0.95em;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 700px) {
+    #members-map,
+    .map-summary {
+      display: none;
+    }
   }
 </style>
