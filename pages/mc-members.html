@@ -1,12 +1,29 @@
 ---
 title: MC Members
 permalink: /:basename/
+leaflet: true
 ---
+
+{% assign member_count = site.data.mc_members | size %}
+{% assign countries = site.data.mc_members | map: "role" | uniq %}
+{% assign country_count = countries | size %}
+{% assign city_list = "" %}
+{% for member in site.data.mc_members %}
+  {% assign m = site.data.members[member.memberId] %}
+  {% if m.city %}
+    {% assign city_list = city_list | append: m.city | append: "," %}
+  {% endif %}
+{% endfor %}
+{% assign city_array = city_list | split: "," | uniq %}
+{% assign city_count = city_array | size | minus: 1 %}
 
 <div class="sub-container">
   <h1>
     Current members of the management committee
   </h1>
+
+  <div id="members-map"></div>
+  <p class="map-summary">{{ member_count }} members across {{ city_count }} cities in {{ country_count }} countries</p>
 
   <div class="cards-container">
     {% for member in site.data.mc_members %}
@@ -15,3 +32,86 @@ permalink: /:basename/
     {% endfor %}
   </div>
 </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+<script>
+  var mcMembersData = [
+    {% for member in site.data.mc_members %}{% assign m = site.data.members[member.memberId] %}{% if m.lat %}
+    { name: {{ m.name | jsonify }}, memberId: {{ member.memberId | jsonify }}, country: {{ member.role | jsonify }}, city: {{ m.city | jsonify }}, lat: {{ m.lat }}, lng: {{ m.lng }} }{% unless forloop.last %},{% endunless %}
+    {% endif %}{% endfor %}
+  ];
+</script>
+<script src="{{ site.baseUrl }}/assets/js/members-map.js"></script>
+
+<style>
+  .leaflet-popup,
+  .leaflet-popup *,
+  .leaflet-tooltip,
+  .leaflet-tooltip * {
+    max-width: none;
+  }
+
+  #members-map {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    border: 2px solid #182f4c;
+    margin-bottom: 2rem;
+    z-index: 0;
+  }
+
+  .map-popup ul {
+    margin: 0.3em 0 0 0;
+    padding-left: 1.2em;
+  }
+
+  .map-popup li {
+    font-size: 0.9em;
+  }
+
+  .map-popup strong {
+    color: #182f4c;
+  }
+
+  .map-popup em {
+    color: #005979;
+    font-size: 0.85em;
+  }
+
+  .popup-member-link {
+    color: #182f4c;
+    text-decoration: none;
+    border-bottom: 1px dashed #39a17f;
+  }
+
+  .popup-member-link:hover {
+    color: #39a17f;
+  }
+
+  .card[data-member-id] {
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s, opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .card-highlighted {
+    box-shadow: 0 0 0 3px #39a17f;
+    border-color: #39a17f;
+  }
+
+  .map-summary {
+    text-align: center;
+    color: #005979;
+    font-size: 0.95em;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 700px) {
+    #members-map,
+    .map-summary {
+      display: none;
+    }
+  }
+</style>

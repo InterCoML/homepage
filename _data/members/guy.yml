@@ -4,3 +4,6 @@ address: "Institute of Information Theory and Automation, Pod Vodarenskou vezi 4
 mail: "guy@utia.cas.cz"
 image: "guy.jpg"
 role: "Co-Leader WG 1"
+city: "Prague"
+lat: 50.0755
+lng: 14.4378

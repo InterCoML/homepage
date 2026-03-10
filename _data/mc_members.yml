@@ -1,20 +1,102 @@
+- role: "Albania"
+  memberId: duka
+- role: "Albania"
+  memberId: mali
 - role: "Austria"
   memberId: kleikamp
+- role: "Bosnia and Herzegovina"
+  memberId: kapic
+- role: "Bosnia and Herzegovina"
+  memberId: velagic
 - role: "Croatia"
-  memberId: lazar
+  memberId: vlasic
 - role: "Czechia"
   memberId: guy
+- role: "Czechia"
+  memberId: pelikan
+- role: "Denmark"
+  memberId: singh
+- role: "Estonia"
+  memberId: belikov
+- role: "Estonia"
+  memberId: petlenkov
 - role: "France"
   memberId: bresch-pietri
+- role: "France"
+  memberId: loheac
 - role: "Germany"
   memberId: gruene
+- role: "Germany"
+  memberId: abel
+- role: "Greece"
+  memberId: karatzas
+- role: "Greece"
+  memberId: stefaneas
+- role: "Ireland"
+  memberId: noor-a-rahim
+- role: "Ireland"
+  memberId: zeinali
+- role: "Israel"
+  memberId: fridman
+- role: "Israel"
+  memberId: gibali
 - role: "Italy"
   memberId: molinari
+- role: "Italy"
+  memberId: trombetti
+- role: "Lithuania"
+  memberId: smidtaite
+- role: "Luxembourg"
+  memberId: schutz
+- role: "Moldova"
+  memberId: toaca
 - role: "Montenegro"
   memberId: jacimovic
+- role: "Montenegro"
+  memberId: mijajlovic
+- role: "North Macedonia"
+  memberId: bogoevska
+- role: "North Macedonia"
+  memberId: koleva
+- role: "Norway"
+  memberId: grong
+- role: "Poland"
+  memberId: rykaczewski
+- role: "Poland"
+  memberId: wiszniewska-matyszkiel
 - role: "Portugal"
   memberId: kennedy
+- role: "Portugal"
+  memberId: nobre-pereira
+- role: "Romania"
+  memberId: ignat
+- role: "Romania"
+  memberId: necoara
 - role: "Serbia"
   memberId: konjik
+- role: "Serbia"
+  memberId: rapaic
+- role: "Slovakia"
+  memberId: kafkova
+- role: "Slovakia"
+  memberId: kuchar
+- role: "Slovenia"
+  memberId: peperko
+- role: "Slovenia"
+  memberId: stres
 - role: "Spain"
   memberId: periago
+- role: "Spain"
+  memberId: garcia-zamora
+- role: "Switzerland"
+  memberId: gonon
+- role: "Switzerland"
+  memberId: teichmann
+- role: "Türkiye"
+  memberId: acar
+- role: "Türkiye"
+  memberId: berigel
+- role: "United Kingdom"
+  memberId: guiver
+- role: "United Kingdom"
+  memberId: hamzi
