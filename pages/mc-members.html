@@ -8,6 +8,8 @@ permalink: /:basename/
     Current members of the management committee
   </h1>
 
+  <div id="members-map"></div>
+
   <div class="cards-container">
     {% for member in site.data.mc_members %}
       {% assign role="MC representative of " | append: member.role %}
@@ -15,3 +17,46 @@ permalink: /:basename/
     {% endfor %}
   </div>
 </div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+<script src="{{ site.baseUrl }}/assets/js/members-map.js"></script>
+
+<style>
+  .leaflet-popup,
+  .leaflet-popup *,
+  .leaflet-tooltip,
+  .leaflet-tooltip * {
+    max-width: none;
+  }
+
+  #members-map {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    border: 2px solid #182f4c;
+    margin-bottom: 2rem;
+  }
+
+  .map-popup ul {
+    margin: 0.3em 0 0 0;
+    padding-left: 1.2em;
+  }
+
+  .map-popup li {
+    font-size: 0.9em;
+  }
+
+  .map-popup strong {
+    color: #182f4c;
+  }
+
+  .map-popup em {
+    color: #005979;
+    font-size: 0.85em;
+  }
+</style>
