@@ -17,7 +17,7 @@
   {% for wg in site.data.working_groups %}
     <button class="accordion">WG {{ wg.number }} - {{ wg.title }}</button>
     <div class="panel">
-      <div class="row">
+      <div class="row" style="margin-top: 18px;">
         <div class="column">
           <p>{{ wg.description }}</p>
           <a href="{{ site.baseUrl }}/working-groups" class="link">More Information</a>
