@@ -11,7 +11,7 @@
     <h3>{{ m.role }}</h3>
   {% endif %}
   {% if m.image %}
-    <img src="{{ site.baseUrl }}/images/members/{{ m.image }}" />
+    <img src="{{ site.baseUrl }}/images/members/{{ m.image }}" loading="lazy" alt="Photo of {{ m.name }}" />
   {% endif %}
   <h3>{{ m.name }}{% if m.degrees %}, {{ m.degrees }}{% endif %}</h3>
   {% if m.mail %}<p><a href="mailto:{{ m.mail }}" class="link">{{ m.mail }}</a></p>{% endif %}
