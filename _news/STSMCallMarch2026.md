@@ -34,6 +34,7 @@ image: "mapEuropeConnections.png"
 </p>
 <h2>How to apply?</h2>
 <b>Call deadline: 31.03.2026</b>
+<br />
 <b>STSMs must be completed by: 30.09.2026</b>
 <ol>
   <li>Submit an application through e-COST: <a href="https://e-services.cost.eu/activity/grants" target="_blank" rel="noopener noreferrer" class="link">https://e-services.cost.eu/activity/grants</a></li>
@@ -60,7 +61,7 @@ image: "mapEuropeConnections.png"
   </li>
   <li>The InterCoML Grant Evaluation Committee evaluates the proposal following the selection criteria described below.</li>
   <li>The review period will last up to three weeks from the call deadline (till 21.04.2026), during which all applications will be examined.</li>
-  <li>If approved, the Grant AwardingCoordinator forwards the application to the Grant Holder and Action Chair for final verification. Applicants will be notified of the outcome within one week after this final verification step (by 28 April 2026), and successful applicants will receive the Grant Letter immediately thereafter.</li>
+  <li>If approved, the Grant Awarding Coordinator forwards the application to the Grant Holder and Action Chair for final verification. Applicants will be notified of the outcome within one week after this final verification step (by 28 April 2026), and successful applicants will receive the Grant Letter immediately thereafter.</li>
   <li>The Grant Holder sends the applicant a grant letter. The mission may begin only after this letter has been signed and returned.</li>
 </ol>
 <h2>Criteria for successful application</h2>
