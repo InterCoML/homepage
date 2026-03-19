@@ -19,3 +19,5 @@ future: true
 collections:
   news:
     output: true
+  dissemination:
+    output: true
