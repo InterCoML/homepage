@@ -1,0 +1,23 @@
+---
+title: Imprint
+permalink: /:basename/
+---
+
+<div class="sub-container">
+  <h2>This website is run by the COST Action</h2>
+  <br />
+  <b>{{ site.actionNumber }} - {{ site.actionTitle }} ({{ site.actionAbbreviation }})</b>
+  <ul>
+    <li>MoU - 045/25</li>
+    <li>CSO Approval date - 19/05/2025</li>
+    <li>Start date - 10/10/2025</li>
+    <li>End date - 09/10/2029</li>
+  </ul>
+  <h3>Action Chair:</h3>
+  {% assign member = site.data.leadership_roles | find: "role", "Action Chair" %}
+  {% include member-card.html headline="" %}
+  <br />
+  <h3>Action Vice-Chair:</h3>
+  {% assign member = site.data.leadership_roles | find: "role", "Action Vice-Chair" %}
+  {% include member-card.html headline="" %}
+</div>

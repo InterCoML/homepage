@@ -2,15 +2,16 @@
   <button class="accordion">Action Leaders</button>
   <div class="panel">
     {% assign members_list = site.data.leadership_roles %}
-    {% include members-list.html %}
+    {% include members-list.html cards=true %}
   </div>
   <button class="accordion">Core Group</button>
   <div class="panel">
     {% assign members_list = site.data.cg_members %}
-    {% include members-list.html %}
+    {% include members-list.html cards=true %}
   </div>
   <button class="accordion">Management Committee</button>
   <div class="panel">
+    <p>More information on the management committee members can be found <a href="{{ site.baseUrl }}/mc-members" class="link">here</a>.</p>
     {% assign members_list = site.data.mc_members %}
     {% include members-list.html %}
   </div>
@@ -37,11 +38,23 @@
       acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
+        if (panel.classList.contains("panel-open")) {
+          // Closing: set explicit height first so transition works, then collapse
           panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
+          panel.offsetHeight; // force reflow
+          panel.style.maxHeight = null;
+          panel.classList.remove("panel-open");
+        } else {
+          // Opening: animate to scrollHeight, then switch to none
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.classList.add("panel-open");
+          panel.addEventListener("transitionend", function handler() {
+            if (panel.classList.contains("panel-open")) {
+              panel.style.maxHeight = "none";
+            }
+            panel.removeEventListener("transitionend", handler);
+          });
+        }
       });
     }
   </script>
