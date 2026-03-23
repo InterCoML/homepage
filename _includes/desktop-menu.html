@@ -15,7 +15,10 @@
       <a href="{{ site.baseUrl }}/activities">Activities</a>
       <a href="{{ site.baseUrl }}/news">News</a>
       <a href="{{ site.baseUrl }}/dissemination">Dissemination</a>
-      <a href="{{ site.baseUrl }}/mc-members">MC Members</a>
+      <span class="mobile-menu-label">Organisation</span>
+      <a href="{{ site.baseUrl }}/action-leaders" class="mobile-sub-item">Action Leaders</a>
+      <a href="{{ site.baseUrl }}/core-group" class="mobile-sub-item">Core Group</a>
+      <a href="{{ site.baseUrl }}/mc-members" class="mobile-sub-item">Management Committee</a>
     </div>
   </div>
   <div class="desktop-menu">
@@ -40,8 +43,13 @@
       <li class="nav-item">
         <a href="{{ site.baseUrl }}/dissemination">Dissemination</a>
       </li>
-      <li class="nav-item">
-        <a href="{{ site.baseUrl }}/mc-members">MC Members</a>
+      <li class="nav-item nav-dropdown">
+        <a href="javascript:void(0)">Organisation</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="{{ site.baseUrl }}/action-leaders">Action Leaders</a></li>
+          <li><a href="{{ site.baseUrl }}/core-group">Core Group</a></li>
+          <li><a href="{{ site.baseUrl }}/mc-members">Management Committee</a></li>
+        </ul>
       </li>
     </nav>
   </div>

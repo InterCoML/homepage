@@ -163,6 +163,20 @@ html, body {
   .mobile-menu-dropdown a:hover {
     background-color: $altGray;
   }
+
+  .mobile-menu-dropdown .mobile-sub-item {
+    padding-left: 30px;
+    font-size: 16px;
+  }
+
+  .mobile-menu-dropdown .mobile-menu-label {
+    display: block;
+    padding: 12px;
+    color: $mainBlue;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid $mainGray;
+  }
 }
 
 @media (max-width: 700px) {

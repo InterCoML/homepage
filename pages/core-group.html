@@ -1,0 +1,14 @@
+---
+title: Core Group
+permalink: /:basename/
+---
+
+<div class="sub-container">
+  <h1>Core Group</h1>
+
+  <div class="cards-container">
+    {% for member in site.data.cg_members %}
+      {% include member-card.html %}
+    {% endfor %}
+  </div>
+</div>
