@@ -28,27 +28,27 @@
       </a>
     </div>
     <ul class="nav-bar">
-      <li class="nav-item">
+      <li class="nav-item{% if page.url == '/about/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/about">About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item{% if page.url == '/working-groups/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/working-groups">Working Groups</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item{% if page.url == '/activities/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/activities">Activities</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item{% if page.url == '/news/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/news">News</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item{% if page.url == '/dissemination/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/dissemination">Dissemination</a>
       </li>
-      <li class="nav-item nav-dropdown">
+      <li class="nav-item nav-dropdown{% if page.url == '/action-leaders/' or page.url == '/core-group/' or page.url == '/mc-members/' %} nav-active{% endif %}">
         <a href="javascript:void(0)">Organisation</a>
         <ul class="nav-dropdown-menu">
-          <li><a href="{{ site.baseUrl }}/action-leaders">Action Leaders</a></li>
-          <li><a href="{{ site.baseUrl }}/core-group">Core Group</a></li>
-          <li><a href="{{ site.baseUrl }}/mc-members">Management Committee</a></li>
+          <li><a href="{{ site.baseUrl }}/action-leaders"{% if page.url == '/action-leaders/' %} class="nav-dropdown-active"{% endif %}>Action Leaders</a></li>
+          <li><a href="{{ site.baseUrl }}/core-group"{% if page.url == '/core-group/' %} class="nav-dropdown-active"{% endif %}>Core Group</a></li>
+          <li><a href="{{ site.baseUrl }}/mc-members"{% if page.url == '/mc-members/' %} class="nav-dropdown-active"{% endif %}>Management Committee</a></li>
         </ul>
       </li>
     </nav>

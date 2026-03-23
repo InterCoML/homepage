@@ -102,6 +102,16 @@
   transform: scaleX(1);
 }
 
+// Active nav item: persistent underline
+.nav-active > a::before {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+}
+
+.nav-dropdown-active {
+  font-weight: bold;
+}
+
 // Dropdown menu
 .nav-dropdown {
   position: relative;
