@@ -16,6 +16,7 @@ html, body {
   width: min(100%, $container-max-width);
   padding-left: 15px;
   padding-right: 15px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
@@ -105,7 +106,7 @@ html, body {
   }
 
   .cards-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
   }
 
   .tabs-container .tab-label {
@@ -180,6 +181,10 @@ html, body {
 }
 
 @media (max-width: 700px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
   .tabs-container {
     flex-direction: column;
   }
