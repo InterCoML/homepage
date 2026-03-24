@@ -1,0 +1,14 @@
+---
+title: Action Leaders
+permalink: /:basename/
+---
+
+<div class="sub-container">
+  <h1>Action Leaders</h1>
+
+  <div class="cards-container">
+    {% for member in site.data.leadership_roles %}
+      {% include member-card.html headline=member.role %}
+    {% endfor %}
+  </div>
+</div>

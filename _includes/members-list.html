@@ -1,6 +1,16 @@
-<ul>
-  {% for member in members_list %}
-    {% assign m = site.data.members[member.memberId] %}
-    <li><a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>{% if member.role %} ({{ member.role }}){% elsif m.role %} ({{ m.role }}){% endif %}</li>
-  {% endfor %}
-</ul>
+{% if include.cards %}
+  <div class="cards-container">
+    {% for member in members_list %}
+      {% assign m = site.data.members[member.memberId] %}
+      {% if member.role %}{% assign role = member.role %}{% elsif m.role %}{% assign role = m.role %}{% else %}{% assign role = '' %}{% endif %}
+      {% include member-card.html headline=role %}
+    {% endfor %}
+  </div>
+{% else %}
+  <ul>
+    {% for member in members_list %}
+      {% assign m = site.data.members[member.memberId] %}
+      <li><a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>{% if member.role %} ({{ member.role }}){% elsif m.role %} ({{ m.role }}){% endif %}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
