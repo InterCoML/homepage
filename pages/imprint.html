@@ -14,10 +14,14 @@ permalink: /:basename/
     <li>End date - 09/10/2029</li>
   </ul>
   <h3>Action Chair:</h3>
-  {% assign member = site.data.leadership_roles | find: "role", "Action Chair" %}
-  {% include member-card.html headline="" %}
+  <div class="cards-container">
+    {% assign member = site.data.leadership_roles | find: "role", "Action Chair" %}
+    {% include member-card.html headline="" %}
+  </div>
   <br />
   <h3>Action Vice-Chair:</h3>
-  {% assign member = site.data.leadership_roles | find: "role", "Action Vice-Chair" %}
-  {% include member-card.html headline="" %}
+  <div class="cards-container">
+    {% assign member = site.data.leadership_roles | find: "role", "Action Vice-Chair" %}
+    {% include member-card.html headline="" %}
+  </div>
 </div>
