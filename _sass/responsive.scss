@@ -138,6 +138,10 @@ html, body {
     border-bottom: 2px solid $mainBlue;
   }
 
+  .desktop-menu-wrapper > hr {
+    display: none;
+  }
+
   #mobileMenuCheckbox {
     display: none;
   }
