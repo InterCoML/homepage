@@ -1,8 +1,8 @@
 ---
 layout: dissemination
-title: "Interactive Adaptive Model Hierarchy for Optimal Control"
-date: 2026-03-17
-short-description: "An interactive demonstration of an adaptive model hierarchy combining reduced order models and machine learning for parametrized optimal control problems."
+title: "Interactive Adaptive Model Hierarchy for Parametric Optimal Control"
+date: 2026-03-25
+short-description: "An interactive demonstration of an adaptive model hierarchy combining reduced order models and machine learning surrogates to efficiently solve parametrized optimal control problems."
 plotly: true
 image: "model-hierarchy-preview.svg"
 authors:
@@ -27,6 +27,7 @@ When queried for a parameter $\mu = (\mu_1, \mu_2)$, the hierarchy first tries t
 If the a posteriori error estimate exceeds the prescribed tolerance $\varepsilon$, it falls back to the RB-ROM, and finally to the FOM.
 Every FOM solve enriches the reduced basis; every RB-ROM solve generates new training data for the ML-ROM.
 The models are built adaptively &mdash; no offline phase is required.
+<a href="https://epubs.siam.org/doi/10.1137/22M1493318" target="_blank" class="link"><em>A new certified hierarchical and adaptive RB-ML-ROM surrogate model for parametrized PDEs</em></a>
 </p>
 
 <div class="hierarchy-diagram">
@@ -53,7 +54,7 @@ The models are built adaptively &mdash; no offline phase is required.
   <div class="hierarchy-caption">
     <span class="arrow-down">&#9660;</span> Error estimate exceeds tolerance $\varepsilon$
     &emsp;
-    <span class="arrow-up">&#9650;</span> Model enrichment (no offline phase)
+    <span class="arrow-up">&#9650;</span> Model enrichment
   </div>
 </div>
 
@@ -212,8 +213,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<h3>How kernel interpolation works</h3>
+<h2>Reduced basis reduced order model</h2>
 
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S0005109816303338" target="_blank" class="link"><em>Greedy controllability of finite dimensional linear systems</em></a>
+<p>
+
+</p>
+
+<h2>Kernel interpolation as machine learning surrogate</h2>
+
+<a href="https://www.esaim-m2an.org/articles/m2an/abs/2025/01/m2an230202/m2an230202.html" target="_blank" class="link"><em>Be greedy and learn: efficient and certified algorithms for parametrized optimal control problems</em></a>
 <p>
 The ML-ROM approximates the map from parameters to reduced coefficients using kernel interpolation.
 Given training data $\{(\mu_i, \alpha_i)\}$, the interpolant is a weighted sum of kernel functions centered at each training point:
@@ -404,9 +413,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<h2>Interactive demo</h2>
+
 <p>
-The test problem is a parametrized 1D heat equation on $\Omega = [0,1]$ with two boundary controls,
-where $\mu_1 \in [1,2]$ is the diffusivity and $\mu_2 \in [0.5, 1.5]$ determines the target state.
+The test problem is a parametrized 1D heat equation on the spatial domain $\Omega = [0,1]$ with two boundary controls,
+where $\mu_1 \in [1,2]$ is the diffusivity and $\mu_2 \in [0.5, 1.5]$ determines the slope of the target state.
+The demo below allows to query the hierarchy either by selecting specific parameters using the sliders,
+by clicking inside of the parameter space box or by drawing random samples.
+It is further possible to query the hierarchy for a whole batch of random parameters.
+The results obtained by the adaptive model hierarchy are shown in the table below and the respective plots.
+As before, the different colors refer to the three models involved here.
+Besides the selected parameters, there are plots showing the estimated errors and the required time to process each query.
+The last plot displays an animation of the solution computed for the selected parameter.
+<br />
+<b>Feel free to try the hierarchy on your own with this interactive demo!</b>
 </p>
 
 <div class="model-hierarchy-demo">
