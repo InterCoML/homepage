@@ -10,9 +10,22 @@ authors:
 ---
 
 <p>
-This interactive demo illustrates an adaptive model hierarchy for parametrized optimal control problems,
-as described in the paper
+This interactive demo illustrates an adaptive model hierarchy for parametrized optimal control problems that is
+described in more detail in
 <a href="http://www.iam.fmph.uniba.sk/amuc/ojs/index.php/algoritmy/article/view/2145" target="_blank" class="link"><em>Application of an adaptive model hierarchy to parametrized optimal control problems</em></a>.
+In this blog post we describe the background of the model hierarchy and the involved models.
+In particular, we show how machine learning can interact with traditional approaches and accelerate computations
+while ensuring certified accuracy.
+</p>
+
+<h2>Parametric optimal control problems</h2>
+
+<p>
+</p>
+
+<h2>Adaptive model hierarchy</h2>
+
+<p>
 The hierarchy consists of three models of decreasing cost and accuracy:
 </p>
 
@@ -23,7 +36,7 @@ The hierarchy consists of three models of decreasing cost and accuracy:
 </ol>
 
 <p>
-When queried for a parameter $\mu = (\mu_1, \mu_2)$, the hierarchy first tries the fastest model (ML-ROM).
+When queried for a parameter $\mu\in\mathcal{P}$, the hierarchy first tries the fastest model (ML-ROM).
 If the a posteriori error estimate exceeds the prescribed tolerance $\varepsilon$, it falls back to the RB-ROM, and finally to the FOM.
 Every FOM solve enriches the reduced basis; every RB-ROM solve generates new training data for the ML-ROM.
 The models are built adaptively &mdash; no offline phase is required.
@@ -58,6 +71,24 @@ The models are built adaptively &mdash; no offline phase is required.
   </div>
 </div>
 
+<p>
+The following flowchart describes in more detail how the adaptive model hierarchy processes an incoming
+parameter $\mu$. The parameter is first passed to the ML-ROM (the cheapest and least accurate in the hierarchy)
+and the ML-ROM solution is computed. The error estimator of the ML-ROM is evaluated and the output compared
+to the prescribed tolerance $\varepsilon$. If the estimated error is below the tolerance, the ML-ROM solution
+is returned and none of the two other models has to be touched for the current parameter. If the estimated
+error is too large, the next model in the hierarchy &mdash; the RB-ROM &mdash; is called next. The RB-ROM is solved and
+its estimated error compared to the tolerance. If the RB-ROM solution is accurate enough, it is returned and
+at the same time used for improving the ML-ROM. It the estimated error of the RB-ROM exceeds the tolerance,
+the FOM is called. The solution of the FOM is returned (there is no accuracy check for the FOM required) and
+used to improve the RB-ROM and consequently also the ML-ROM. It is important to note that the error estimation
+ensures the accuracy of the solution delivered by the model hierarchy. In any case, the error of the model
+hierarchy's output is smaller than the given tolerance. At the same time, computations are handled by the
+faster models whenever possible and only when really necessary, more costly models are solved. Even when
+models later in the hierarchy have to be called, this still generates training data for the other models
+in the hierarchy, this way improving their performance as well.
+</p>
+
 <div class="flowchart">
   <div class="fc-node fc-input">Query $\mu$</div>
   <div class="fc-arrow"></div>
@@ -84,7 +115,7 @@ The models are built adaptively &mdash; no offline phase is required.
             <div class="fc-node fc-decision"><span>Error $\leq \varepsilon$ ?</span></div>
           </div>
           <div class="fc-connector"></div>
-    <div class="fc-split-arms">
+          <div class="fc-split-arms">
             <div class="fc-arm fc-yes">
               <div class="fc-branch-label fc-label-yes">yes</div>
               <div class="fc-arrow"></div>
@@ -107,6 +138,19 @@ The models are built adaptively &mdash; no offline phase is required.
     </div>
   </div>
 </div>
+
+<p>
+The following plot shows how a typical sequence of queries of the adaptive model hierarchy compares
+to querying the FOM or a general ROM in terms of computational costs. Typically, ROMs are built within
+an expensive offline phase and applied afterwards during the so-called online phase. The costs for evaluating
+the ROM during the online phase are usually much smaller than evaluating the FOM. The computational costs
+are therefore split into a costly offline phase and cheap evaluations online for unseen parameters. In contrast,
+the FOM does not have an offline phase but every solve of the FOM is costly on its own. The adaptive hierarchy
+also does not require an offline phase. However, some of the queries might lead to a higher computational effort
+due to the evaluation of more costly models in the hierarchy and potential updates or training of the cheaper models.
+The plot below shows an example for the computational time with respect to the number of queried parameters
+for the three scenarios discussed here.
+</p>
 
 <div id="cost-comparison-plot" style="max-width:700px; margin:2rem auto;"></div>
 
@@ -215,9 +259,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <h2>Reduced basis reduced order model</h2>
 
-<a href="https://www.sciencedirect.com/science/article/abs/pii/S0005109816303338" target="_blank" class="link"><em>Greedy controllability of finite dimensional linear systems</em></a>
 <p>
-
+Before moving to the machine learning surrogate, we briefly summarize the main ideas of reduced basis
+reduced order models. The particular reduced model applied in the interactive demo was introduced in
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S0005109816303338" target="_blank" class="link"><em>Greedy controllability of finite dimensional linear systems</em></a>.
+Here, we describe projection-based reduced models for parametric problems in a more general manner:
+</p>
+<p>
+Consider a problem with a parameter-dependency in the underlying system, such that also the solutions
+vary with the parameter. Assume further that the solutions live in a high-dimensional space. In many cases,
+although the solutions are parameter-dependent, they do not change arbitrary but depend smoothly
+in some way on the parameter. The smoothness of the dependency can be exploitet by extracting a low-dimensional
+subspace that covers the main variety of the solutions. Therefore, instead of solving in the original
+high-dimensional space, we restrict ourselves to a suitable low-dimensional subspace and solve within
+that subspace. This leads to an approximate solution which can be represented as a linear combination
+of a basis of the subspace &mdash; the so-called reduced basis. Solving in the reduced space is, when done
+properly, much faster than solving the original problem. The major computational effort is required
+when computing the reduced basis itself. This is usually done based on some solutions of the high-dimensional
+problem. Within the adaptive model hierarchy, high-dimensional solution data is available whenever
+the full-order model is called. We further note that the reduced model used here allows for an error
+estimator that can be evaluated efficiently. Given a new parameter, we just need to solve in the
+subspace spanned by the reduced basis and, based on the approximate solution, compute an upper bound
+for the error with respect to the high-dimensional solution. This error estimate does in particular not
+require the high-dimensional solution itself and can be computed with a similar computational effort
+than solving in the subspace.
 </p>
 
 <h2>Kernel interpolation as machine learning surrogate</h2>
@@ -413,8 +478,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<p>
+For the ML-ROM, we are actually not restricted to kernel methods. Any machine learning method capable
+of approximating vector-valued input-output data in a supervised learning setting can be used.
+The approach has for instance been tested with deep neural networks and Gaussian process regression as well.
+</p>
+
 <h2>Interactive demo</h2>
 
+<p>
+We are now set to show the interactive demo for the hierarchy including the models presented above.
+To this end, we consider a parametric optimal control problem that is briefly described in the following.
+</p>
 <p>
 The test problem is a parametrized 1D heat equation on the spatial domain $\Omega = [0,1]$ with two boundary controls,
 where $\mu_1 \in [1,2]$ is the diffusivity and $\mu_2 \in [0.5, 1.5]$ determines the slope of the target state.
