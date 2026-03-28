@@ -6,6 +6,9 @@ on:
       - 'main'
     paths-ignore:
       - 'README.md'
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -26,6 +29,21 @@ jobs:
       - name: Compile Website
         run: docker compose run intercoml-homepage ./updateWebsite compile
 
+      - name: Fix permissions on ./html
+        if: github.ref != 'refs/heads/main'
+        run: sudo chown -R $USER:$USER ./html
+
+      - name: Move site to branch folder (if not main)
+        if: github.ref != 'refs/heads/main'
+        run: |
+          # Detect branch name
+          BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
+          # Sanitize branch name for URLs
+          SAFE_BRANCH_NAME=${BRANCH_NAME//\//-}
+          mkdir -p ./html/branches/$SAFE_BRANCH_NAME
+          # Copy everything except existing branches folder
+          rsync -a --exclude 'branches' ./html/ ./html/branches/$SAFE_BRANCH_NAME/
+
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
@@ -33,9 +51,7 @@ jobs:
           path: ./html
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    environment: ${{ github.ref == 'refs/heads/main' && 'github-pages' || 'github-pages-preview' }}
     runs-on: ubuntu-latest
     needs: build
     permissions:
