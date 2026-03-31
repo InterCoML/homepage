@@ -1,7 +1,7 @@
 ---
 layout: dissemination
 title: "Interactive Adaptive Model Hierarchy for Parametric Optimal Control"
-date: 2026-03-25
+date: 2026-04-01
 short-description: "An interactive demonstration of an adaptive model hierarchy combining reduced order models and machine learning surrogates to efficiently solve parametrized optimal control problems."
 plotly: true
 image: "model-hierarchy-preview.svg"
@@ -19,20 +19,23 @@ while ensuring certified accuracy.
 </p>
 
 <h2>Parametric optimal control problems</h2>
-
 <p>
+
+Eventually, a conjugate gradient solver is used to iteratively solve the arising high-dimensional linear system
+for a new parameter.
 </p>
 
 <h2>Adaptive model hierarchy</h2>
-
 <p>
-The hierarchy consists of three models of decreasing cost and accuracy:
+In order to accelerate the solution of otherwise costly parametric optimal control problems, we discuss in the following
+an adaptive model hierarchy that replaces the high-fidelity full-order model by faster surrogates whenever possible.
+The hierarchy consists of three models (the surrogate models are described in more detail below)
+of decreasing cost and accuracy:
 </p>
-
 <ol>
-  <li><strong style="color:#c0392b">FOM</strong> (Full-Order Model) &mdash; exact solver using conjugate gradient iteration</li>
-  <li><strong style="color:#e67e22">RB-ROM</strong> (Reduced Basis ROM) &mdash; projection onto a low-dimensional reduced basis</li>
-  <li><strong style="color:#27ae60">ML-ROM</strong> (Machine Learning ROM) &mdash; kernel-based surrogate mapping parameters to reduced coefficients</li>
+  <li><strong style="color: #c0392b;">FOM</strong> (Full-Order Model) &mdash; exact solver using conjugate gradient iteration</li>
+  <li><strong style="color: #e67e22;">RB-ROM</strong> (Reduced Basis ROM) &mdash; projection onto a low-dimensional reduced basis</li>
+  <li><strong style="color: #27ae60;">ML-ROM</strong> (Machine Learning ROM) &mdash; kernel-based surrogate mapping parameters to reduced coefficients</li>
 </ol>
 
 <p>
@@ -40,7 +43,10 @@ When queried for a parameter $\mu\in\mathcal{P}$, the hierarchy first tries the 
 If the a posteriori error estimate exceeds the prescribed tolerance $\varepsilon$, it falls back to the RB-ROM, and finally to the FOM.
 Every FOM solve enriches the reduced basis; every RB-ROM solve generates new training data for the ML-ROM.
 The models are built adaptively &mdash; no offline phase is required.
+The adaptive model hierarchy has been introduced originally in
 <a href="https://epubs.siam.org/doi/10.1137/22M1493318" target="_blank" class="link"><em>A new certified hierarchical and adaptive RB-ML-ROM surrogate model for parametrized PDEs</em></a>
+and we provide a more detailed description of the functionality of the hierarchy below.
+First of all, the following figure gives a good overview of the involved models and their relationships.
 </p>
 
 <div class="hierarchy-diagram">
@@ -277,7 +283,7 @@ of a basis of the subspace &mdash; the so-called reduced basis. Solving in the r
 properly, much faster than solving the original problem. The major computational effort is required
 when computing the reduced basis itself. This is usually done based on some solutions of the high-dimensional
 problem. Within the adaptive model hierarchy, high-dimensional solution data is available whenever
-the full-order model is called. We further note that the reduced model used here allows for an error
+the full-order model is called. We further note that the reduced model used here allows for an a posteriori error
 estimator that can be evaluated efficiently. Given a new parameter, we just need to solve in the
 subspace spanned by the reduced basis and, based on the approximate solution, compute an upper bound
 for the error with respect to the high-dimensional solution. This error estimate does in particular not
@@ -286,14 +292,27 @@ than solving in the subspace.
 </p>
 
 <h2>Kernel interpolation as machine learning surrogate</h2>
-
-<a href="https://www.esaim-m2an.org/articles/m2an/abs/2025/01/m2an230202/m2an230202.html" target="_blank" class="link"><em>Be greedy and learn: efficient and certified algorithms for parametrized optimal control problems</em></a>
 <p>
 The ML-ROM approximates the map from parameters to reduced coefficients using kernel interpolation.
-Given training data $\{(\mu_i, \alpha_i)\}$, the interpolant is a weighted sum of kernel functions centered at each training point:
-$$s(\mu) = \sum_{i=1}^{M} w_i \, k(\mu, \mu_i)$$
-where $k$ is a kernel function (e.g., a Gaussian $k(\mu, \mu') = \exp(-\gamma \|\mu - \mu'\|^2)$).
-Click on the plot below to add training points and see how the interpolation is built from individual kernels.
+It therefore avoids solving for the coefficients and replaces this step by a simple evaluation of the kernel surrogate.
+Interestingly, the a posteriori error estimator of the reduced basis ROM is still applicable and provides an upper
+bound for the error of the ML-ROM. The approach for constructing the ML-ROM is outlined in detail in
+<a href="https://www.esaim-m2an.org/articles/m2an/abs/2025/01/m2an230202/m2an230202.html" target="_blank" class="link"><em>Be greedy and learn: efficient and certified algorithms for parametrized optimal control problems</em></a>.
+Before taking a closer look at the interactive demo, we briefly introduce kernel interpolation, which is
+presented by another interactive plot where a kernel surrogate for a given function can be constructed.
+</p>
+<p>
+A kernel interpolant is a weighted sum of kernel functions centered at training points:
+$$s(\mu) = \sum_{i=1}^{M} w_i \, k(\mu, \mu_i),$$
+where $k$ is a kernel function (for instance a Gaussian kernel $k(\mu, \mu') = \exp(-\gamma \|\mu - \mu'\|^2)$),
+$w_1,\ldots,w_M\in\mathbb{R}$ are the weights and $\mu_1,\ldots,\mu_M$ are the training points (also called centers).
+In its simplest form, the weights are chosen such that an interpolation property of the form
+$$s(\mu_i) = \alpha_i\qquad\text{for }i=1,\ldots,M$$
+holds. Here, we refer by $\alpha_i\in\mathbb{R}^N$ to the reduced coefficients associated with the parameter
+$\mu_i\in\mathcal{P}$. The kernel interpolant is thus constructed as a linear combination of kernel functions such
+that it interpolates the given data at the training points.
+Click on the plot below to add training points and see how the interpolation of a given function is built
+from individual Gaussian kernels centered at the training points.
 </p>
 
 <div class="kernel-demo-controls" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px;">
