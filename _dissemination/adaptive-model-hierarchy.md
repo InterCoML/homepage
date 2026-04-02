@@ -1,7 +1,7 @@
 ---
 layout: dissemination
 title: "Interactive Adaptive Model Hierarchy for Parametric Optimal Control"
-date: 2026-04-01
+date: 2026-04-02
 short-description: "An interactive demonstration of an adaptive model hierarchy combining reduced order models and machine learning surrogates to efficiently solve parametrized optimal control problems."
 plotly: true
 image: "model-hierarchy-preview.svg"
@@ -20,9 +20,33 @@ while ensuring certified accuracy.
 
 <h2>Parametric optimal control problems</h2>
 <p>
-
+In many applications, dynamical systems with a control input are of interest. Such systems arise for instance in
+engineering where mechanical systems might be steered into a desired state by applying an external control force.
+Another example could be the navigation of vehicles or even the control of space shuttles.
+In the field of optimal control, the goal is typically to determine a control policy that balances the deviation
+of the system from its target state and the costs of applying the control (for instance the required energy to
+change the system's state).
+</p>
+<p>
+As an additional complexity of many optimal control problems, certain parameters of the underlying dynamical system
+might be unknown or can change depending on the considered scenario. Hence, the solution of the optimal control problem
+changes with the parameter. In many cases, for instance when investigating uncertainty of the system or trying to find
+an optimal value for the parameter, solutions of the optimal control problem for lots of different parameters have to
+be computed. This can result in severe computational issues when a single solution of the optimal control problem might
+already take minutes. Solving for hundreds or even thousands of parameters would be infeasible in that case.
+</p>
+<p>
+The optimal control problems considered here consist of a linear control system and a quadratic cost measuring the
+deviation from the target and the control costs. The state of the dynamical system lives in a high-dimensional
+space and changes over time depending on the applied control. Due to the special structure of the optimal control
+problem, when fixing the parameter, the solution boils down to solving a linear system.
 Eventually, a conjugate gradient solver is used to iteratively solve the arising high-dimensional linear system
-for a new parameter.
+for a new parameter. The model associated with the original high-dimensional optimal control problem is referred to
+as the full-order model (FOM). However, as described before, the solution of the FOM depends heavily on the parameter
+and solving high-dimensional linear systems for several hundreds of different parameters is prohibitively costly.
+This issue can be addressed with reduced order models and machine learning surrogates that are described
+in more detail below. In this particular blog post, we focus on combining surrogates models with the FOM in an
+adaptive hierarchy that is applicable when (approximate) solutions for many different parameter values are required.
 </p>
 
 <h2>Adaptive model hierarchy</h2>
@@ -39,8 +63,9 @@ of decreasing cost and accuracy:
 </ol>
 
 <p>
-When queried for a parameter $\mu\in\mathcal{P}$, the hierarchy first tries the fastest model (ML-ROM).
-If the a posteriori error estimate exceeds the prescribed tolerance $\varepsilon$, it falls back to the RB-ROM, and finally to the FOM.
+When queried for a parameter $\mu\in\mathcal{P}$ coming from a set of parameters $\mathcal{P}$,
+the hierarchy first tries the fastest model (ML-ROM). If the a posteriori error estimate exceeds
+the prescribed tolerance $\varepsilon>0$, it falls back to the RB-ROM, and finally to the FOM.
 Every FOM solve enriches the reduced basis; every RB-ROM solve generates new training data for the ML-ROM.
 The models are built adaptively &mdash; no offline phase is required.
 The adaptive model hierarchy has been introduced originally in
@@ -89,7 +114,8 @@ at the same time used for improving the ML-ROM. It the estimated error of the RB
 the FOM is called. The solution of the FOM is returned (there is no accuracy check for the FOM required) and
 used to improve the RB-ROM and consequently also the ML-ROM. It is important to note that the error estimation
 ensures the accuracy of the solution delivered by the model hierarchy. In any case, the error of the model
-hierarchy's output is smaller than the given tolerance. At the same time, computations are handled by the
+hierarchy's output is smaller than the given tolerance. This also holds for the machine learning predictions where
+reliable error certification is usually difficult. At the same time, computations are handled by the
 faster models whenever possible and only when really necessary, more costly models are solved. Even when
 models later in the hierarchy have to be called, this still generates training data for the other models
 in the hierarchy, this way improving their performance as well.
@@ -272,17 +298,23 @@ reduced order models. The particular reduced model applied in the interactive de
 Here, we describe projection-based reduced models for parametric problems in a more general manner:
 </p>
 <p>
-Consider a problem with a parameter-dependency in the underlying system, such that also the solutions
-vary with the parameter. Assume further that the solutions live in a high-dimensional space. In many cases,
-although the solutions are parameter-dependent, they do not change arbitrary but depend smoothly
+Consider a problem with a parameter-dependency in the underlying system, such that also the solutions $u(\mu)\in V$
+vary with the parameter $\mu\in\mathcal{P}$. Assume further that the solutions live in a very high-dimensional space $V$.
+In many cases, although the solutions are parameter-dependent, they do not change arbitrary but depend smoothly
 in some way on the parameter. The smoothness of the dependency can be exploitet by extracting a low-dimensional
-subspace that covers the main variety of the solutions. Therefore, instead of solving in the original
-high-dimensional space, we restrict ourselves to a suitable low-dimensional subspace and solve within
-that subspace. This leads to an approximate solution which can be represented as a linear combination
-of a basis of the subspace &mdash; the so-called reduced basis. Solving in the reduced space is, when done
-properly, much faster than solving the original problem. The major computational effort is required
-when computing the reduced basis itself. This is usually done based on some solutions of the high-dimensional
-problem. Within the adaptive model hierarchy, high-dimensional solution data is available whenever
+subspace $V_N$ that covers the main variety of the solutions. Therefore, instead of solving in the original
+high-dimensional space $V$, we restrict ourselves to a suitable low-dimensional subspace and solve within
+that subspace. This leads to an approximate solution $u_N(\mu)\in V_N$ which can be represented as a linear combination
+of a basis $v_1,\ldots,v_N\in V_N$ of the subspace $V_N$ &mdash; the so-called reduced basis.
+The reduced solution is therefore of the form
+$$u_N(\mu)=\sum_{i=1}^{N} \alpha_i(\mu)\cdot v_i,$$
+where $\alpha_i(\mu)\in\mathbb{R}$ is the $i$-th coefficient depending on the parameter $\mu$.
+Solving in the reduced space is, when done properly, much faster than solving the original problem since only
+the reduced coefficients $\alpha_1,\ldots,\alpha_N$ have to be computed.
+The major computational effort is required when constructing the reduced basis itself.
+This is usually done based on some solutions of the high-dimensional problem, i.e. $u(\mu_1),\ldots,u(\mu_k)\in V$
+for some parameters $\mu_1,\ldots,\mu_k\in\mathcal{P}$.
+Within the adaptive model hierarchy, high-dimensional solution data is available whenever
 the full-order model is called. We further note that the reduced model used here allows for an a posteriori error
 estimator that can be evaluated efficiently. Given a new parameter, we just need to solve in the
 subspace spanned by the reduced basis and, based on the approximate solution, compute an upper bound
@@ -303,14 +335,17 @@ presented by another interactive plot where a kernel surrogate for a given funct
 </p>
 <p>
 A kernel interpolant is a weighted sum of kernel functions centered at training points:
-$$s(\mu) = \sum_{i=1}^{M} w_i \, k(\mu, \mu_i),$$
+$$s(\mu) = \sum_{j=1}^{M} w_j \cdot k(\mu, \mu_j),$$
 where $k$ is a kernel function (for instance a Gaussian kernel $k(\mu, \mu') = \exp(-\gamma \|\mu - \mu'\|^2)$),
 $w_1,\ldots,w_M\in\mathbb{R}$ are the weights and $\mu_1,\ldots,\mu_M$ are the training points (also called centers).
 In its simplest form, the weights are chosen such that an interpolation property of the form
-$$s(\mu_i) = \alpha_i\qquad\text{for }i=1,\ldots,M$$
-holds. Here, we refer by $\alpha_i\in\mathbb{R}^N$ to the reduced coefficients associated with the parameter
-$\mu_i\in\mathcal{P}$. The kernel interpolant is thus constructed as a linear combination of kernel functions such
-that it interpolates the given data at the training points.
+$$s(\mu_j) = \alpha(\mu_j)\qquad\text{for }j=1,\ldots,M$$
+holds. Here, $\alpha(\mu_j)=[\alpha_1(\mu_j),\ldots,\alpha_N(\mu_j)]\in\mathbb{R}^N$ is a vector containing
+the reduced coefficients associated with the parameter $\mu_j\in\mathcal{P}$.
+The kernel interpolant approximates vector-valued data in this case.
+Computing the weights amounts to solving a linear system of equations with dimension
+similar to the number of training data points. The kernel interpolant is thus constructed as a linear combination
+of kernel functions such that it interpolates the given data at the training points.
 Click on the plot below to add training points and see how the interpolation of a given function is built
 from individual Gaussian kernels centered at the training points.
 </p>
@@ -498,8 +533,16 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <p>
+Within the adaptive model hierarchy, the kernel surrogate is constructed adaptively
+using the available data provided by evaluations of the RB-ROM. The ML-ROM therefore interacts with and is built on
+the RB-ROM and makes further use of its a posteriori error estimator. This connection illustrates how machine learning
+methods can benefit from an integration with classical methods developed in different areas of applied mathematics.
+</p>
+<p>
 For the ML-ROM, we are actually not restricted to kernel methods. Any machine learning method capable
 of approximating vector-valued input-output data in a supervised learning setting can be used.
+In particular the same a posteriori error estimator is still applicable and guarantees a sufficiently accurate
+approximation of the optimal control.
 The approach has for instance been tested with deep neural networks and Gaussian process regression as well.
 </p>
 
@@ -542,10 +585,10 @@ The last plot displays an animation of the solution computed for the selected pa
       <button id="btn-query" class="button">Query Single</button>
       <button id="btn-random" class="button">Random Query</button>
       <button id="btn-batch" class="button">Run Batch</button>
-      <button id="btn-reset" class="button button-secondary">Reset</button>
       <label style="font-size:0.85em">Batch size:
         <input type="number" id="batch-size" value="200" min="10" max="2000" style="width:70px">
       </label>
+      <button id="btn-reset" class="button button-secondary">Reset</button>
     </div>
   </div>
 
