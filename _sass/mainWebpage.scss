@@ -131,6 +131,23 @@ hr {
   }
 }
 
+.tag {
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tag-news {
+  background-color: $altBlue;
+}
+
+.tag-dissemination {
+  background-color: $mainGreen;
+}
+
 .card img {
   max-width: 100%;
   max-height: 200px;
