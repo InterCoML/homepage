@@ -45,7 +45,7 @@ for a new parameter. The model associated with the original high-dimensional opt
 as the full-order model (FOM). However, as described before, the solution of the FOM depends heavily on the parameter
 and solving high-dimensional linear systems for several hundreds of different parameters is prohibitively costly.
 This issue can be addressed with reduced order models and machine learning surrogates that are described
-in more detail below. In this particular blog post, we focus on combining surrogates models with the FOM in an
+in more detail below. In this particular blog post, we focus on combining surrogate models with the FOM in an
 adaptive hierarchy that is applicable when (approximate) solutions for many different parameter values are required.
 </p>
 
@@ -110,7 +110,7 @@ to the prescribed tolerance $\varepsilon$. If the estimated error is below the t
 is returned and none of the two other models has to be touched for the current parameter. If the estimated
 error is too large, the next model in the hierarchy &mdash; the RB-ROM &mdash; is called next. The RB-ROM is solved and
 its estimated error compared to the tolerance. If the RB-ROM solution is accurate enough, it is returned and
-at the same time used for improving the ML-ROM. It the estimated error of the RB-ROM exceeds the tolerance,
+at the same time used for improving the ML-ROM. If the estimated error of the RB-ROM exceeds the tolerance,
 the FOM is called. The solution of the FOM is returned (there is no accuracy check for the FOM required) and
 used to improve the RB-ROM and consequently also the ML-ROM. It is important to note that the error estimation
 ensures the accuracy of the solution delivered by the model hierarchy. In any case, the error of the model
@@ -289,6 +289,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<p>
+Having seen the overall hierarchy, let us now describe the individual surrogate models in more detail.
+</p>
+
 <h2>Reduced basis reduced order model</h2>
 
 <p>
@@ -301,7 +305,7 @@ Here, we describe projection-based reduced models for parametric problems in a m
 Consider a problem with a parameter-dependency in the underlying system, such that also the solutions $u(\mu)\in V$
 vary with the parameter $\mu\in\mathcal{P}$. Assume further that the solutions live in a very high-dimensional space $V$.
 In many cases, although the solutions are parameter-dependent, they do not change arbitrary but depend smoothly
-in some way on the parameter. The smoothness of the dependency can be exploitet by extracting a low-dimensional
+in some way on the parameter. The smoothness of the dependency can be exploited by extracting a low-dimensional
 subspace $V_N$ that covers the main variety of the solutions. Therefore, instead of solving in the original
 high-dimensional space $V$, we restrict ourselves to a suitable low-dimensional subspace and solve within
 that subspace. This leads to an approximate solution $u_N(\mu)\in V_N$ which can be represented as a linear combination
@@ -320,7 +324,7 @@ estimator that can be evaluated efficiently. Given a new parameter, we just need
 subspace spanned by the reduced basis and, based on the approximate solution, compute an upper bound
 for the error with respect to the high-dimensional solution. This error estimate does in particular not
 require the high-dimensional solution itself and can be computed with a similar computational effort
-than solving in the subspace.
+as solving in the subspace.
 </p>
 
 <h2>Kernel interpolation as machine learning surrogate</h2>
@@ -621,3 +625,13 @@ The last plot displays an animation of the solution computed for the selected pa
 </div>
 
 <script type="module" src="{{ site.baseUrl }}/assets/js/model-hierarchy/main.js"></script>
+
+<h2>Conclusion</h2>
+<p>
+In this blog post we introduced an adaptive model hierarchy for solving parametrized optimal control problems.
+The hierarchy provides approximate optimal controls with certified accuracy based on the interaction
+of a full-order model, a reduced basis reduced order model and a machine learning surrogate.
+The surrogate models are created adaptively using information from more costly but also more accurate models
+in the hierarchy. Whenever possible, the faster surrogate models are used, leveraging the computational
+advantages of the machine learning surrogate and the reduced order model.
+</p>
