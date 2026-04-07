@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+{% if page.date %}
+  <h3>Posting date: {{ page.date | date: "%-d %B %Y" }}</h3>
+{% endif %}
+{% if page.image %}
+  <img class="news-img-large" src="{{ site.baseUrl }}/images/dissemination/{{ page.image }}" />
+{% endif %}
+{{ page.content }}
+{% if page.authors %}
+  <h3>Author{% if page.authors.size > 1 %}s{% endif %}:</h3>
+  <div class="cards-container">
+    {% for author in page.authors %}
+      {% assign member=author %}
+      {% include member-card.html %}
+    {% endfor %}
+  </div>
+{% endif %}

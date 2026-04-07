@@ -1,0 +1,67 @@
+{% comment %}
+  Unified card container for any combination of collections.
+
+  Parameters:
+    collections  - comma-separated list of collection names (e.g. "news", "news,dissemination")
+    limit        - optional max number of items to show
+    showMore     - if "true", show links to the full collection pages
+{% endcomment %}
+
+{% assign items = "" | split: "" %}
+{% assign collection_list = include.collections | split: "," %}
+{% for col_name in collection_list %}
+  {% assign col_name_stripped = col_name | strip %}
+  {% if col_name_stripped == "news" %}
+    {% assign items = items | concat: site.news %}
+  {% elsif col_name_stripped == "dissemination" %}
+    {% assign items = items | concat: site.dissemination %}
+  {% endif %}
+{% endfor %}
+{% assign items = items | sort: 'date' | reverse %}
+
+<div class="sub-container">
+  <div class="cards-container">
+    {% for posting in items limit:include.limit %}
+      <div class="card">
+        {% if posting.date %}
+          <h5>
+            {{ posting.date | date: "%-d %B %Y" }}
+            {% if posting.collection == "news" %}
+              · <span class="tag tag-news">News</span>
+            {% elsif posting.collection == "dissemination" %}
+              · <span class="tag tag-dissemination">Article</span>
+            {% endif %}
+          </h5>
+        {% endif %}
+        <h3>{{ posting.title }}</h3>
+        {% if posting.image %}
+          <img src="{{ site.baseUrl }}/images/{{ posting.collection }}/{{ posting.image }}" loading="lazy" alt="{{ posting.title }}" />
+        {% endif %}
+        {% if posting.short-description %}
+          <p>{{ posting.short-description }}</p>
+        {% endif %}
+        {% assign content = posting.content | strip_newlines %}
+        {% if content != "" %}
+          <a class="button" href="{{ posting.url | prepend: site.baseUrl }}">Find out more</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if include.showMore == "true" %}
+    {% assign shown = include.limit | plus: 0 %}
+    {% assign total = items.size %}
+    {% if total > shown %}
+      <br>
+      {% for col_name in collection_list %}
+        {% assign col_name_stripped = col_name | strip %}
+        {% if forloop.index > 1 %} · {% endif %}
+        {% if col_name_stripped == "news" %}
+          <a href="{{ site.baseUrl }}/news" class="link">More News...</a>
+        {% elsif col_name_stripped == "dissemination" %}
+          <a href="{{ site.baseUrl }}/dissemination" class="link">More Articles...</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+</div>
