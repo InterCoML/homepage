@@ -5,6 +5,7 @@
     collections  - comma-separated list of collection names (e.g. "news", "news,dissemination")
     limit        - optional max number of items to show
     showMore     - if "true", show links to the full collection pages
+    timeFilter   - optional: "future" (date >= today), "past" (date < today), omit for all
 {% endcomment %}
 
 {% assign items = "" | split: "" %}
@@ -19,6 +20,23 @@
 {% endfor %}
 {% assign items = items | sort: 'date' | reverse %}
 
+{% if include.timeFilter %}
+  {% assign today = site.time | date: "%Y%m%d" %}
+  {% assign filtered = "" | split: "" %}
+  {% for item in items %}
+    {% assign item_date = item.date | date: "%Y%m%d" %}
+    {% if item.collection != "news" %}
+      {% comment %} Non-news items (e.g. dissemination) are not filtered by time {% endcomment %}
+      {% assign filtered = filtered | push: item %}
+    {% elsif include.timeFilter == "future" and item_date >= today %}
+      {% assign filtered = filtered | push: item %}
+    {% elsif include.timeFilter == "past" and item_date < today %}
+      {% assign filtered = filtered | push: item %}
+    {% endif %}
+  {% endfor %}
+  {% assign items = filtered %}
+{% endif %}
+
 <div class="sub-container">
   <div class="cards-container">
     {% for posting in items limit:include.limit %}
@@ -27,7 +45,13 @@
           <h5>
             {{ posting.date | date: "%-d %B %Y" }}
             {% if posting.collection == "news" %}
-              · <span class="tag tag-news">News</span>
+              {% assign post_date = posting.date | date: "%Y%m%d" %}
+              {% assign today = site.time | date: "%Y%m%d" %}
+              {% if post_date >= today %}
+                · <span class="tag tag-news">News</span>
+              {% else %}
+                · <span class="tag tag-activity">Activity</span>
+              {% endif %}
             {% elsif posting.collection == "dissemination" %}
               · <span class="tag tag-dissemination">Article</span>
             {% endif %}
@@ -58,6 +82,7 @@
         {% if forloop.index > 1 %} · {% endif %}
         {% if col_name_stripped == "news" %}
           <a href="{{ site.baseUrl }}/news" class="link">More News...</a>
+          · <a href="{{ site.baseUrl }}/activities" class="link">More Activities...</a>
         {% elsif col_name_stripped == "dissemination" %}
           <a href="{{ site.baseUrl }}/dissemination" class="link">More Articles...</a>
         {% endif %}
