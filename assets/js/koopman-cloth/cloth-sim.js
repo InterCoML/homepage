@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Grid parameters
   var NX = 8, NY = 8;
   var restLen = 0.12; // rest length between adjacent nodes
-  var gravity = -0.25;
+  var gravity = -0.45;
   var damping = 0.98;
   var dt = 0.016;
-  var stiffness = 2000;
-  var shearStiffness = 1000;
+  var stiffness = 1200;
+  var shearStiffness = 600;
 
   // 3D projection parameters
   var camDist = 3.0;
