@@ -6,6 +6,8 @@ on:
       - 'main'
     paths-ignore:
       - 'README.md'
+  schedule:
+    - cron: '0 2 * * *'  # Rebuild every night at 2:00 UTC
 
 jobs:
   build:
