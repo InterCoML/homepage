@@ -123,6 +123,8 @@ hr {
   text-align: center;
   background-color: $altGray;
   color: black;
+  overflow-wrap: break-word;
+  word-break: break-word;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 
   &.visible:hover, &:not(.fade-in):hover {
