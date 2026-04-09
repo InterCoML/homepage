@@ -5,7 +5,8 @@
     collections  - comma-separated list of collection names (e.g. "news", "news,dissemination")
     limit        - optional max number of items to show
     showMore     - if "true", show links to the full collection pages
-    timeFilter   - optional: "future" (date >= today), "past" (date < today), omit for all
+    timeFilter   - optional: "future" (expiry-date >= today), "past" (expiry-date < today), omit for all
+                   Uses expiry-date if set, otherwise falls back to date
 {% endcomment %}
 
 {% assign items = "" | split: "" %}
@@ -24,13 +25,17 @@
   {% assign today = site.time | date: "%Y%m%d" %}
   {% assign filtered = "" | split: "" %}
   {% for item in items %}
-    {% assign item_date = item.date | date: "%Y%m%d" %}
+    {% comment %} Use expiry-date for news/activity split, fall back to date {% endcomment %}
+    {% if item.expiry-date %}
+      {% assign split_date = item.expiry-date | date: "%Y%m%d" %}
+    {% else %}
+      {% assign split_date = item.date | date: "%Y%m%d" %}
+    {% endif %}
     {% if item.collection != "news" %}
-      {% comment %} Non-news items (e.g. dissemination) are not filtered by time {% endcomment %}
       {% assign filtered = filtered | push: item %}
-    {% elsif include.timeFilter == "future" and item_date >= today %}
+    {% elsif include.timeFilter == "future" and split_date >= today %}
       {% assign filtered = filtered | push: item %}
-    {% elsif include.timeFilter == "past" and item_date < today %}
+    {% elsif include.timeFilter == "past" and split_date < today %}
       {% assign filtered = filtered | push: item %}
     {% endif %}
   {% endfor %}
@@ -45,9 +50,13 @@
           <h5>
             {{ posting.date | date: "%-d %B %Y" }}
             {% if posting.collection == "news" %}
-              {% assign post_date = posting.date | date: "%Y%m%d" %}
+              {% if posting.expiry-date %}
+                {% assign expiry = posting.expiry-date | date: "%Y%m%d" %}
+              {% else %}
+                {% assign expiry = posting.date | date: "%Y%m%d" %}
+              {% endif %}
               {% assign today = site.time | date: "%Y%m%d" %}
-              {% if post_date >= today %}
+              {% if expiry >= today %}
                 · <span class="tag tag-news">News</span>
               {% else %}
                 · <span class="tag tag-activity">Activity</span>
