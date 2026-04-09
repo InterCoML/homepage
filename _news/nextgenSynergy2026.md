@@ -2,6 +2,7 @@
 layout: news
 title: "InterCoML Conference: NextGen Synergy"
 date: 2026-01-22
+expiry-date: 2026-05-01
 short-description: "The inaugural conference of InterCoML is taking place April 27-30, 2026, in Prague, Czech Republic. <a href='https://coml26.utia.cas.cz/' target='_blank' rel='noopener noreferrer' class='link'>Register now!</a>"
 authors:
   - guy

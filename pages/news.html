@@ -5,4 +5,23 @@ permalink: /:basename/
 
 <h1>News</h1>
 
-{% include collection-cards.html collections="news" %}
+{% assign today = site.time | date: "%Y%m%d" %}
+{% assign future_news = false %}
+{% for item in site.news %}
+  {% if item.expiry-date %}
+    {% assign check_date = item.expiry-date | date: "%Y%m%d" %}
+  {% else %}
+    {% assign check_date = item.date | date: "%Y%m%d" %}
+  {% endif %}
+  {% if check_date >= today %}
+    {% assign future_news = true %}
+  {% endif %}
+{% endfor %}
+
+{% if future_news %}
+  {% include collection-cards.html collections="news" timeFilter="future" %}
+{% else %}
+  <div class="sub-container">
+    <p>No upcoming news at the moment. Check out our <a href="{{ site.baseUrl }}/activities" class="link">previous activities</a>!</p>
+  </div>
+{% endif %}
