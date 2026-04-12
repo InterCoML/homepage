@@ -26,7 +26,7 @@ jobs:
         run: docker compose build intercoml-homepage
 
       - name: Compile Website
-        run: docker compose run intercoml-homepage ./updateWebsite compile
+        run: docker compose run intercoml-homepage ./updateWebsite.sh compile
 
       - name: Upload static files as artifact
         id: deployment
