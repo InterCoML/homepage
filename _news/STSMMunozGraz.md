@@ -1,6 +1,6 @@
 ---
 layout: news
-title: "Short Term Scientific Missiong by Juan Ricardo Muñoz"
+title: "Short Term Scientific Mission by Juan Ricardo Muñoz"
 date: 2026-04-20
 short-description: "Juan Ricardo Muñoz works together with Hendrik Kleikamp on reduced-order modeling for parameter-dependent optimal control as part of an STSM in Graz."
 authors:
