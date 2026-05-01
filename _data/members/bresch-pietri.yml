@@ -7,3 +7,4 @@ role: "Equal Opportunity Coordinator (EOC)"
 city: "Paris"
 lat: 48.8566
 lng: 2.3522
+wgs: [1, 2, 3]

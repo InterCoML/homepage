@@ -4,3 +4,4 @@ _site
 .jekyll-metadata
 html/
 baseurl_config.yml
+*.csv

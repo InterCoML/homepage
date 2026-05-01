@@ -23,15 +23,6 @@
     {% endfor %}
   </ol>
 
-  <hr>
-  <h3>Working group leaders</h3>
-  <div class="cards-container">
-    {% assign member = wg.leader %}
-    {% include member-card.html headline="Leader" %}
-    {% assign member = wg.co-leader %}
-    {% include member-card.html headline="Co-Leader" %}
-  </div>
-
   {% if wg.open-problems %}
     <hr>
     <h3>Open problems (sorted by topic)</h3>
@@ -77,6 +68,42 @@
         </tbody>
       </table>
     {% endfor %}
+  {% endif %}
+
+  <hr>
+  <h3>Working group leaders</h3>
+  <div class="cards-container">
+    {% assign member = wg.leader %}
+    {% include member-card.html headline="Leader" %}
+    {% assign member = wg.co-leader %}
+    {% include member-card.html headline="Co-Leader" %}
+  </div>
+
+  {% comment %} Working group members list {% endcomment %}
+  {% assign wg_members = "" | split: "" %}
+  {% for member_pair in site.data.members %}
+    {% assign m = member_pair[1] %}
+    {% if m.wgs and m.wgs contains page.wg_number %}
+      {% assign wg_members = wg_members | push: m %}
+    {% endif %}
+  {% endfor %}
+  {% assign wg_members = wg_members | sort: 'name' %}
+
+  {% if wg_members.size > 0 %}
+    <hr>
+    <h3>Working group members ({{ wg_members.size }})</h3>
+    <ul class="wg-members-list">
+      {% for m in wg_members %}
+        <li>
+          {% if m.mail %}
+            <a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>
+          {% else %}
+            <strong>{{ m.name }}</strong>
+          {% endif %}
+          {% if m.address %}<span class="wg-member-affiliation"> &mdash; {{ m.address }}</span>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
 
   {% assign all_items = site.news | concat: site.dissemination %}

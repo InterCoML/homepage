@@ -4,3 +4,4 @@ mail: "liviu.ignat@imar.ro"
 city: "Bucharest"
 lat: 44.4268
 lng: 26.1025
+wgs: [1, 2]

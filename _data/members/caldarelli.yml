@@ -4,3 +4,4 @@ address: "Fondazione Istituto Italiano Di Tecnologia, via San Quirico 19D, 16163
 mail: "edoardo.caldarelli@iit.it"
 image: "caldarelli.jpeg"
 role: "Leader WG 5"
+wgs: [1, 2, 3, 4, 5]

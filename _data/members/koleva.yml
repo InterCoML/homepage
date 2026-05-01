@@ -5,3 +5,4 @@ image: "koleva.jpg"
 city: "Skopje"
 lat: 41.9981
 lng: 21.4254
+wgs: [1, 2, 3]

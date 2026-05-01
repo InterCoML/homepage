@@ -5,3 +5,4 @@ mail: "aljosa.peperko@fs.uni-lj.si"
 city: "Ljubljana"
 lat: 46.0569
 lng: 14.5058
+wgs: [1, 2, 3]

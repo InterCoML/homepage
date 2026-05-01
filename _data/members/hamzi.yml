@@ -5,3 +5,4 @@ mail: "boumediene.hamzi@gmail.com"
 city: "Pasadena"
 lat: 34.1478
 lng: -118.1445
+wgs: [1, 2, 3, 4, 5]

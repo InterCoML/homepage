@@ -172,6 +172,20 @@ hr {
   flex-wrap: wrap;
 }
 
+.wg-members-list {
+  padding-left: 1.2em;
+
+  li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+}
+
+.wg-member-affiliation {
+  color: #666;
+  font-size: 0.9em;
+}
+
 .card img {
   max-width: 100%;
   max-height: 200px;

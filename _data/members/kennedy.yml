@@ -7,3 +7,4 @@ role: "Grant Awarding Coordinator"
 city: "Aveiro"
 lat: 40.6405
 lng: -8.6538
+wgs: [1]
