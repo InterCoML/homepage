@@ -26,3 +26,56 @@ th {
   background-color: $mainGreen;
   color: white;
 }
+
+.open-problems-table {
+  table-layout: fixed;
+  word-wrap: break-word;
+
+  td {
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 700px) {
+  .open-problems-table,
+  .open-problems-table colgroup,
+  .open-problems-table col,
+  .open-problems-table thead,
+  .open-problems-table tbody,
+  .open-problems-table tr,
+  .open-problems-table th,
+  .open-problems-table td {
+    display: block;
+    width: auto !important;
+  }
+
+  .open-problems-table {
+    table-layout: auto;
+  }
+
+  .open-problems-table thead {
+    display: none;
+  }
+
+  .open-problems-table tr {
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+  }
+
+  .open-problems-table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .open-problems-table td:last-child {
+    border-bottom: none;
+    background-color: #f8f8f8;
+    font-size: 0.9em;
+  }
+
+  .open-problems-table td:last-child::before {
+    content: "Contact: ";
+    font-weight: bold;
+    color: $mainBlue;
+  }
+}
