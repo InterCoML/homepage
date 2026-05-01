@@ -2,6 +2,7 @@
 layout: news
 title: "Call for Short Term Scientific Missions (STSMs)"
 date: 2026-03-10
+wgs: [1, 2]
 short-description: "We welcome applications for 8 Short Term Scientific Missions (STSMs) related to Working Group 1 (CT for ML) or Working Group 2 (ML for CT).<br/><b>Call deadline: 31.03.2026</b>"
 image: "mapEuropeConnections.png"
 ---

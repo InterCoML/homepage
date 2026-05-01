@@ -2,6 +2,7 @@
 layout: news
 title: "Kickoff workshop WG 2 - online"
 date: 2025-12-05
+wg: 2
 short-description: "Working group 2 had its virtual kickoff workshop on 5 December, 2025."
 authors:
   - kleikamp

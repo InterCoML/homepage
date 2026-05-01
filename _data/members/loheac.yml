@@ -5,3 +5,4 @@ mail: "jerome.loheac@univ-lorraine.fr"
 city: "Vandoeuvre-lès-Nancy"
 lat: 48.6566
 lng: 6.1503
+wgs: [1, 2, 3]

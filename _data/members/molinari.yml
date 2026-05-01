@@ -7,3 +7,4 @@ role: "Co-Leader WG 5, Science Communication Coordinator"
 city: "Genova"
 lat: 44.4056
 lng: 8.9463
+wgs: [1, 2, 3, 4, 5]

@@ -5,3 +5,4 @@ city: "Durres"
 image: "duka.jpg"
 lat: 41.3246
 lng: 19.4565
+wgs: [1, 2, 3, 4, 5]

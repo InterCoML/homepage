@@ -5,3 +5,4 @@ mail: "erlend.grong@uib.no"
 city: "Bergen"
 lat: 60.3913
 lng: 5.3221
+wgs: [1, 2, 3, 5]

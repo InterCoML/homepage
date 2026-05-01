@@ -7,3 +7,4 @@ role: "Co-Leader WG 3"
 city: "Bayreuth"
 lat: 49.9456
 lng: 11.5713
+wgs: [1, 2, 3, 4]

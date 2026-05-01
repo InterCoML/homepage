@@ -5,3 +5,4 @@ mail: "edliramali@gmail.com"
 city: "Tirana"
 lat: 41.3275
 lng: 19.8187
+wgs: [3, 5]

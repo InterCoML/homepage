@@ -31,6 +31,87 @@ face the curse of dimensionality."
     - "Construction of control Lyapunov functions using ML methods"
     - "Developing ML-based approaches for the for the life-cycle-optimisation in materials"
     - "Exploiting PINNs for solving complex free boundary problems"
+  open-problems:
+    - topic: "Addressing the curse of dimensionality with ML tools"
+      problems:
+      - title: "Learn set-valued maps related to control problems with machine learning tools"
+        contact: periago
+        skills: "Good command of Python and a basic knowledge of control theory"
+      - title: "Regularity theory for PDEs in high dimensions"
+        contact: periago
+        skills: "Good command of functional analysis and PDEs"
+    - topic: "Solving parameterised optimal control problems"
+      problems:
+      - title: "Nonlinear and transport-dominated problems"
+        contact: lazar
+        skills: "Good command in numerics of PDEs and in control theory"
+        goal: 'Solve optimal control problems where the governing dynamics are parametric and nonlinear or transport-dominated, for instance $$\frac{\partial y}{\partial t}+\mu\frac{\partial y^2}{\partial x}=u.$$'
+        details: "<ul><li>Nonlinear problems pose difficulties for traditional, linear approximation schemes.</li>
+                      <li>General question for model order reduction.</li>
+                      <li>What is possible in the context of (optimal) control of such systems?</li>
+                      <li>Where can machine learning help to overcome these issues (nonlinear strategies such as autoencoders, etc.)?</li></ul>"
+      - title: "Control of flow problems such as the Navier-Stokes equations"
+        contact: '<a href="mailto:maria.strazzullo@polito.it" class="link">Maria Strazzullo</a>'
+        skills: "Good command in numerics of PDEs and in control theory"
+        goal: 'Solve optimal control problems for flows governed by parametric Navier-Stokes equations, for instance $$\begin{aligned}\frac{\partial y}{\partial t} - \mu\Delta y + (y\cdot\nabla)y + \nabla p &= u,\\\operatorname{div} y &= 0.\end{aligned}$$'
+        details: '<ul><li>Navier-Stokes equations are an important model for (viscous) flow in real-world applications.</li><li>Depending on the Reynolds number (roughly the parameter $\mu$ in the formulation above), the solution behavior can change completely.</li><li>Can machine learning help in order to deal with the turbulent regime?</li></ul>'
+      - title: "General convex objective functionals"
+        contact: molinari
+        skills: "Good command in (convex) optimization; Python programming"
+        goal: 'Induce sparsity in the control by solving a problem of the form $$u^*_\mu = \arg\min\limits_{u\in G}\ \lVert u\rVert_{L^1([0,T];U)}+\frac{\alpha}{2}\lVert u\rVert_{L^2([0,T];U)}^2 + h(x_\mu).$$'
+        details: "<ul><li>Which algorithm is suited best to solve this OCP?</li><li>How to deal with the parameter dependence?</li><li>Can reduced order modeling be applied here in a suitable manner?</li><li>If so, how to combine it in a reasonable way with machine learning?</li></ul>"
+      - title: "Optimization in the parameter space"
+        contact: kleikamp
+        skills: "Knowledge in optimization and control theory; Python programming"
+        goal: 'Solve problems of the form $$\mu^* = \arg\min\limits_{\mu\in\mathcal{P}}\ F(\mu;u_\mu)$$ where $u_\mu\in G$ solves an optimal control problem for the parameter $\mu\in\mathcal{P}$.'
+        details: '<ul><li>Optimal control problem for a fixed parameter as an "inner" problem.</li><li>Derivatives with respect to the parameter are typically required.</li><li>Optimizer usually moves outside of the range of training data points. $\longrightarrow$ How to extrapolate properly?</li></ul>'
+      - title: "Small data regime"
+        contact: kleikamp
+        skills: "Good command of machine learning and control theory"
+        goal: "How to deal with relatively small amount of available data?"
+        details: '<ul><li>Training data (at least using the FOM) is costly to obtain.</li><li>Which quantities are easiest to learn when only a small amount of data is available?<ul><li>Optimal control $\longrightarrow$ How to obtain performance guarantees?</li><li>Reduced quantities $\longrightarrow$ Combination with MOR techniques often allows to collect more training data and to make use of their error estimates.</li><li>Open loop vs. closed loop systems $\longrightarrow$ Feedback control requires different architectures and learning techniques.</li></ul></li></ul>'
+      - title: "Applications in uncertainty quantification"
+        contact: kleikamp
+        skills: "Machine learning and surrogate modeling; a bit of probability theory and statistics; Python programming"
+        goal: 'Make use of the derived surrogates in <em>multilevel Monte Carlo methods</em>: $$\mathbb{E}[M_L] = \mathbb{E}[M_0] + \sum\limits_{\ell=0}^{L} \mathbb{E}[M_\ell-M_{\ell-1}].$$'
+        details: "<ul><li>Consider different applications in which we want efficient estimates of unknown quantities.</li><li>Interactions of the different models?</li><li>Strategies to select the models and the number of evaluations on different levels?</li><li>Can we derive probabilistic guarantees that this works?</li></ul>"
+    - topic: "Construction of control Lyapunov functions using ML methods"
+      problems:
+      - title: "Fast and reliable learning algorithms (in particular for nonsmooth functions)"
+        contact: gruene
+      - title: "Efficient verification of a control Lyapunov function candidate"
+        contact: gruene
+    - topic: "Developing ML-based approaches for the life-cycle-optimisation in materials"
+      problems:
+      - title: "Approximating solutions to the elasticity system"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: "Develop the concept of approximating solutions to the elasticity system with damage evolution."
+      - title: "Existence and uniqueness of weak solutions I"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'Establish the existence and uniqueness of the weak solutions via approximation for the $L^1$-damage source function $$\phi(\mathbf{e}(\mathbf{u}),\zeta) = -\lambda_D\left(\frac{1-\zeta}{\zeta}\right)-\frac{1}{2}\lambda_u\mathbf{e}(\mathbf{u})\cdot\mathbf{e}(\mathbf{u})+\lambda_w.$$'
+      - title: "Existence and uniqueness of weak solutions II"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'Study the existence of weak solutions to the original problem using the following relaxed version $$-\operatorname{div}(\zeta A\mathbf{e}(\mathbf{u}))+\varepsilon\mathbf{u}=\mathbf{f}\qquad\text{in }\Omega_T.$$'
+      - title: "Investigating the strain tensor"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'Find out whether the strain tensor $\mathbf{e}(\mathbf{u})=\{\mathbf{e}_{ij}/\mathbf{u}\}$ with $$\mathbf{e}_{ij}(\mathbf{u}) = \frac{1}{2}\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right),\qquad\forall i,j=1,\dots,N$$ possesses the high integrability property, $|\mathbf{e}(\mathbf{u})|\in L^{2(1+\delta)}$ for some $\delta>0$.'
+      - title: "Existence of an optimal control"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'Establish the existence of an optimal control provided the damage source function takes the form $$\phi(\mathbf{e}(\mathbf{u}),\zeta) = -\lambda_D\left(\frac{1-\zeta}{\zeta}\right)-\frac{1}{2}\lambda_u\mathbf{e}(\mathbf{u})\cdot\mathbf{e}(\mathbf{u})+\lambda_w.$$'
+      - title: "Controls in the limit of vanishing smoothing"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'Find out whether sustainable controls can be attained in the limit as $\varepsilon\to0$ using the following relaxed version of the first equation $$-\operatorname{div}((\zeta)_\varepsilon A\mathbf{e}(\mathbf{u}))=\mathbf{f}\qquad\text{in }\Omega_T,$$ where $(\cdot)_\varepsilon$ stands for the Steklov smoothing operator.'
+      - title: "Existence of a control"
+        contact: '<a href="mailto:p.kogut@i.ua" class="link">Peter Kogut</a>'
+        goal: 'It is unknown whether there exists a control $f\in\mathcal{F}_{ad}$ such that the corresponding solutions $(\zeta,\mathbf{u})$ satisfy the equations $$\begin{aligned}-\operatorname{div}(\zeta A\mathbf{e}(\mathbf{u})) &= \mathbf{f},\\\zeta''-\kappa\Delta\zeta &= \phi(\mathbf{e}(\mathbf{u}),\zeta)\end{aligned}$$ in the sense of $L^2(Q_T)$.'
+    - topic: "Exploiting PINNs for solving complex free boundary problems"
+      problems:
+      - title: "Error estimates for PINNs"
+        contact: trombetti
+        goal: "Find error estimates for PINNs for more complex problems, elliptic problems like for instance Bernoulli, or even evolutionary PDEs."
+      - title: "PINNs containing domain information"
+        contact: trombetti
+        goal: "Work out a new type of PINNs where the neural network provides not only the function (solution to the PDE) but also information on the domain."
 - number: 3
   title: "Hybrid and Data-driven modelling"
   leader: flasskamp

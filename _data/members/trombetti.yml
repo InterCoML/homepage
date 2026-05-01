@@ -5,3 +5,4 @@ mail: "cristina@unina.it"
 city: "Napoli"
 lat: 40.8518
 lng: 14.2681
+wgs: [1, 3]

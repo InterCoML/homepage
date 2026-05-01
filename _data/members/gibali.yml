@@ -5,3 +5,4 @@ mail: "avivgi@hit.ac.il"
 city: "Holon"
 lat: 32.0114
 lng: 34.7748
+wgs: [1, 2]
