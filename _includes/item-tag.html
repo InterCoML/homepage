@@ -1,0 +1,21 @@
+{% comment %}
+  Renders a colored tag badge for a news or dissemination item.
+  Usage: {% include item-tag.html item=some_item %}
+  - news items get "News" (blue) if expiry-date >= today, else "Activity" (orange)
+  - dissemination items get "Article" (green)
+{% endcomment %}
+{% if include.item.collection == "news" %}
+  {% if include.item.expiry-date %}
+    {% assign _expiry = include.item.expiry-date | date: "%Y%m%d" %}
+  {% else %}
+    {% assign _expiry = include.item.date | date: "%Y%m%d" %}
+  {% endif %}
+  {% assign _today = site.time | date: "%Y%m%d" %}
+  {% if _expiry >= _today %}
+    <span class="tag tag-news">News</span>
+  {% else %}
+    <span class="tag tag-activity">Activity</span>
+  {% endif %}
+{% elsif include.item.collection == "dissemination" %}
+  <span class="tag tag-dissemination">Article</span>
+{% endif %}

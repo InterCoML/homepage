@@ -2,6 +2,7 @@
 layout: dissemination
 title: "Interactive Adaptive Model Hierarchy for Parametric Optimal Control"
 date: 2026-04-07
+wg: 2
 short-description: "An interactive demonstration of an adaptive model hierarchy combining reduced order models and machine learning surrogates to efficiently solve parametrized optimal control problems."
 plotly: true
 image: "model-hierarchy-preview.svg"

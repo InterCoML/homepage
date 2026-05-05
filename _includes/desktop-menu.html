@@ -11,14 +11,22 @@
     <div class="mobile-menu-dropdown">
       <a href="{{ site.baseUrl }}/">Home</a>
       <a href="{{ site.baseUrl }}/about">About</a>
-      <a href="{{ site.baseUrl }}/working-groups">Working Groups</a>
+      <details class="mobile-submenu">
+        <summary>Working Groups</summary>
+        <a href="{{ site.baseUrl }}/working-groups" class="mobile-sub-item">Overview</a>
+        {% for wg in site.data.working_groups %}
+          <a href="{{ site.baseUrl }}/wg{{ wg.number }}" class="mobile-sub-item">WG {{ wg.number }} - {{ wg.title }}</a>
+        {% endfor %}
+      </details>
       <a href="{{ site.baseUrl }}/activities">Activities</a>
       <a href="{{ site.baseUrl }}/news">News</a>
       <a href="{{ site.baseUrl }}/dissemination">Dissemination</a>
-      <span class="mobile-menu-label">Organisation</span>
-      <a href="{{ site.baseUrl }}/action-leaders" class="mobile-sub-item">Action Leaders</a>
-      <a href="{{ site.baseUrl }}/core-group" class="mobile-sub-item">Core Group</a>
-      <a href="{{ site.baseUrl }}/mc-members" class="mobile-sub-item">Management Committee</a>
+      <details class="mobile-submenu">
+        <summary>Organisation</summary>
+        <a href="{{ site.baseUrl }}/action-leaders" class="mobile-sub-item">Action Leaders</a>
+        <a href="{{ site.baseUrl }}/core-group" class="mobile-sub-item">Core Group</a>
+        <a href="{{ site.baseUrl }}/mc-members" class="mobile-sub-item">Management Committee</a>
+      </details>
     </div>
   </div>
   <div class="desktop-menu">
@@ -31,8 +39,21 @@
       <li class="nav-item{% if page.url == '/about/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/about">About</a>
       </li>
-      <li class="nav-item{% if page.url == '/working-groups/' %} nav-active{% endif %}">
-        <a href="{{ site.baseUrl }}/working-groups">Working Groups</a>
+      {% assign wg_active = false %}
+      {% if page.url == '/working-groups/' %}{% assign wg_active = true %}{% endif %}
+      {% for wg in site.data.working_groups %}
+        {% capture wg_url %}/wg{{ wg.number }}/{% endcapture %}
+        {% if page.url == wg_url %}{% assign wg_active = true %}{% endif %}
+      {% endfor %}
+      <li class="nav-item nav-dropdown{% if wg_active %} nav-active{% endif %}">
+        <a href="javascript:void(0)">Working Groups</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="{{ site.baseUrl }}/working-groups"{% if page.url == '/working-groups/' %} class="nav-dropdown-active"{% endif %}>Overview</a></li>
+          {% for wg in site.data.working_groups %}
+            {% capture wg_url %}/wg{{ wg.number }}/{% endcapture %}
+            <li><a href="{{ site.baseUrl }}/wg{{ wg.number }}"{% if page.url == wg_url %} class="nav-dropdown-active"{% endif %}>WG {{ wg.number }} - {{ wg.title }}</a></li>
+          {% endfor %}
+        </ul>
       </li>
       <li class="nav-item{% if page.url == '/activities/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/activities">Activities</a>

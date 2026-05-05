@@ -17,11 +17,8 @@ body {
 h1, h2, h3 {
   font-family: $headerFont;
   color: $mainBlue;
-  margin-bottom: 0;
-}
-
-h2, h3 {
   margin-top: $h2-spacing;
+  margin-bottom: 0;
 }
 
 h4 {
@@ -152,6 +149,27 @@ hr {
 
 .tag-activity {
   background-color: #e67e22;
+}
+
+.related-items-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+.wg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card img {

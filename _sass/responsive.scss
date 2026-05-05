@@ -162,6 +162,7 @@ html, body {
   }
 
   .mobile-menu-dropdown a {
+    display: block;
     padding: 12px;
     text-decoration: none;
     color: $mainBlue;
@@ -176,6 +177,37 @@ html, body {
   .mobile-menu-dropdown .mobile-sub-item {
     padding-left: 30px;
     font-size: 16px;
+  }
+
+  .mobile-menu-dropdown .mobile-submenu {
+    border-top: 1px solid $mainGray;
+  }
+
+  .mobile-menu-dropdown .mobile-submenu summary {
+    padding: 12px;
+    color: $mainBlue;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu-dropdown .mobile-submenu summary::after {
+    content: " \25BC";
+    font-size: 0.7em;
+    color: $mainGray;
+  }
+
+  .mobile-menu-dropdown .mobile-submenu[open] summary::after {
+    content: " \25B2";
+  }
+
+  .mobile-menu-dropdown .mobile-submenu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu-dropdown .mobile-submenu .mobile-sub-item {
+    border-top: 1px solid $mainGray;
   }
 
   .mobile-menu-dropdown .mobile-menu-label {

@@ -5,39 +5,26 @@ permalink: /:basename/
 
 <div class="sub-container">
   <h1>Working Groups</h1>
-  <p>The COST Action is organized in five working groups described in more detail below.</p>
+  <p>The COST Action is organized in five working groups described briefly below.</p>
   <p>
     You want to become part of one or more working groups of the Action and receive information about upcoming events?
     Just create an e-COST account and apply for membership in the working groups you are interested in!
   </p>
   <a class="button" href="https://e-services.cost.eu/action/CA24136/working-groups/apply" target="_blank" rel="noopener noreferrer">Apply here</a>
-  
-  <div class="tabs-container">
+
+  <div class="cards-container" style="margin-top: 30px;">
     {% for wg in site.data.working_groups %}
-    <input type="radio" id="tab-{{ wg.number }}" name="working-group-tab"{% if wg.number == 1 %} checked{% endif %}>
-    <label for="tab-{{ wg.number }}" class="tab-label">WG {{ wg.number }}<br><div class="tab-sublabel">{{ wg.title }}</div></label>
-      <div class="tab-content">
-        <h1>WG {{ wg.number }} - {{ wg.title }}</h1>
-        <hr>
-        <h4>Overview</h4>
+      <div class="card wg-overview-card">
+        <h3>WG {{ wg.number }}</h3>
+        <h4>{{ wg.title }}</h4>
         <p>{{ wg.description }}</p>
-        <hr>
-        <h4>Tasks</h4>
-        <p>
-          <ol>
-            {% for task in wg.tasks %}
-              <li>{{ task }}</li>
-            {% endfor %}
-          </ol>
+        {% assign leader = site.data.members[wg.leader] %}
+        {% assign coleader = site.data.members[wg.co-leader] %}
+        <p class="wg-overview-leaders">
+          <strong>Leader:</strong> {{ leader.name }}<br>
+          <strong>Co-Leader:</strong> {{ coleader.name }}
         </p>
-        <hr>
-        <h3>Working group leaders:</h3>
-        <div class="cards-container">
-          {% assign member = wg.leader %}
-          {% include member-card.html headline="Leader" %}
-          {% assign member = wg.co-leader %}
-          {% include member-card.html headline="Co-Leader" %}
-        </div>
+        <a class="button" href="{{ site.baseUrl }}/wg{{ wg.number }}">More about WG {{ wg.number }}</a>
       </div>
     {% endfor %}
   </div>

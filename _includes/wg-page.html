@@ -1,0 +1,105 @@
+{% comment %}
+  Renders the full content for an individual working group page.
+  Requires page.wg_number to be set in the page front matter.
+{% endcomment %}
+
+{% assign wg = site.data.working_groups | where: "number", page.wg_number | first %}
+
+<div class="sub-container">
+  <div class="wg-header">
+    <h1>WG {{ wg.number }} - {{ wg.title }}</h1>
+    <a class="button" href="https://e-services.cost.eu/action/CA24136/working-groups/apply" target="_blank" rel="noopener noreferrer">Apply to join</a>
+  </div>
+
+  <hr>
+  <h4>Overview</h4>
+  <p>{{ wg.description }}</p>
+
+  <hr>
+  <h4>Tasks</h4>
+  <ol>
+    {% for task in wg.tasks %}
+      <li>{{ task }}</li>
+    {% endfor %}
+  </ol>
+
+  <hr>
+  <h3>Working group leaders</h3>
+  <div class="cards-container">
+    {% assign member = wg.leader %}
+    {% include member-card.html headline="Leader" %}
+    {% assign member = wg.co-leader %}
+    {% include member-card.html headline="Co-Leader" %}
+  </div>
+
+  {% if wg.open-problems %}
+    <hr>
+    <h3>Open problems (sorted by topic)</h3>
+    {% for topic in wg.open-problems %}
+      <h4>{{ topic.topic }}</h4>
+      <table class="open-problems-table">
+        <colgroup>
+          <col style="width: 75%;">
+          <col style="width: 25%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Title and details</th>
+            <th>Contact person</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for problem in topic.problems %}
+            <tr>
+              <td>
+                <details>
+                  <summary>{{ problem.title }}</summary>
+                  <br>
+                  {% if problem.goal %}<i>Goal:</i> {{ problem.goal }}<br>{% endif %}
+                  {% if problem.skills %}<i>Required skills:</i> {{ problem.skills }}<br>{% endif %}
+                  {% if problem.details %}<i>Details:</i> {{ problem.details }}{% endif %}
+                </details>
+              </td>
+              <td>
+                {% assign contact_member = site.data.members[problem.contact] %}
+                {% if contact_member %}
+                  {% if contact_member.mail %}
+                    <a href="mailto:{{ contact_member.mail }}" class="link">{{ contact_member.name }}</a>
+                  {% else %}
+                    {{ contact_member.name }}
+                  {% endif %}
+                {% else %}
+                  {{ problem.contact }}
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+  {% endif %}
+
+  {% assign all_items = site.news | concat: site.dissemination %}
+  {% assign related = "" | split: "" %}
+  {% for item in all_items %}
+    {% if item.wg == page.wg_number %}
+      {% assign related = related | push: item %}
+    {% elsif item.wgs and item.wgs contains page.wg_number %}
+      {% assign related = related | push: item %}
+    {% endif %}
+  {% endfor %}
+  {% assign related = related | sort: 'date' | reverse %}
+
+  {% if related.size > 0 %}
+    <hr>
+    <h3>Related news and activities</h3>
+    <ul>
+      {% for item in related %}
+        <li>
+          <a href="{{ item.url | prepend: site.baseUrl }}" class="link">{{ item.title }}</a>
+          <span style="color:#666; font-size:0.9em;"> &mdash; {{ item.date | date: "%-d %B %Y" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

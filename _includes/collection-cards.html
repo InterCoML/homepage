@@ -49,21 +49,7 @@
         {% if posting.date %}
           <h5>
             {{ posting.date | date: "%-d %B %Y" }}
-            {% if posting.collection == "news" %}
-              {% if posting.expiry-date %}
-                {% assign expiry = posting.expiry-date | date: "%Y%m%d" %}
-              {% else %}
-                {% assign expiry = posting.date | date: "%Y%m%d" %}
-              {% endif %}
-              {% assign today = site.time | date: "%Y%m%d" %}
-              {% if expiry >= today %}
-                · <span class="tag tag-news">News</span>
-              {% else %}
-                · <span class="tag tag-activity">Activity</span>
-              {% endif %}
-            {% elsif posting.collection == "dissemination" %}
-              · <span class="tag tag-dissemination">Article</span>
-            {% endif %}
+            · {% include item-tag.html item=posting %}
           </h5>
         {% endif %}
         <h3>{{ posting.title }}</h3>
