@@ -7,3 +7,4 @@ role: "Leader WG 4"
 city: "Podgorica"
 lat: 42.4304
 lng: 19.2594
+wgs: [1, 4, 5]

@@ -172,6 +172,45 @@ hr {
   flex-wrap: wrap;
 }
 
+.wg-members-list {
+  li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+}
+
+.wg-members-details {
+  margin-top: $h2-spacing;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    h3 {
+      display: inline;
+
+      &::after {
+        content: " \25BC";
+        font-size: 0.7em;
+        color: $mainGray;
+      }
+    }
+  }
+
+  &[open] summary h3::after {
+    content: " \25B2";
+  }
+}
+
+.wg-member-affiliation {
+  color: #666;
+  font-size: 0.9em;
+}
+
 .card img {
   max-width: 100%;
   max-height: 200px;

@@ -5,3 +5,4 @@ mail: "rasa.smidtaite@ktu.lt"
 city: "Kaunas"
 lat: 54.8985
 lng: 23.9036
+wgs: [1, 5]

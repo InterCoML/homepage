@@ -5,3 +5,4 @@ image: "bogoevska.png"
 city: "Skopje"
 lat: 41.9981
 lng: 21.4254
+wgs: [3, 4]

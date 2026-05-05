@@ -5,3 +5,4 @@ mail: "petrosstefaneas@gmail.com"
 city: "Athens"
 lat: 37.9838
 lng: 23.7275
+wgs: [1, 2, 3, 4, 5]

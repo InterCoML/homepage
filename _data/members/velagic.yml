@@ -5,3 +5,4 @@ mail: "jvelagic@etf.unsa.ba"
 city: "Sarajevo"
 lat: 43.8563
 lng: 18.4131
+wgs: [1, 2]

@@ -5,3 +5,4 @@ mail: "Lmper@ualg.pt"
 city: "Faro"
 lat: 37.0194
 lng: -7.9322
+wgs: [4]

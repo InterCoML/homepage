@@ -5,3 +5,4 @@ mail: "georges.schutz@rtc4water.com"
 city: "Roeser"
 lat: 49.5442
 lng: 6.1466
+wgs: [2, 3, 4]

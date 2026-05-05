@@ -5,3 +5,4 @@ mail: "markus.abel@ambrosys.de"
 city: "Potsdam"
 lat: 52.3906
 lng: 13.0645
+wgs: [1, 3]

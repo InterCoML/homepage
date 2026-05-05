@@ -5,3 +5,4 @@ mail: "juri.belikov@taltech.ee"
 city: "Tallinn"
 lat: 59.437
 lng: 24.7536
+wgs: [1, 2, 3, 4, 5]

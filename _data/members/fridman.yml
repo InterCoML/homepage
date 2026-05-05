@@ -5,3 +5,4 @@ mail: "emilia@tauex.tau.ac.il"
 city: "Tel Aviv"
 lat: 32.0853
 lng: 34.7818
+wgs: [1]

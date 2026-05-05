@@ -4,3 +4,4 @@ address: "Sveuciliste U Dubrovniku, Branitelja Dubrovnika 41, 20000 Dubrovnik, C
 mail: "mlazar@unidu.hr"
 image: "lazar.jpg"
 role: "Action Chair"
+wgs: [1, 2, 3, 4, 5]

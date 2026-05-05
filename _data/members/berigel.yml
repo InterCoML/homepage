@@ -5,3 +5,4 @@ mail: "berigel@ktu.edu.tr"
 city: "Trabzon"
 lat: 41.0027
 lng: 39.7168
+wgs: [4]

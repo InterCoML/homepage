@@ -5,3 +5,4 @@ mail: "jteichma@math.ethz.ch"
 city: "Zürich"
 lat: 47.3769
 lng: 8.5417
+wgs: [1, 2]

@@ -5,3 +5,4 @@ mail: "mohammadjavad.zeinali@ucd.ie"
 city: "Dublin"
 lat: 53.3498
 lng: -6.2603
+wgs: [2, 3]

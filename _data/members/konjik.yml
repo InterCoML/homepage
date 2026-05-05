@@ -7,3 +7,4 @@ role: "Action Vice-Chair"
 city: "Novi Sad"
 lat: 45.2671
 lng: 19.8335
+wgs: [1, 2, 3, 4, 5]

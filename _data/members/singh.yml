@@ -4,3 +4,4 @@ mail: "rs.digi@cbs.dk"
 city: "Frederiksberg"
 lat: 55.6761
 lng: 12.5683
+wgs: [1, 3, 4, 5]

@@ -5,3 +5,4 @@ mail: "pavol.kuchar@uniza.sk"
 city: "Žilina"
 lat: 49.2234
 lng: 18.7394
+wgs: [4, 5]

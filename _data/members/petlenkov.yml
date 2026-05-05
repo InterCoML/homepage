@@ -5,3 +5,4 @@ mail: "eduard.petlenkov@ttu.ee"
 city: "Tallinn"
 lat: 59.437
 lng: 24.7536
+wgs: [2, 3, 4]

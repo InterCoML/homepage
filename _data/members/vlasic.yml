@@ -4,3 +4,4 @@ mail: "mara.vlasic@unidu.hr"
 city: "Dubrovnik"
 lat: 42.6507
 lng: 18.0944
+wgs: [2, 5]

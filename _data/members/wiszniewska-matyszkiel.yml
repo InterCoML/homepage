@@ -5,3 +5,4 @@ mail: "agnese@mimuw.edu.pl"
 city: "Warsaw"
 lat: 52.2297
 lng: 21.0122
+wgs: [1, 2, 3]

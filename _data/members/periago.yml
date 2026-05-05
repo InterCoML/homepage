@@ -7,3 +7,4 @@ role: "Co-Leader WG 2"
 city: "Cartagena"
 lat: 37.6057
 lng: -0.9913
+wgs: [1, 2]

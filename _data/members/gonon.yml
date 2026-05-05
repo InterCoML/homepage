@@ -5,3 +5,4 @@ mail: "lukas.gonon@unisg.ch"
 city: "St. Gallen"
 lat: 47.4245
 lng: 9.3767
+wgs: [1, 2]
