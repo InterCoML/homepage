@@ -91,19 +91,21 @@
 
   {% if wg_members.size > 0 %}
     <hr>
-    <h3>Working group members ({{ wg_members.size }})</h3>
-    <ul class="wg-members-list">
-      {% for m in wg_members %}
-        <li>
-          {% if m.mail %}
-            <a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>
-          {% else %}
-            <strong>{{ m.name }}</strong>
-          {% endif %}
-          {% if m.address %}<span class="wg-member-affiliation"> &mdash; {{ m.address }}</span>{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+    <details class="wg-members-details">
+      <summary><h3>Working group members ({{ wg_members.size }})</h3></summary>
+      <ul class="wg-members-list">
+        {% for m in wg_members %}
+          <li>
+            {% if m.mail %}
+              <a href="mailto:{{ m.mail }}" class="link">{{ m.name }}</a>
+            {% else %}
+              <strong>{{ m.name }}</strong>
+            {% endif %}
+            {% if m.address %}<span class="wg-member-affiliation"> &mdash; {{ m.address }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
   {% endif %}
 
   {% assign all_items = site.news | concat: site.dissemination %}
