@@ -1,4 +1,8 @@
 name: "Maria Filipkovska"
 mail: "maria.filipk@gmail.com"
 address: "B.Verkin Institute for Low Temperature Physics and Engineering of the National Academy of Sciences of Ukraine, Ukraine"
+image: "filipkovska.jpg"
+city: "Kharkiv"
+lat: 50.0020
+lng: 36.3074
 wgs: [2, 3]
