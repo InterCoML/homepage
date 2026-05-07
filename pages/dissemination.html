@@ -3,6 +3,62 @@ title: Dissemination
 permalink: /:basename/
 ---
 
-<h1>Dissemination</h1>
+<div class="sub-container">
+  <h1>Dissemination</h1>
 
-{% include collection-cards.html collections="dissemination" %}
+  <h2>Acknowledgement</h2>
+  <p>
+    In case you publish work with direct or indirect support by the COST Action,
+    please include the following line of acknowledgement:
+  </p>
+  <blockquote class="acknowledgement-box">
+    <span id="acknowledgement-text">
+      This article/publication is based upon work from COST Action {{ site.actionAbbreviation }}, {{ site.actionNumber }},
+      supported by COST (European Cooperation in Science and Technology).
+    </span>
+    <button id="copy-acknowledgement" class="button" type="button" title="Copy to clipboard">
+      <i class="fa fa-copy" aria-hidden="true"></i>
+      <span class="copy-label">Copy</span>
+    </button>
+  </blockquote>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var btn = document.getElementById("copy-acknowledgement");
+      var box = document.getElementById("acknowledgement-text");
+      if (!btn || !box) return;
+      var label = btn.querySelector(".copy-label");
+      var defaultLabel = label.textContent;
+
+      btn.addEventListener("click", function () {
+        var text = box.textContent.replace(/\s+/g, " ").trim();
+        navigator.clipboard.writeText(text).then(function () {
+          label.textContent = "Copied!";
+          setTimeout(function () { label.textContent = defaultLabel; }, 2000);
+        }).catch(function () {
+          label.textContent = "Copy failed";
+          setTimeout(function () { label.textContent = defaultLabel; }, 2000);
+        });
+      });
+    });
+  </script>
+
+  <h2>Resources</h2>
+  <p>The following resources are available for use in publications, presentations and dissemination materials:</p>
+  <div class="cards-container resource-cards">
+    <div class="card resource-card">
+      <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Action Logo</h3>
+      <p>The official logo of the COST Action {{ site.actionAbbreviation }}.</p>
+      <a class="button" href="{{ site.baseUrl }}/assets/images/logo_intercoml.png" target="_blank" rel="noopener noreferrer">Download PNG</a>
+    </div>
+    <div class="card resource-card">
+      <h3><i class="fa fa-file-code-o" aria-hidden="true"></i> Beamer Template</h3>
+      <p>A LaTeX beamer template for talks supported by the Action.</p>
+      <a class="button" href="{{ site.baseUrl }}/files/InterCoMLBeamerTemplate.zip" target="_blank" rel="noopener noreferrer">Download ZIP</a>
+    </div>
+  </div>
+
+  <h2>Blog posts</h2>
+
+  {% include collection-cards.html collections="dissemination" %}
+</div>
