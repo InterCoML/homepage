@@ -1,7 +1,7 @@
 ---
 layout: news
 title: "InterCoML Conference: NextGen Synergy"
-date: 2026-01-22
+date: 2026-05-11
 expiry-date: 2026-05-20
 short-description: "Celebrating the success of the inaugural conference of InterCoML."
 authors:
