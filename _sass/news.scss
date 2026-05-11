@@ -1,7 +1,20 @@
 @use "variables" as *;
 
-.news-img-large {
+.news-img-figure {
   max-width: 300px;
   float: right;
   margin: 30px;
+}
+
+.news-img-large {
+  max-width: 100%;
+  display: block;
+}
+
+.news-img-credit {
+  font-size: 0.75em;
+  color: #666;
+  margin-top: 4px;
+  text-align: center;
+  font-style: italic;
 }
