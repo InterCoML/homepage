@@ -8,6 +8,7 @@ authors:
   - flasskamp
   - gruene
 image: "campusSaarland.jpg"
+image-credit: "Campus 2045 Illustration Sommer | Reinventing Society, loomn & DG HochN (CC BY NC SA 4.0)"
 ---
 
 <p>
