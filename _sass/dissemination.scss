@@ -71,6 +71,19 @@
   border-radius: 0;
 }
 
+.resource-card-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resource-note {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #666;
+}
+
 @media (max-width: 700px) {
   .resource-cards {
     grid-template-columns: 1fr;
