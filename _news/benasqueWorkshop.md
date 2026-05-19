@@ -1,7 +1,8 @@
 ---
 layout: news
 title: "Thematic session within the XI Workshop-Summer School 2026: Partial differential equations, optimal design and numerics"
-date: 2026-06-01
+date: 2026-05-19
+expiry-date: 2026-06-02
 wgs: [1, 2]
 short-description: "We welcome applications to our session within the XI Workshop-Summer School 2026: Partial differential equations, optimal design and numerics.<br/><b>Call deadline: 01.06.2026</b>"
 ---
