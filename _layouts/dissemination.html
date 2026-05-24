@@ -7,7 +7,12 @@ layout: default
   <h3>Posting date: {{ page.date | date: "%-d %B %Y" }}</h3>
 {% endif %}
 {% if page.image %}
-  <img class="news-img-large" src="{{ site.baseUrl }}/images/dissemination/{{ page.image }}" />
+  <figure class="news-img-figure">
+    <img class="news-img-large" src="{{ site.baseUrl }}/images/dissemination/{{ page.image }}" />
+    {% if page.image-credit %}
+      <figcaption class="news-img-credit">{{ page.image-credit }}</figcaption>
+    {% endif %}
+  </figure>
 {% endif %}
 {{ page.content }}
 {% if page.authors %}
