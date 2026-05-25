@@ -1,0 +1,30 @@
+# Job offers and internships shown on the /jobs page.
+#
+# Schema for `positions`:
+#   - title: "Postdoc in ML for Control"
+#     institution: "University X"
+#     date: 2026-05-15          # posting date (required)
+#     deadline: 2026-08-31      # optional; if past, the offer moves to "Expired offers"
+#     link: "https://..."       # link to the official posting
+#     abstract: "..."           # optional short description (rendered in <details>)
+#
+# Schema for `internships`:
+#   - title: "ML Engineering Intern (6 months)"
+#     company: "Company Y"
+#     date: 2026-05-10
+#     deadline: 2026-07-01      # optional; if past, moves to "Expired offers"
+#     link: "https://..."       # optional
+#     description: "..."        # longer free-form text (HTML allowed)
+#     requirements:             # optional bullet list
+#       - "..."
+#     contact: "..."            # optional contact info (HTML allowed)
+
+positions:
+  - title: "Post-doc position (1,5 years) at University of Dubrovnik"
+    institution: "University of Dubrovnik, Dubrovnik, Croatia"
+    date: 2026-05-18
+    deadline: 2026-07-01
+    link: "https://conduction.unidu.hr/postdoc-position/"
+    abstract: "Post-doc position (1,5 years) at University of Dubrovnik, within Conduction (Optimal control and model reduction for evolution and data driven problems) project and aligned with the European COST Action CA24136 - Interactions between Control Theory and Machine Learning (InterCoML). The candidate will work on problems related to the Work packages 1 and 2 (Optimal control problems for evolution systems. Spectral analysis of Gramian operators, Lyapunov and Riccati equation) of the project. Special intention will be given to interactions among control theory and machine learning. He/she will be expected to work effectively within the project team, to have the ability to develop and apply new concepts, to write numerical codes and run the simulations, as well as to write clearly and concisely for publication."
+
+internships: []

@@ -1,0 +1,107 @@
+@use "variables" as *;
+
+.job-list {
+  padding-left: 1.5em;
+
+  .job-item {
+    margin-bottom: 12px;
+    line-height: 1.5;
+
+    &.expired {
+      color: #666;
+    }
+  }
+
+  .job-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    align-items: baseline;
+  }
+
+  .job-date {
+    color: #666;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  .job-title {
+    font-weight: bold;
+  }
+
+  .job-institution {
+    color: $altBlue;
+  }
+
+  .job-deadline {
+    color: #666;
+    font-size: 0.9em;
+  }
+
+  .job-abstract {
+    margin-top: 4px;
+
+    summary {
+      cursor: pointer;
+      color: $altBlue;
+      font-size: 0.9em;
+    }
+
+    p {
+      margin: 8px 0 0 0;
+    }
+  }
+}
+
+.internship-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.internship-card {
+  text-align: left;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .internship-company {
+    color: $altBlue;
+    margin: 4px 0 8px 0;
+  }
+
+  .internship-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0 0 12px 0;
+  }
+}
+
+.expired-offers {
+  margin-top: 2rem;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    h3 {
+      display: inline;
+
+      &::after {
+        content: " \25BC";
+        font-size: 0.7em;
+        color: $mainGray;
+      }
+    }
+  }
+
+  &[open] summary h3::after {
+    content: " \25B2";
+  }
+}
