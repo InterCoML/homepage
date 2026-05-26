@@ -1,0 +1,153 @@
+---
+title: Jobs
+permalink: /:basename/
+---
+
+{% assign today = site.time | date: "%Y%m%d" %}
+
+{% comment %} Split positions into active and expired {% endcomment %}
+{% assign active_positions = "" | split: "" %}
+{% assign expired_positions = "" | split: "" %}
+{% for p in site.data.job_offers.positions %}
+  {% if p.deadline %}
+    {% assign dl = p.deadline | date: "%Y%m%d" %}
+  {% else %}
+    {% assign dl = "99999999" %}
+  {% endif %}
+  {% if dl >= today %}
+    {% assign active_positions = active_positions | push: p %}
+  {% else %}
+    {% assign expired_positions = expired_positions | push: p %}
+  {% endif %}
+{% endfor %}
+{% assign active_positions = active_positions | sort: 'date' | reverse %}
+{% assign expired_positions = expired_positions | sort: 'date' | reverse %}
+
+{% comment %} Split internships into active and expired {% endcomment %}
+{% assign active_internships = "" | split: "" %}
+{% assign expired_internships = "" | split: "" %}
+{% for i in site.data.job_offers.internships %}
+  {% if i.deadline %}
+    {% assign dl = i.deadline | date: "%Y%m%d" %}
+  {% else %}
+    {% assign dl = "99999999" %}
+  {% endif %}
+  {% if dl >= today %}
+    {% assign active_internships = active_internships | push: i %}
+  {% else %}
+    {% assign expired_internships = expired_internships | push: i %}
+  {% endif %}
+{% endfor %}
+{% assign active_internships = active_internships | sort: 'date' | reverse %}
+{% assign expired_internships = expired_internships | sort: 'date' | reverse %}
+
+<div class="sub-container">
+  <h1>Jobs</h1>
+  <p>
+    Job offers and internships shared by members of the COST Action.
+    To submit a position or internship for inclusion on this page, please contact the
+    <a href="{{ site.baseUrl }}/action-leaders" class="link">Action leaders</a>.
+  </p>
+
+  <h2>Open positions</h2>
+  {% if active_positions.size > 0 %}
+    <ol class="job-list">
+      {% for p in active_positions %}
+        <li class="job-item">
+          <div class="job-header">
+            <span class="job-date">{{ p.date | date: "%-d %B %Y" }}</span>
+            <span class="job-title">
+              {% if p.link %}
+                <a href="{{ p.link }}" target="_blank" rel="noopener noreferrer" class="link">{{ p.title }}</a>
+              {% else %}
+                {{ p.title }}
+              {% endif %}
+            </span>
+            {% if p.institution %}<span class="job-institution">&mdash; {{ p.institution }}</span>{% endif %}
+            {% if p.deadline %}<span class="job-deadline">(deadline: {{ p.deadline | date: "%-d %B %Y" }})</span>{% endif %}
+          </div>
+          {% if p.abstract %}
+            <details class="job-abstract">
+              <summary>Abstract</summary>
+              <p>{{ p.abstract }}</p>
+            </details>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p><em>No open positions at the moment.</em></p>
+  {% endif %}
+
+  <h2>Internships offered by our industrial partners</h2>
+  {% if active_internships.size > 0 %}
+    <div class="internship-list">
+      {% for i in active_internships %}
+        <div class="card internship-card">
+          <h3>{{ i.title }}</h3>
+          {% if i.company %}<p class="internship-company"><strong>{{ i.company }}</strong></p>{% endif %}
+          <p class="internship-meta">
+            Posted {{ i.date | date: "%-d %B %Y" }}
+            {% if i.deadline %} &middot; Apply by {{ i.deadline | date: "%-d %B %Y" }}{% endif %}
+          </p>
+          {% if i.description %}<p>{{ i.description }}</p>{% endif %}
+          {% if i.requirements %}
+            <p><strong>Requirements:</strong></p>
+            <ul>
+              {% for req in i.requirements %}<li>{{ req }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+          {% if i.contact %}<p><strong>Contact:</strong> {{ i.contact }}</p>{% endif %}
+          {% if i.link %}<a class="button" href="{{ i.link }}" target="_blank" rel="noopener noreferrer">More information</a>{% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p><em>No internships available at the moment.</em></p>
+  {% endif %}
+
+  {% assign total_expired = expired_positions.size | plus: expired_internships.size %}
+  {% if total_expired > 0 %}
+    <details class="expired-offers">
+      <summary><h3>Expired offers ({{ total_expired }})</h3></summary>
+      {% if expired_positions.size > 0 %}
+        <h4>Positions</h4>
+        <ol class="job-list">
+          {% for p in expired_positions %}
+            <li class="job-item expired">
+              <span class="job-date">{{ p.date | date: "%-d %B %Y" }}</span>
+              <span class="job-title">
+                {% if p.link %}
+                  <a href="{{ p.link }}" target="_blank" rel="noopener noreferrer" class="link">{{ p.title }}</a>
+                {% else %}
+                  {{ p.title }}
+                {% endif %}
+              </span>
+              {% if p.institution %}<span class="job-institution">&mdash; {{ p.institution }}</span>{% endif %}
+              {% if p.deadline %}<span class="job-deadline">(deadline was {{ p.deadline | date: "%-d %B %Y" }})</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+      {% if expired_internships.size > 0 %}
+        <h4>Internships</h4>
+        <ol class="job-list">
+          {% for i in expired_internships %}
+            <li class="job-item expired">
+              <span class="job-date">{{ i.date | date: "%-d %B %Y" }}</span>
+              <span class="job-title">
+                {% if i.link %}
+                  <a href="{{ i.link }}" target="_blank" rel="noopener noreferrer" class="link">{{ i.title }}</a>
+                {% else %}
+                  {{ i.title }}
+                {% endif %}
+              </span>
+              {% if i.company %}<span class="job-institution">&mdash; {{ i.company }}</span>{% endif %}
+              {% if i.deadline %}<span class="job-deadline">(deadline was {{ i.deadline | date: "%-d %B %Y" }})</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+    </details>
+  {% endif %}
+</div>
