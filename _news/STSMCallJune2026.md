@@ -25,7 +25,7 @@ image: "mapEuropeConnections.png"
 <h2>What do STSMs provide?</h2>
 <ul>
   <li>Duration: 5 to 90 days (up to 180 days for Early Career Investigators: PhD + <8 years).</li>
-  <li>Maximum grant: EUR 2,000, covering travel, accommodation, subsistence, and project-related costs.</li>
+  <li>Maximum grant: EUR 4,000, covering travel, accommodation, subsistence, and project-related costs.</li>
   <li>Grants are contributions rather than full reimbursements. Differentiated rates may apply according to the cost of living in the host country. In the event of a successful application, a lower amount may be awarded than was requested.</li>
   <li>STSMs may be combined with other funding sources, which must be acknowledged.</li>
 </ul>
