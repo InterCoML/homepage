@@ -1,4 +1,7 @@
 name: "Peter Kogut"
 mail: "peter.i.kogut@gmail.com"
 address: "Oles Honchar Dnipro National University, Ukraine"
+city: "Dnipro"
+lat: 48.4344
+lng: 35.0383
 wgs: [2]
