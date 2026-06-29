@@ -2,6 +2,8 @@
 layout: news
 title: "Kickoff workshop WG 1 - online"
 date: 2026-01-16
+start-date: 2026-01-16
+calendar: true
 wg: 1
 short-description: "Working group 1 had its virtual kickoff workshop on 16 January, 2026."
 authors:

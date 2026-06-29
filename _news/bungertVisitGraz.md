@@ -2,6 +2,8 @@
 layout: news
 title: "Connecting WG1 and WG2"
 date: 2026-01-19
+start-date: 2026-01-19
+calendar: false
 wgs: [1, 2]
 short-description: "Professor Leon Bungert, leader of WG1, visited Hendrik Kleikamp, leader of WG2, in Graz and gave an interesting talk."
 authors:
