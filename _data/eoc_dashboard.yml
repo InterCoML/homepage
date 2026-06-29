@@ -1,0 +1,78 @@
+# Equal Opportunity Dashboard data.
+#
+# The `meta`, `members` and `mc` keys below are AUTO-GENERATED from
+# CA24136-WG-members.csv by scripts/extract-eoc-stats.rb — do not edit
+# them by hand; re-run the script to refresh. Aggregate counts only;
+# no personal data is stored here.
+
+meta:
+  generated: "2026-06-29"
+  source: "CA24136-WG-members.csv"
+
+members:
+  title: "Action Members"
+  subtitle: "Composition of the Action"
+  headline: "191"
+  headline_label: "members across 38 countries"
+  stats:
+    - label: "Women"
+      value: "24.6%"
+      fraction: [47, 191]
+    - label: "ITC"
+      value: "54.5%"
+      fraction: [104, 191]
+    - label: "Young Researchers"
+      value: "55.0%"
+      fraction: [105, 191]
+  note: "Men: 142 (74.3%) · Other / prefer not to say: 2 (1.0%)"
+
+mc:
+  title: "Management Committee"
+  subtitle: "Governance representation"
+  headline: "56"
+  headline_label: "MC members across 33 countries"
+  stats:
+    - label: "Women"
+      value: "30.4%"
+      fraction: [17, 56]
+    - label: "ITC"
+      value: "64.3%"
+      fraction: [36, 56]
+    - label: "Young Researchers"
+      value: "28.6%"
+      fraction: [16, 56]
+  note: "Men: 39 (69.6%)"
+
+# === MANUAL SECTION (edited by hand — preserved when this script re-runs) ===
+
+# Each entry below renders as its own summary box on the dashboard.
+# Add as many entries as you like; provide `fraction: [count, total]` on a stat
+# to draw a bar. These figures are gathered by hand (not available in the CSV).
+
+conference:
+  - title: "Inaugural Conference: NextGen Synergy"
+    subtitle: "Inclusiveness in scientific visibility"
+    headline: "90+"
+    headline_label: "participants across 21 countries"
+    stats:
+      - label: "ITC"
+        value: "17/21"
+        fraction: [17, 21]
+      - label: "Women keynote speakers"
+        value: "1/8"
+        fraction: [1, 8]
+    note: "Hosted in Prague · local chair: Tatiana Valentine Guy · ~50% women as session chairs"
+
+stsm:
+  - title: "STSM Participation"
+    subtitle: "Mobility and career development"
+    headline: "5"
+    headline_label: "STSM applications (1 call)"
+    stats:
+      - label: "ITC involved"
+        value: "4/6"
+        fraction: [4, 6]
+      - label: "Women applicants"
+        value: "2/5"
+        fraction: [2, 5]
+    note: "2 ITC ↔ ITC missions"
