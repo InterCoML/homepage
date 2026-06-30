@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         end: parseDate(e.end || e.start),
         startTime: e.startTime,
         endTime: e.endTime,
+        shortDescription: e.shortDescription,
       };
     })
     .sort(function (a, b) {
@@ -87,12 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
         var titleHtml = e.url
           ? '<a class="link" href="' + e.url + '" target="_blank" rel="noopener noreferrer">' + e.title + "</a>"
           : '<span class="event-calendar__event-title">' + e.title + "</span>";
+        var descHtml = e.shortDescription
+          ? '<details class="event-calendar__desc"><summary>Description</summary>' +
+            '<div class="event-calendar__desc-body">' + e.shortDescription + "</div></details>"
+          : "";
         return (
           '<div class="event-calendar__event">' +
           '<span class="event-calendar__event-date">' + when +
           (past ? ' <span class="event-calendar__badge">past</span>' : "") +
           "</span>" +
           titleHtml +
+          descHtml +
           "</div>"
         );
       })
