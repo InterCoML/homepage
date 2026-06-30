@@ -2,6 +2,7 @@
 layout: news
 title: "Call for Short Term Scientific Missions (STSMs)"
 date: 2026-06-19
+expiry-date: 2026-07-10
 wgs: [1, 2, 3, 4]
 short-description: "The second round of applications for Short Term Scientific Missions (STSMs) is open now!<br/><b>Call deadline: 10.07.2026</b>"
 image: "mapEuropeConnections.png"

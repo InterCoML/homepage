@@ -3,6 +3,9 @@ layout: news
 title: "Workshop on Energy Systems: Control and Machine Learning in Action"
 date: 2026-05-01
 expiry-date: 2026-09-16
+start-date: 2026-09-14
+end-date: 2026-09-15
+calendar: true
 wg: 3
 short-description: "Working group 3 organizes a workshop on <b>Energy Systems</b> in September 2026 in Saarbrücken, Germany. Find more information <a href='https://www.uni-saarland.de/lehrstuhl/flasskamp/workshop-on-energy-systems-control-and-machine-learning-in-action.html' target='_blank' rel='noopener noreferrer' class='link'>here</a>."
 authors:

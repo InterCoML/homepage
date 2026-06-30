@@ -49,6 +49,12 @@ p {
   text-align: center;
 }
 
+// Top-align the welcome columns so the left text stays anchored when the
+// calendar column changes height (e.g. when an event detail panel opens).
+.row--welcome .column {
+  vertical-align: top;
+}
+
 .column ul {
   text-align: left;
 }

@@ -1,0 +1,67 @@
+---
+permalink: /events.ics
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  iCalendar feed of the events shown on the site calendar (news items with
+  `calendar: true` and a `start-date`).
+
+  All-day event:  start-date (+ optional end-date for multi-day).
+  Timed event:    additionally set start-time and end-time ("HH:MM", CET/CEST).
+                  Times are interpreted in the Europe/Berlin time zone.
+{%- endcomment -%}
+{%- assign cal_events = "" | split: "" -%}
+{%- assign has_timed = false -%}
+{%- for item in site.news -%}
+  {%- if item.calendar and item.start-date -%}
+    {%- assign cal_events = cal_events | push: item -%}
+    {%- if item['start-time'] and item['end-time'] -%}{%- assign has_timed = true -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{ site.actionAbbreviation }}//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.actionAbbreviation }} Events
+X-WR-CALDESC:Events of the COST Action {{ site.actionNumber }} ({{ site.actionAbbreviation }})
+COLOR:#39a17f
+X-APPLE-CALENDAR-COLOR:#39A17F
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+{% if has_timed -%}
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+{% endif -%}
+{% for item in cal_events %}{% assign summary = item.title | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign desc = item.short-description | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign link = item.url | prepend: site.baseUrl %}{% assign body = item.content | strip_html | strip %}BEGIN:VEVENT
+UID:intercoml{{ item.url | replace: "/", "-" | append: "@cost-intercoml.unidu.hr" }}
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%SZ" }}
+{% if item['start-time'] and item['end-time'] -%}
+DTSTART;TZID=Europe/Berlin:{{ item['start-date'] | date: "%Y%m%d" }}T{{ item['start-time'] | remove: ":" }}00
+DTEND;TZID=Europe/Berlin:{{ item['end-date'] | default: item['start-date'] | date: "%Y%m%d" }}T{{ item['end-time'] | remove: ":" }}00
+{% else -%}
+DTSTART;VALUE=DATE:{{ item['start-date'] | date: "%Y%m%d" }}
+DTEND;VALUE=DATE:{{ item['end-date'] | default: item['start-date'] | date: "%s" | plus: 86400 | date: "%Y%m%d" }}
+{% endif -%}
+SUMMARY:{{ summary }}
+DESCRIPTION:{{ desc }}{% if body != "" %}\n\nMore information: {{ link }}{% endif %}
+{% if body != "" %}URL:{{ link }}
+{% endif -%}
+END:VEVENT
+{% endfor %}END:VCALENDAR
