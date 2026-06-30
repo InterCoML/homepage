@@ -32,6 +32,10 @@
   memberId: karatzas
 - role: "Greece"
   memberId: stefaneas
+- role: "Hungary"
+  memberId: bokor
+- role: "Hungary"
+  memberId: do
 - role: "Ireland"
   memberId: noor-a-rahim
 - role: "Ireland"
@@ -44,6 +48,10 @@
   memberId: molinari
 - role: "Italy"
   memberId: trombetti
+- role: "Latvia"
+  memberId: caiko
+- role: "Latvia"
+  memberId: kunicina
 - role: "Lithuania"
   memberId: smidtaite
 - role: "Luxembourg"
@@ -98,6 +106,8 @@
   memberId: berigel
 - role: "Ukraine"
   memberId: filipkovska
+- role: "Ukraine"
+  memberId: kogut
 - role: "United Kingdom"
   memberId: guiver
 - role: "United Kingdom"

@@ -1,4 +1,7 @@
 name: "László Bokor"
 mail: "bokorl@hit.bme.hu"
 address: "Budapest University of Technology and Economics, Hungary"
+city: "Budapest"
+lat: 47.4813
+lng: 19.0556
 wgs: [2]
