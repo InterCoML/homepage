@@ -84,12 +84,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.startTime) {
           when += " · " + e.startTime + (e.endTime ? "–" + e.endTime : "");
         }
+        var titleHtml = e.url
+          ? '<a class="link" href="' + e.url + '" target="_blank" rel="noopener noreferrer">' + e.title + "</a>"
+          : '<span class="event-calendar__event-title">' + e.title + "</span>";
         return (
           '<div class="event-calendar__event">' +
           '<span class="event-calendar__event-date">' + when +
           (past ? ' <span class="event-calendar__badge">past</span>' : "") +
           "</span>" +
-          '<a class="link" href="' + e.url + '" target="_blank" rel="noopener noreferrer">' + e.title + "</a>" +
+          titleHtml +
           "</div>"
         );
       })

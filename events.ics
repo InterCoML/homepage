@@ -49,7 +49,7 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 {% endif -%}
-{% for item in cal_events %}{% assign summary = item.title | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign desc = item.short-description | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign link = item.url | prepend: site.baseUrl %}BEGIN:VEVENT
+{% for item in cal_events %}{% assign summary = item.title | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign desc = item.short-description | strip_html | replace: "\", "\\" | replace: ";", "\;" | replace: ",", "\," | strip_newlines %}{% assign link = item.url | prepend: site.baseUrl %}{% assign body = item.content | strip_html | strip %}BEGIN:VEVENT
 UID:intercoml{{ item.url | replace: "/", "-" | append: "@cost-intercoml.unidu.hr" }}
 DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%SZ" }}
 {% if item['start-time'] and item['end-time'] -%}
@@ -60,7 +60,8 @@ DTSTART;VALUE=DATE:{{ item['start-date'] | date: "%Y%m%d" }}
 DTEND;VALUE=DATE:{{ item['end-date'] | default: item['start-date'] | date: "%s" | plus: 86400 | date: "%Y%m%d" }}
 {% endif -%}
 SUMMARY:{{ summary }}
-DESCRIPTION:{{ desc }}\n\nMore information: {{ link }}
-URL:{{ link }}
+DESCRIPTION:{{ desc }}{% if body != "" %}\n\nMore information: {{ link }}{% endif %}
+{% if body != "" %}URL:{{ link }}
+{% endif -%}
 END:VEVENT
 {% endfor %}END:VCALENDAR

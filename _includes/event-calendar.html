@@ -42,9 +42,9 @@
 
 <script>
   var calendarEvents = [
-    {% for item in calendar_events %}{
+    {% for item in calendar_events %}{% assign body = item.content | strip_html | strip %}{
       title: {{ item.title | jsonify }},
-      url: {{ item.url | prepend: site.baseUrl | jsonify }},
+      url: {% if body != "" %}{{ item.url | prepend: site.baseUrl | jsonify }}{% else %}null{% endif %},
       start: {{ item['start-date'] | date: "%Y-%m-%d" | jsonify }},
       end: {{ item['end-date'] | default: item['start-date'] | date: "%Y-%m-%d" | jsonify }},
       startTime: {{ item['start-time'] | jsonify }},
