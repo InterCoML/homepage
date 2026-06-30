@@ -156,6 +156,13 @@
     font-weight: normal;
     vertical-align: middle;
   }
+
+  &__subscribe {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $mainBlue;
+  }
 }
 
 @media (max-width: 600px) {

@@ -28,7 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var events = calendarEvents
     .map(function (e) {
-      return { title: e.title, url: e.url, start: parseDate(e.start), end: parseDate(e.end || e.start) };
+      return {
+        title: e.title,
+        url: e.url,
+        start: parseDate(e.start),
+        end: parseDate(e.end || e.start),
+        startTime: e.startTime,
+        endTime: e.endTime,
+      };
     })
     .sort(function (a, b) {
       return a.start - b.start;
@@ -73,9 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var html = dayEvents
       .map(function (e) {
         var past = dayKey(e.end) < todayKey;
+        var when = formatRange(e.start, e.end);
+        if (e.startTime) {
+          when += " · " + e.startTime + (e.endTime ? "–" + e.endTime : "");
+        }
         return (
           '<div class="event-calendar__event">' +
-          '<span class="event-calendar__event-date">' + formatRange(e.start, e.end) +
+          '<span class="event-calendar__event-date">' + when +
           (past ? ' <span class="event-calendar__badge">past</span>' : "") +
           "</span>" +
           '<a class="link" href="' + e.url + '" target="_blank" rel="noopener noreferrer">' + e.title + "</a>" +
