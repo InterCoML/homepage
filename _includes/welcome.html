@@ -1,8 +1,5 @@
 <div class="sub-container">
-  <div class="row">
-    <div class="column">
-      <img style="width: 100%;" class="logo" src="{{ site.baseUrl }}/assets/images/logo_intercoml.png" alt="Logo of the {{ site.actionAbbreviation }} COST Action" />
-    </div>
+  <div class="row row--welcome">
     <div class="column">
       <h1><span class="mainGreen">Inter</span><span class="mainBlue">CoML:</span> {{ site.actionTitle }}</h1>
       <p>
@@ -17,6 +14,9 @@
         Just create an e-COST account and apply for membership in the working groups you are interested in!
       </p>
       <a class="button" href="https://e-services.cost.eu/action/CA24136/working-groups/apply" target="_blank" rel="noopener noreferrer">Apply here</a>
+    </div>
+    <div class="column">
+      {% include event-calendar.html %}
     </div>
   </div>
 </div>

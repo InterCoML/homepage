@@ -1,8 +1,10 @@
 @use "variables" as *;
 
 .event-calendar {
-  max-width: $container-max-width;
-  margin: 0 auto;
+  max-width: 26rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  text-align: left;
 
   &__bar {
     display: flex;
@@ -19,12 +21,16 @@
   }
 
   &__nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: $mainBlue;
     color: #fff;
     border: none;
     border-radius: 4px;
     width: 2.4rem;
     height: 2.4rem;
+    padding: 0;
     font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
@@ -58,7 +64,8 @@
 
   &__cell {
     position: relative;
-    height: 5.5rem; // uniform fixed grid
+    box-sizing: border-box; // keep bordered + empty cells the same total height
+    height: 3.5rem; // uniform fixed grid
     overflow: hidden;
     border: 1px solid $mainGray;
     border-radius: 4px;

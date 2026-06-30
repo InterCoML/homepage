@@ -151,6 +151,15 @@ document.addEventListener("DOMContentLoaded", function () {
       grid.appendChild(cell);
     }
 
+    // Pad to a fixed 6-week grid so the calendar height stays constant
+    // across months (4/5/6-week months no longer shift the layout).
+    var trailing = 42 - (startWeekday + daysInMonth);
+    for (var t = 0; t < trailing; t++) {
+      var pad = document.createElement("div");
+      pad.className = "event-calendar__cell event-calendar__cell--empty";
+      grid.appendChild(pad);
+    }
+
     detailEl.innerHTML = "";
     detailEl.classList.remove("is-open");
   }
