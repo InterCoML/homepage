@@ -3,8 +3,11 @@
 .event-calendar {
   max-width: 26rem;
   margin: 1.5rem auto;
-  padding: 0 1rem;
+  padding: 1.25rem 1.25rem 0.75rem;
   text-align: left;
+  background-color: $altGray;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); // card look, but no hover transform
 
   &__bar {
     display: flex;
@@ -132,7 +135,7 @@
 
     &.is-open {
       padding: 1rem;
-      background: $altGray;
+      background: #fff;
       border-radius: 4px;
     }
   }
