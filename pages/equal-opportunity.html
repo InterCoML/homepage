@@ -1,0 +1,36 @@
+---
+title: Equal Opportunity
+permalink: /:basename/
+---
+
+{% assign d = site.data.eoc_dashboard %}
+
+<div class="sub-container">
+  <h1>Equal Opportunity Dashboard</h1>
+
+  <p>
+    {{ site.actionAbbreviation }} is committed to inclusiveness and balanced participation across all
+    Action activities. This dashboard summarises the involvement of women, Young Researchers (YR) and
+    researchers from Inclusiveness Target Countries (ITC) in the Action.
+  </p>
+
+  <h2>Composition of the Action</h2>
+  <div class="cards-container">
+    {% if d.members %}{% include eoc-box.html box=d.members %}{% endif %}
+    {% if d.mc %}{% include eoc-box.html box=d.mc %}{% endif %}
+  </div>
+
+  {% if d.conference or d.stsm %}
+    <h2>Activities</h2>
+    <div class="cards-container">
+      {% for c in d.conference %}{% include eoc-box.html box=c %}{% endfor %}
+      {% for s in d.stsm %}{% include eoc-box.html box=s %}{% endfor %}
+    </div>
+  {% endif %}
+
+  {% if d.meta.generated %}
+    <p class="eoc-source">
+      Figures generated from membership records on {{ d.meta.generated }}.
+    </p>
+  {% endif %}
+</div>

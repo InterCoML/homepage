@@ -1,0 +1,37 @@
+{% comment %}
+  Renders one Equal Opportunity summary box.
+  Parameter: box - a hash with title, subtitle, headline, headline_label,
+             stats (list of {label, value, fraction:[count,total]}), note.
+{% endcomment %}
+{% assign box = include.box %}
+<div class="card eoc-box">
+  <h3>{{ box.title }}</h3>
+  {% if box.subtitle %}<p class="eoc-box__subtitle">{{ box.subtitle }}</p>{% endif %}
+  {% if box.headline %}
+    <p class="eoc-box__headline">
+      <span class="eoc-box__number">{{ box.headline }}</span>
+      {% if box.headline_label %}<span class="eoc-box__headline-label">{{ box.headline_label }}</span>{% endif %}
+    </p>
+  {% endif %}
+  {% if box.stats %}
+    <ul class="eoc-box__stats">
+      {% for stat in box.stats %}
+        <li class="eoc-box__stat">
+          <div class="eoc-box__stat-head">
+            <span class="eoc-box__stat-label">{{ stat.label }}</span>
+            <span class="eoc-box__stat-value">{{ stat.value }}</span>
+          </div>
+          {% if stat.fraction %}
+            {% assign num = stat.fraction[0] | times: 1.0 %}
+            {% assign den = stat.fraction[1] %}
+            {% if den and den != 0 %}
+              {% assign pct = num | divided_by: den | times: 100 | round: 2 %}
+              <span class="eoc-box__bar"><span class="eoc-box__bar-fill" style="width: {{ pct }}%;"></span></span>
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if box.note %}<p class="eoc-box__note">{{ box.note }}</p>{% endif %}
+</div>
