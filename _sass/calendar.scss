@@ -156,6 +156,20 @@
     margin-bottom: 0.15rem;
   }
 
+  &__desc {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+
+    summary {
+      cursor: pointer;
+      color: $altBlue;
+    }
+  }
+
+  &__desc-body {
+    margin-top: 0.4rem;
+  }
+
   &__badge {
     display: inline-block;
     background: $mainGray;

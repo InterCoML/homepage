@@ -48,7 +48,8 @@
       start: {{ item['start-date'] | date: "%Y-%m-%d" | jsonify }},
       end: {{ item['end-date'] | default: item['start-date'] | date: "%Y-%m-%d" | jsonify }},
       startTime: {{ item['start-time'] | jsonify }},
-      endTime: {{ item['end-time'] | jsonify }}
+      endTime: {{ item['end-time'] | jsonify }},
+      shortDescription: {{ item['short-description'] | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
