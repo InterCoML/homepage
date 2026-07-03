@@ -18,11 +18,11 @@ layout: default
 {% endif %}
 {{ page.content }}
 {% if page.authors %}
-  <h3>Author{% if page.authors.size > 1 %}s{% endif %}:</h3>
+  <h3>Posted by:</h3>
   <div class="cards-container">
     {% for author in page.authors %}
       {% assign member=author %}
-      {% include member-card.html %}
+      {% include member-card.html hideImage=true %}
     {% endfor %}
   </div>
 {% endif %}
