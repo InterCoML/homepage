@@ -54,9 +54,9 @@ Applications will be evaluated according to COST's principles of excellence, fai
 </ol>
 
 <h2>After the conference</h2>
+After the event has finished, you must upload the following documentation to e-COST, for approval. If the event takes place in October 2026, please submit all documentation by 31 October, 2026, in order to allow for processing by the end of the COST Grant Period:
 <ul>
-  <li>After the event has finished, you must upload the following documentation to e-COST, for approval. If the event takes place in October 2026, please submit all documentation by 31 October, 2026, in order to allow for processing by the end of the COST Grant Period.</li>
-  <li>A short report on the outcome of the presentation of the accepted contribution. This may cover topics such as visibility, research exchange, establishment of new contacts for future collaboration, and the like. It is recommended that you use the template available at <a href="https://www.cost.eu/ITCG-report-template" target="_blank" rel="noopener noreferrer" class="link">https://www.cost.eu/ITCG-report-template</a> (ITC Conference Grants) or <a href="https://www.cost.eu/YRICG-report-template" target="_blank" rel="noopener noreferrer" class="link">https://www.cost.eu/YRICG-report-template</a> (YRI Conference Grants)</li>
+  <li>A short report on the outcome of the presentation of the accepted contribution, using the COST template available at <a href="https://www.cost.eu/ITCG-report-template" target="_blank" rel="noopener noreferrer" class="link">https://www.cost.eu/ITCG-report-template</a> (ITC Conference Grants) or <a href="https://www.cost.eu/YRICG-report-template" target="_blank" rel="noopener noreferrer" class="link">https://www.cost.eu/YRICG-report-template</a> (YRI Conference Grants);</li>
   <li>A certificate of attendance;</li>
   <li>The program of the conference or book of abstracts or equivalent indicating the oral presentation or poster of the grantee.</li>
 </ul>
