@@ -9,6 +9,8 @@
     <h3>{{ include.headline }}</h3>
   {% elsif m.role %}
     <h3>{{ m.role }}</h3>
+  {% elsif m.wgs %}
+    <h3>Member WG {{ m.wgs | join: ", " }}</h3>
   {% endif %}
   {% unless include.hideImage %}
     {% if m.image %}

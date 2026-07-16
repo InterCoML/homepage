@@ -5,6 +5,7 @@ date: 2026-06-14
 wg: 2
 short-description: "Birgit Hillebrecht works together with Martin Lazar on an ML-enhanced optimal control framework as part of an STSM in Dubrovnik."
 authors:
+  - hillebrecht
   - lazar
 image: "hillebrechtSTSM.jpeg"
 ---
