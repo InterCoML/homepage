@@ -5,6 +5,7 @@ date: 2026-06-29
 wg: 2
 short-description: "Dilara Kılınç works together with Hendrik Kleikamp on driver intention prediction for autonomous driving as part of an STSM in Graz."
 authors:
+  - kilinc
   - kleikamp
 image: "kilincSTSM.jpeg"
 ---
