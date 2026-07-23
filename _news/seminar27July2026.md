@@ -6,14 +6,14 @@ start-date: 2026-07-27
 start-time: "16:00"
 end-time: "17:00"
 calendar: true
-short-description: "The COST Action will have its second online seminar talk on July 27, 2026, 16:00-17:00 CEST. <b>Alessandro Scagliotti</b> will present <i>Normalizing flows as approximations of the optimal transport map</i>. The seminar will be hosted on Microsoft Teams. The link will be shared on the day of the seminar."
+short-description: "The COST Action will have its second online seminar talk on July 27, 2026, 16:00-17:00 CEST. <b>Alessandro Scagliotti</b> will present <i>Normalizing flows as approximations of the optimal transport map</i>. The seminar will be hosted on <a href='https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4'  target='_blank' rel='noopener noreferrer' class='link'>Microsoft Teams</a>."
 ---
 
 <h3>General information:</h3>
 <ul>
   <li><b>Speaker:</b> Alessandro Scagliotti</li>
   <li><b>Date and time:</b> July 27, 2026, 16:00 CEST</li>
-  <li><b>Where:</b> Microsoft Teams (The link will be shared on the day of the seminar.)</li>
+  <li><b>Where:</b> <a href="https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4" target="_blank" rel="noopener noreferrer" class="link">Microsoft Teams</a></li>
   <li><b>Title:</b> Normalizing flows as approximations of the optimal transport map</li>
 </ul>
 <h3>Abstract:</h3>
