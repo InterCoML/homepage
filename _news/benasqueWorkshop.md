@@ -3,28 +3,23 @@ layout: news
 title: "Thematic session within the XI Workshop-Summer School 2026: Partial differential equations, optimal design and numerics"
 date: 2026-05-19
 expiry-date: 2026-06-02
-start-date: 2026-08-31
-end-date: 2026-09-01
+start-date: 2026-08-27
 calendar: true
 wgs: [1, 2]
 short-description: "We welcome applications to our session within the XI Workshop-Summer School 2026: Partial differential equations, optimal design and numerics.<br/><b>Call deadline: 01.06.2026</b>"
 ---
 
-The Action organizes a 2-day thematic session within the <a href="https://benasque.org/2026pde/" target="_blank" rel="noopener noreferrer" class="link">XI Workshop-Summer School 2026:
-Partial differential equations, optimal design and numerics</a>, to be held in Benasque, Spain.
-The session will take place on Aug 31<sup>st</sup> and Sept 1<sup>st</sup> (Monday and Tuesday of the second week of
-the workshop).<br/>
-
+The Action organizes a thematic session within the <a href="https://benasque.org/2026pde/" target="_blank" rel="noopener noreferrer" class="link">XI Workshop-Summer School 2026: Partial differential equations, optimal design and numerics</a>, to be held in Benasque, Spain.
+The session will take place on August 27.
+<br/>
 The session will focus on the interactions of Mathematics (in particular Optimization and
 Control Theory) with Data Science and Machine Learning.
 <br/> 
-
 A limited number of financial support grants will be available for participants that want to
 present their results on this special session. The grants cover travel expenses and daily
 allowances (150 € per day) in accordance to COST rules and policies. In particular, 100% of the
 daily allowance is granted for each attended day of the session, and for the travel day to the
 event. 40% of the daily allowance is granted for the day of departure from the event.
-<br/>
 
 <h2>Who can apply?</h2>
 <ul>
