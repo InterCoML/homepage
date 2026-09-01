@@ -18,9 +18,14 @@ authors:
   Everyone interested in actively participating in the working group is very much invited to join.
   The goal of the workshop is to get an overview of current topics and questions related to WG4 and to initiate first connections to industrial partners of the Action.
 </p>
-<p>
-  Below you find the preliminary program of the workshop.
-</p>
+<h4>How to participate</h4>
+The workshop will take place via <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="link">Google Meet</a>.
+Everyone interested in the meeting can participate using this
+<br>
+<ul>
+  <li><a href="https://meet.google.com/efe-zmmw-aku" target="_blank" rel="noopener noreferrer" class="link">Google Meet-Link</a></li>
+</ul>
+Please mute yourself by default during the meeting and use the "raise hand" functionality if you would like to join a discussion.
 
 <h4>Program</h4>
 All times mentioned in the table below are CET.
