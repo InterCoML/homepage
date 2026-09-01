@@ -7,7 +7,7 @@ start-time: "13:00"
 end-time: "17:00"
 calendar: true
 wg: 4
-short-description: "Working group 4 will have its virtual kickoff workshop on 4 September, 2026."
+short-description: "Working group 4 will have its virtual kickoff workshop on 4 September, 2026. Join via this <a href='https://meet.google.com/efe-zmmw-aku' target='_blank' rel='noopener noreferrer' class='link'>Google Meet-Link</a>."
 authors:
   - jacimovic
   - dede
