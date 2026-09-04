@@ -18,8 +18,7 @@
           <a href="{{ site.baseUrl }}/wg{{ wg.number }}" class="mobile-sub-item">WG {{ wg.number }} - {{ wg.title }}</a>
         {% endfor %}
       </details>
-      <a href="{{ site.baseUrl }}/activities">Activities</a>
-      <a href="{{ site.baseUrl }}/news">News</a>
+      <a href="{{ site.baseUrl }}/news">News &amp; Activities</a>
       <a href="{{ site.baseUrl }}/jobs">Jobs</a>
       <a href="{{ site.baseUrl }}/dissemination">Dissemination</a>
       <details class="mobile-submenu">
@@ -57,11 +56,8 @@
           {% endfor %}
         </ul>
       </li>
-      <li class="nav-item{% if page.url == '/activities/' %} nav-active{% endif %}">
-        <a href="{{ site.baseUrl }}/activities">Activities</a>
-      </li>
       <li class="nav-item{% if page.url == '/news/' %} nav-active{% endif %}">
-        <a href="{{ site.baseUrl }}/news">News</a>
+        <a href="{{ site.baseUrl }}/news">News &amp; Activities</a>
       </li>
       <li class="nav-item{% if page.url == '/jobs/' %} nav-active{% endif %}">
         <a href="{{ site.baseUrl }}/jobs">Jobs</a>
