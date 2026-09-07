@@ -16,6 +16,9 @@
 
   margin-left: auto;
   margin-right: auto;
+
+  display: flex;
+  align-items: center;
 }
 
 .desktop-menu-top-wrapper {
@@ -47,9 +50,10 @@
 }
 
 .menu-logo {
-  height: 100px;
+  // Scales smoothly between 900px and 1200px viewport instead of stepping.
+  height: clamp(70px, calc(70px + (100vw - 900px) / 10), 100px);
   width: auto;
-  float: left;
+  flex-shrink: 0;
   margin: 5px;
 }
 
@@ -63,6 +67,7 @@
   margin: 0;
   line-height: 110px;
   display: flex;
+  flex: 1;
 }
 
 .nav-item {
