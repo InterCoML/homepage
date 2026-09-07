@@ -5,6 +5,9 @@
     collections  - comma-separated list of collection names (e.g. "news", "news,dissemination")
     limit        - optional max number of items to show
     showMore     - if "true", show links to the full collection pages
+    showTags     - if "true", show the News/Article tag badge on each card
+                   (use when collections are mixed, e.g. the homepage; omit on
+                   single-collection subpages where the tag would be redundant)
 {% endcomment %}
 
 {% assign items = "" | split: "" %}
@@ -26,7 +29,7 @@
         {% if posting.date %}
           <h5>
             {{ posting.date | date: "%-d %B %Y" }}
-            · {% include item-tag.html item=posting %}
+            {% if include.showTags %}· {% include item-tag.html item=posting %}{% endif %}
           </h5>
         {% endif %}
         <h3>{{ posting.title }}</h3>
