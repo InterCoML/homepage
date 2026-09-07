@@ -527,3 +527,24 @@
     width: 140px;
   }
 }
+
+.seminar-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: $container-max-width;
+
+  li {
+    padding: 0.6rem 0;
+
+    & + li {
+      border-top: 1px solid $mainGray;
+    }
+  }
+
+  .seminar-meta {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 0.15rem;
+  }
+}

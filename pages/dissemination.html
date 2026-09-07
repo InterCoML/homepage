@@ -12,6 +12,22 @@ permalink: /:basename/
 
   {% include collection-cards.html collections="dissemination" %}
 
+  <h2>Online Seminars</h2>
+  <p>The Action runs a regular online seminar series. Click a talk for the abstract and details.</p>
+  {% assign seminars = site.news | where: "seminar", true | sort: "start-date" | reverse %}
+  {% if seminars.size > 0 %}
+    <ul class="seminar-list">
+      {% for s in seminars %}
+        <li>
+          <a href="{{ s.url | prepend: site.baseUrl }}" class="link">{{ s['talk-title'] | default: s.title }}</a>
+          <span class="seminar-meta">{{ s.speaker }} &middot; {{ s['start-date'] | default: s.date | date: "%-d %B %Y" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No seminars announced yet.</p>
+  {% endif %}
+
   <h2>Acknowledgement</h2>
   <p>
     In case you publish work with direct or indirect support by the COST Action,
