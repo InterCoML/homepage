@@ -6,6 +6,9 @@ start-date: 2026-07-13
 start-time: "16:00"
 end-time: "17:00"
 calendar: true
+seminar: true
+speaker: "Joachim Bona-Pellissier"
+talk-title: "Physics-informed machine learning with kernel methods"
 short-description: "The COST Action will have its first online seminar talk on July 13, 2026, 16:00-17:00 CEST. <b>Joachim Bona-Pellissier</b> will present <i>Physics-informed machine learning with kernel methods</i>. The seminar will be hosted on <a href='https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4'  target='_blank' rel='noopener noreferrer' class='link'>Microsoft Teams</a>."
 ---
 
