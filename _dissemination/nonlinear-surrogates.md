@@ -5,6 +5,7 @@ date: 2026-09-10
 wg: 2
 short-description: "A summary of the STSM by Juan Ricardo Muñoz at the University of Graz."
 image: "architecture-u-net.png"
+card-image-only: true
 authors:
   - munoz
   - kleikamp
