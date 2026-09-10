@@ -548,3 +548,25 @@
     margin-top: 0.15rem;
   }
 }
+
+// Figures inside dissemination articles: capped on wide screens, but grow
+// toward full width on small screens instead of staying a fixed 50%.
+.article-figure {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+}
