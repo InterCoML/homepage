@@ -18,3 +18,21 @@
   text-align: center;
   font-style: italic;
 }
+
+// A row of images (e.g. two photos side by side). Establishes its own
+// formatting context, so it sits neatly beside a floated figure instead of
+// overlapping it, and stacks on small screens.
+.news-img-row {
+  display: flex;
+  gap: 12px;
+  max-width: 640px;
+  margin: 20px 0;
+}
+
+.news-img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
