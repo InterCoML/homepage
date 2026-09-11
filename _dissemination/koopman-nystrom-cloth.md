@@ -84,13 +84,13 @@ This result indicates that the controller performance is highly robust to the ap
 
 <h2>Numerical Validation</h2>
 
-<div id="fig-poc" style="display: block; margin: 0 auto; width: 50%;">
-  <img src="../images/dissemination/control_policies_PoC.jpeg" >
+<div id="fig-poc" class="article-figure">
+  <img src="{{ site.baseUrl }}/images/dissemination/control_policies_PoC.jpeg" alt="Approximation of the optimal control on a one-dimensional nonlinear proof-of-concept system">
   <p><em>Figure 1: Our Nyström-based methodology recovers a good approximation of the known optimal control on a proof-of-concept, one dimensional nonlinear system.</em></p>
 </div>
 
-<div id="fig-cloth-swing" style="display: block; margin: 0 auto; width: 50%;">
-  <img src="../images/dissemination/cloth_swing_scatter.jpeg">
+<div id="fig-cloth-swing" class="article-figure">
+  <img src="{{ site.baseUrl }}/images/dissemination/cloth_swing_scatter.jpeg" alt="Scatter plot of the robotic cloth-swing task reaching the target pose faster with the Nyström-based embedding">
   <p><em>Figure 2: Using the Nyström-based embedding allows to reach the target pose in the cloth swing motion in a faster and more reliable way as opposed to other state-space lifting functions.</em></p>
 </div>
 The efficacy of this approach was validated on a proof-of-concept experiment, on the _Duffing oscillator_ and a high-dimensional _robotic cloth manipulation_ simulated task.

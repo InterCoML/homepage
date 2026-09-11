@@ -6,7 +6,7 @@ layout: default
 {% if page.date %}
   <h3>Posting date: {{ page.date | date: "%-d %B %Y" }}</h3>
 {% endif %}
-{% if page.image %}
+{% if page.image and page['card-image-only'] != true %}
   <figure class="news-img-figure">
     <img class="news-img-large" src="{{ site.baseUrl }}/images/dissemination/{{ page.image }}" />
     {% if page.image-credit %}
