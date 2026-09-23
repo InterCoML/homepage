@@ -1,6 +1,6 @@
 ---
 layout: news
-title: "InterCoML Online Seminar, Edition 1"
+title: "InterCoML Online Seminar"
 date: 2026-07-13
 start-date: 2026-07-13
 start-time: "16:00"
