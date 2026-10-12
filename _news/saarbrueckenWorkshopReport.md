@@ -3,11 +3,11 @@ layout: news
 title: "Workshop on Energy Systems: Control and Machine Learning in Action"
 date: 2026-10-12
 wgs: [3]
-short-description: "Wrap up of our Workshop on Energy Systems: Control and Machine Learning in Action."
+short-description: "Wrap up of our Workshop on <i>Energy Systems: Control and Machine Learning in Action</i>."
 authors:
  - flasskamp
  - gruene
-image: "saarbruecken_group_photo.jpg"
+image: "saarbruecken_group_photo.JPG"
 ---
 <p>
 The InterCoML Working Group 3 workshop "Energy Systems: Control and Machine Learning in Action" took place on 14-15 September 2026 at Saarland University in Saarbrücken, Germany. The event brought together researchers and practitioners from academia and industry working at the interface of control theory, machine learning, and energy systems. More than 30 participants from across Europe attended the workshop, representing universities, research institutes, industrial partners, and public utilities.
