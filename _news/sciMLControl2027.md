@@ -1,7 +1,7 @@
 ---
 layout: news
 title: "WG4 Workshop: SciMLControl"
-date: 2026-11-10
+date: 2027-02-03
 expiry-date: 2027-02-05
 start-date: 2027-02-03
 end-date: 2027-02-05
