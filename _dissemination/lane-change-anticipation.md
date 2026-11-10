@@ -12,6 +12,7 @@ authors:
   - viti
 ---
 
+<span class="author-note">This text was written by Dilara Kılınç.</span>
 <p>
 Safety in autonomous driving depends not only on accurately perceiving the
 surrounding environment but also on anticipating other road users' actions
@@ -44,7 +45,7 @@ also be interpreted as a Hidden Markov Model (HMM). Under first-order
 Markov and conditional observation independence assumptions, the
 posterior distribution is updated according to
 $$
-P[I_t\mid O_{t-w},\ldots,O_t] = \frac{1}{Z_t}P[O_t\mid I_t]\cdot\sum\limits_{I_{t-1}\in\{\mathrm{K},\mathrm{L},\mathrm{R}\}}P[I_t\mid I_{t-1}]\cdot P[I_{t-1}\mid O_{t-w},\ldots,O_{t-1}]
+P[I_t\mid O_{t-w},\ldots,O_t] = \frac{1}{Z_t}P[O_t\mid I_t]\cdot\sum\limits_{I_{t-1}\in\{\mathrm{K},\mathrm{L},\mathrm{R}\}}P[I_t\mid I_{t-1}]\cdot P[I_{t-1}\mid O_{t-w},\ldots,O_{t-1}].
 $$
 Here, $P[O_t\mid I_t]$ represents the observation likelihood, $P[I_t\mid I_{t-1}]$
 denotes the transition probabilities between driving intentions, and $Z_t=P[O_t\mid O_{t-w},\ldots,O_{t-1}]$
@@ -116,7 +117,7 @@ methods applied to the probability estimates produced by the recursive Bayesian 
   <li>Beta calibration, a parametric transformation that corrects systematic overconfidence or underconfidence.</li>
   <li>Venn–ABERS predictors provide probability intervals and can also convey uncertainty in the estimated probabilities.</li>
 </ul>
-To quantify calibration reliability, we use expected calibration error (ECE).
+To quantify calibration reliability, we use the Expected Calibration Error (ECE).
 </p>
 <p>
 A key advantage of post-hoc calibration is that it can improve the reliability
@@ -158,7 +159,8 @@ without compromising predictive performance.
 <h3>Computational Efficiency</h3>
 <p>
 Our experimental implementation of the GBM-based recursive filter achieves an
-average inference time of approximately 0.017 milliseconds per frame.
+average inference time of approximately 0.017 milliseconds per frame, which is
+well-suited for real time applications.
 </p>
 <h3>Conclusions and Future Perspectives</h3>
 <p>
@@ -181,10 +183,12 @@ at the University of Graz, supported by COST Action CA24136 InterCoML.
 </p>
 <p>
 During the two-week visit, the welcoming, inspiring, and highly supportive
-research environment at the IDea_Lab, together with the invaluable guidance
-from Hendrik Kleikamp and discussions with Martin Holler and Bruno Viti,
-strengthened my ability to conduct independent research, critically evaluate
-methodological choices, and collaborate in an international research environment.
+research environment at the
+<b><a href="https://idea-lab.uni-graz.at" target="_blank" class="link">IDea_Lab</a></b>,
+together with the invaluable guidance from Hendrik Kleikamp and discussions
+with Martin Holler and Bruno Viti, strengthened my ability to conduct independent
+research, critically evaluate methodological choices, and collaborate in an
+international research environment.
 </p>
 <p>
 I particularly valued the opportunity to discuss questions directly, review the

@@ -10,6 +10,7 @@ authors:
   - kleikamp
 ---
 
+<span class="author-note">This text was written by Hendrik Kleikamp.</span>
 <p>
 This interactive demo illustrates an adaptive model hierarchy for parametrized optimal control problems that is
 described in more detail in

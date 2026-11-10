@@ -12,6 +12,7 @@ authors:
   - lazar
 ---
 
+<span class="author-note">This text was written by Juan Ricardo Muñoz.</span>
 <p>
 Parameter-dependent optimal control problems arise when the dynamics,
 target states, physical coefficients, or other components of a controlled

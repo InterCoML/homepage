@@ -1,6 +1,11 @@
 @use "variables" as *;
 
 // Dissemination page resources
+.author-note {
+    color: $mainGray;
+    font-size: 0.9em;
+}
+
 .acknowledgement-box {
   background-color: $altGray;
   border-left: 4px solid $mainGreen;
