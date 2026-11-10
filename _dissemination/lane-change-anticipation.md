@@ -12,7 +12,7 @@ authors:
   - viti
 ---
 
-<span class="author-note">This text was written by Dilara Kılınç.</span>
+<span class="author-note">This blog post was written by Dilara Kılınç.</span>
 <p>
 Safety in autonomous driving depends not only on accurately perceiving the
 surrounding environment but also on anticipating other road users' actions
