@@ -9,6 +9,7 @@ authors:
   - molinari
 ---
 
+<span class="author-note">This blog post was written by Edoardo Caldarelli.</span>
 <p>
 	
 Nonlinear dynamical systems pose a great challenge  in terms of system identification and control. A powerful approach to deal with nonlinear systems, originally introduced in the context of autonomous dynamics,  is provided by the <em>Koopman operator</em> framework.
