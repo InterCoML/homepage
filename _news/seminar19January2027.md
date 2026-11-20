@@ -1,21 +1,21 @@
 ---
 layout: news
 title: "InterCoML Online Seminar"
-date: 2027-01-26
-start-date: 2027-01-26
+date: 2027-01-19
+start-date: 2027-01-19
 start-time: "16:00"
 end-time: "17:00"
 calendar: true
 seminar: true
 speaker: "Cezary Orłowski"
 talk-title: "From distributed data pipelines to data-driven control: Integrating Apache Kafka and Apache Spark for scalable machine learning"
-short-description: "The COST Action will have an online seminar talk on January 26, 2027, 16:00-17:00 CET. <b>Cezary Orłowski</b> will present <i>From distributed data pipelines to data-driven control: Integrating Apache Kafka and Apache Spark for scalable machine learning</i>. The seminar will be hosted on <a href='https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4'  target='_blank' rel='noopener noreferrer' class='link'>Microsoft Teams</a>."
+short-description: "The COST Action will have an online seminar talk on January 19, 2027, 16:00-17:00 CET. <b>Cezary Orłowski</b> will present <i>From distributed data pipelines to data-driven control: Integrating Apache Kafka and Apache Spark for scalable machine learning</i>. The seminar will be hosted on <a href='https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4'  target='_blank' rel='noopener noreferrer' class='link'>Microsoft Teams</a>."
 ---
 
 <h3>General information:</h3>
 <ul>
   <li><b>Speaker:</b> Cezary Orłowski</li>
-  <li><b>Date and time:</b> January 26, 2027, 16:00 CEST</li>
+  <li><b>Date and time:</b> January 19, 2027, 16:00 CEST</li>
   <li><b>Where:</b> <a href="https://teams.microsoft.com/meet/3363982521028?p=HTIXUfoyBrZz1ug5V4" target="_blank" rel="noopener noreferrer" class="link">Microsoft Teams</a></li>
   <li><b>Title:</b> From distributed data pipelines to data-driven control: Integrating Apache Kafka and Apache Spark for scalable machine learning map</li>
 </ul>
